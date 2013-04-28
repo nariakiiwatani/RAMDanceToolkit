@@ -35,7 +35,6 @@ void testApp::setup()
 	GUI = new ofxUICanvas(0, 0, width_panel, ofGetHeight());
 	input_ip = new ofxUITextInput("osc_ip", "127.0.0.1", width_input);
 	input_port = new ofxUITextInput("osc_port", "10000", width_input);
-	slider_speed = new ofxUISlider("Playback speed", -3.0, 3.0, &speed, width_ui, 30);
 	
 	
 	// title
@@ -68,7 +67,7 @@ void testApp::setup()
 	// player control section
 	GUI->addWidgetDown(new ofxUIToggle("Pause", &paused, 30, 30, 0, 0, OFX_UI_FONT_MEDIUM));
 	GUI->addWidgetDown(new ofxUIButton("Reset playhead", &reset_playhead, 30, 30, 0, 0, OFX_UI_FONT_MEDIUM));
-	GUI->addWidgetDown(slider_speed);
+	GUI->addWidgetDown(new ofxUISlider("Playback speed", -3.0, 3.0, &speed, width_ui, 30));
 	
 	GUI->addWidgetDown(new ofxUIButton("Set playback speed: -3", false, 10, 10, 0, 0, OFX_UI_FONT_SMALL));
 	GUI->addWidgetDown(new ofxUIButton("Set playback speed: -2", false, 10, 10, 0, 0, OFX_UI_FONT_SMALL));
@@ -169,7 +168,7 @@ void testApp::onValueChanged(ofxUIEventArgs &e)
 		if (static_cast<ofxUIButton *>(e.widget)->getValue() == false)
 			return;
 		
-		ofFileDialogResult result = ofSystemLoadDialog("Select motiona data xml file.", false, "bin/data");
+		ofFileDialogResult result = ofSystemLoadDialog("Select motiona data xml file.", false);
 		
 		if (result.bSuccess)
 			load(result.getPath());

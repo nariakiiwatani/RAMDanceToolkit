@@ -63,9 +63,9 @@ void ramOscPlaybacker::load(const string path)
 	ofxXmlSettings xml(path);
 	xml.pushTag(sessionTagName);
 	
-	const string date = xml.getValue(recDateTagName, "unknown_date_")+ofToString(ofRandom(100));
+	const string date = xml.getValue( recDateTagName, "unknown_date_"+ofToString(ofRandom(100)) );
 	const string address = xml.getValue( addrTagName, "/unknown_address" );
-    const size_t num_frames = xml.getNumTags(frameTagName);
+    const size_t num_frames = xml.getNumTags( frameTagName );
 	
 	recording_date = date;
 	
@@ -203,11 +203,10 @@ void ramOscPlaybacker::updatePlayhead()
 	setPlayhead(elapsed_time / duration);
 }
 
-int ramOscPlaybacker::calcCurrentFrameIndex()
+size_t ramOscPlaybacker::calcCurrentFrameIndex()
 {
-	int frameIndex = floor(frames.size() * playhead);
+	size_t frameIndex = floor(frames.size() * playhead);
 	
-	if (frameIndex < 0) frameIndex = 0;
 	if (frameIndex >= frames.size()) frameIndex = frames.size()-1;
 	
 	return frameIndex;

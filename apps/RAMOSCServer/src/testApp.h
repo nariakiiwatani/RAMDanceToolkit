@@ -34,7 +34,6 @@ public:
 	ofxUICanvas *GUI;
 	ofxUITextInput *input_ip;
 	ofxUITextInput *input_port;
-	ofxUISlider *slider_speed;
 	
 	bool paused;
 	bool reset_playhead;

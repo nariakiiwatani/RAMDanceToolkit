@@ -76,13 +76,13 @@ protected:
 	inline void setState(ramPlayerState new_state) { state = new_state; };
 	void parseXmlToArgs(ofxOscMessage &m, ofxXmlSettings &xml);
 	void updatePlayhead();
-	int calcCurrentFrameIndex();
+	size_t calcCurrentFrameIndex();
 	
 	
 	// playback data properties
 	string recording_date;
 	string actor_name;
-	int num_nodes;
+	size_t num_nodes;
 	
 	
 	// player properties
