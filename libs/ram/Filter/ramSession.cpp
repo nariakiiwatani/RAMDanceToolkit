@@ -258,8 +258,6 @@ float ramSession::getAverageFrameTime()
 
 float ramSession::getDuration()
 {
-	assert(getNumFrames() > 0);
-	
 	ramNodeArray &frontFrame = mBuffer.get( 0 );
 	ramNodeArray &backFrame = mBuffer.get( getNumFrames() );
 	

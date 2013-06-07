@@ -37,7 +37,7 @@ else
 	# ofxInteractivePrimitives
 	git clone git@github.com:satoruhiga/ofxInteractivePrimitives.git
 	cd ofxInteractivePrimitives
-	git checkout 89302be
+	git checkout 987205e
 	cd ../
 
 	# ofxCv
