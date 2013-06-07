@@ -268,7 +268,6 @@ float ramSession::getDuration()
 
 string ramSession::getNodeArrayName()
 {
-	assert(getNumFrames() > 0);
 	return getNumFrames() > 0 ? mBuffer.get(0).getName() : "no name";
 }
 
