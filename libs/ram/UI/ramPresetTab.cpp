@@ -27,6 +27,11 @@ ramPresetTab::ramPresetTab()
 ,cam_position(false)
 ,cam_look_at(false)
 {
+	
+// show preset scenes button
+// if this project is RAMDanceToolkit.xcodeproj
+// RAM_USE_PRESET_SCENES is defined as Preprocessor Macros only in RAMDanceToolkit.xcodeproj
+#ifdef RAM_USE_PRESET_SCENES
 	// should probably be a list of named presets instead of a grid
     addLabelButton("Line", false);
     addLabelButton("Hasty Chase", false);
@@ -42,6 +47,7 @@ ramPresetTab::ramPresetTab()
 	addLabelButton("Future", false); // only for windows
 #endif
 	addSpacer();
+#endif
 	
 	vector<string> cameraPresetNames;
 	cameraPresetNames.push_back("Low");
@@ -67,7 +73,7 @@ ramPresetTab::ramPresetTab()
     addToggle("Enable Node Cam", &use_node_cam, 30, 30);
     
 	autoSizeToFitWidgets();
-	
+
 	ofAddListener(ofEvents().update, this, &ramPresetTab::update);
 	ofAddListener(ofEvents().draw, this, &ramPresetTab::draw);
 	ofAddListener(newGUIEvent, this, &ramPresetTab::guiEvent);
