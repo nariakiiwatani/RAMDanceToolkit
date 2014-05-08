@@ -2770,6 +2770,7 @@
 					"\"$(SRCROOT)/../../../addons/ofxBt/libs/bullet/lib/vs2010\"",
 				);
 				PRODUCT_NAME = ram;
+				SDKROOT = macosx;
 				VALID_ARCHS = i386;
 			};
 			name = Debug;
@@ -2795,6 +2796,7 @@
 					"\"$(SRCROOT)/../../../addons/ofxBt/libs/bullet/lib/vs2010\"",
 				);
 				PRODUCT_NAME = ram;
+				SDKROOT = macosx;
 				VALID_ARCHS = i386;
 			};
 			name = Release;
