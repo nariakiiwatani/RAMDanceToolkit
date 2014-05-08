@@ -17,6 +17,12 @@
 
 #include "testApp.h"
 
+//#include "ramEventMain.h"
+//#include "ramFilterMain.h"
+//#include "ramGraphicsMain.h"
+//#include "ramFilterMain.h"
+//#include "ramRecognizerMain.h"
+
 #pragma mark - oF methods
 //--------------------------------------------------------------
 void testApp::setup()
