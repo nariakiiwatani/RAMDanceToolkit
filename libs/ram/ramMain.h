@@ -34,3 +34,9 @@
 
 #define _USE_MATH_DEFINES
 #include <math.h>
+
+#include "ramEventMain.h"
+#include "ramFilterMain.h"
+#include "ramGraphicsMain.h"
+#include "ramPhysicsMain.h"
+#include "ramRecognizerMain.h"
