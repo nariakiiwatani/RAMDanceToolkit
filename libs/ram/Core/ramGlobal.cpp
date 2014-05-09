@@ -62,7 +62,7 @@ void ramInitialize(int oscPort, bool usePresetScenes)
 
 string ramToResourcePath(string path)
 {
-	return ofFilePath::join(ofToDataPath("../../../../resources"), path);
+	return ofFilePath::join(ofToDataPath("../../resources"), path);
 }
 
 //

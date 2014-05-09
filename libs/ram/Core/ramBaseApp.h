@@ -77,7 +77,6 @@ private:
 	bool draw_floor_auto;
 
 	// event callback
-	void setup(ofEventArgs &args);
 	void update(ofEventArgs &args);
 	void draw(ofEventArgs &args);
 	void exit(ofEventArgs &args);
