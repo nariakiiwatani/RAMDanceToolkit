@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#define PI 3.14159265
+
 @interface ViewController ()
 
 @end
@@ -18,13 +20,32 @@
 - (IBAction)hostDidEndOnExit:(id)sender
 {
     NSLog(@"%@", self.hostTextField.text);
-    [sender resignFirstResponder];
+    [_manager deleteAllOutputs];
+    _outPort = [_manager createNewOutputToAddress:self.hostTextField.text
+                                           atPort:[self.portTextField.text intValue]];
+    [self saveUseDefaults];
+
+ //   [sender resignFirstResponder];
 }
 
 - (IBAction)portDidEndOnExit:(id)sender
 {
     NSLog(@"%@", self.portTextField.text);
-    [sender resignFirstResponder];
+    [_manager deleteAllOutputs];
+    _outPort = [_manager createNewOutputToAddress:self.hostTextField.text
+                                           atPort:[self.portTextField.text intValue]];
+    [self saveUseDefaults];
+ //   [sender resignFirstResponder];
+}
+
+- (void)saveUseDefaults{
+    NSArray *array = @[self.hostTextField.text, self.portTextField.text];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:array forKey:@"HostAndPort"];
+    BOOL successful = [defaults synchronize];
+    if (successful) {
+        NSLog(@"%@", @"データの保存に成功しました。");
+    }
 }
 
 
@@ -33,13 +54,31 @@
     
     [super viewDidLoad];
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray *array = [defaults arrayForKey:@"HostAndPort"];
+    if (array) {
+        
+        self.hostTextField.text = [array objectAtIndex:0];
+        self.portTextField.text = [array objectAtIndex:1];
+        
+    } else {
+        
+        self.hostTextField.text = @"169.254.100.100";
+        self.portTextField.text = @"10000";
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSArray *array = @[self.hostTextField.text, self.portTextField.text];
+        [defaults setObject:array forKey:@"HostAndPort"];
+    }
+
+    
     _startTime = [[[NSDate alloc] init] timeIntervalSince1970];
     
 	// Do any additional setup after loading the view, typically from a nib.
-    OSCManager *manager = [[OSCManager alloc] init];
-    manager.delegate = self;
-        
-    OSCOutPort *outPort = [manager createNewOutputToAddress:@"169.254.103.196" atPort:10000];
+    _manager = [[OSCManager alloc] init];
+    _manager.delegate = self;
+    
+    _outPort = [_manager createNewOutputToAddress:self.hostTextField.text atPort:[self.portTextField.text intValue]];
     
     _motionManager = [[CMMotionManager alloc] init];
     
@@ -83,34 +122,11 @@
          [message addFloat:quat.y];
          [message addFloat:quat.z];
          [message addFloat:dt];
-         [outPort sendThisPacket:[OSCPacket createWithContent:message]];
+         [_outPort sendThisPacket:[OSCPacket createWithContent:message]];
         
-         
-         /*ofQuaternion ofQuat;
-         ofQuat.set(quat.x, quat.y, quat.z, quat.w);
-         
-         ofVec3f axis;
-         float angle;
-         ofQuat.getRotate(angle, axis);
-         
-         ofxOscMessage m;
-         m.setAddress( "/ram/rigid_body" );
-         m.addStringArg( "iPhone" );
-         m.addIntArg(1);
-         m.addStringArg("Neck");
-         m.addFloatArg(0.0);
-         m.addFloatArg(0.0);
-         m.addFloatArg(0.0);
-         m.addFloatArg(angle);
-         m.addFloatArg(axis.x);
-         m.addFloatArg(axis.y);
-         m.addFloatArg(axis.z);
-         m.addFloatArg(ofGetElapsedTimef());
-         sender.sendMessage( m );
-         
-         pitch = motion.attitude.pitch * 180 / M_PI;
-         roll = motion.attitude.roll * 180 / M_PI;
-         yaw = motion.attitude.yaw * 180 / M_PI;*/
+         self.pitch.text = [NSString stringWithFormat:@"%f",motion.attitude.pitch * 180 / PI];
+         self.roll.text = [NSString stringWithFormat:@"%f",motion.attitude.roll * 180 / PI];
+         self.yaw.text = [NSString stringWithFormat:@"%f",motion.attitude.yaw * 180 / PI];
          
      }];
 

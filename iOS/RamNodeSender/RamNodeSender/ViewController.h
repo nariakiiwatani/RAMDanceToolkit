@@ -16,5 +16,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *portTextField;
 @property CMMotionManager *motionManager;
 @property NSTimeInterval startTime;
+@property OSCManager *manager;
+@property OSCOutPort *outPort;
+@property (weak, nonatomic) IBOutlet UILabel *pitch;
+@property (weak, nonatomic) IBOutlet UILabel *roll;
+@property (weak, nonatomic) IBOutlet UILabel *yaw;
+
+-(void)saveUseDefaults;
 
 @end
