@@ -31,15 +31,6 @@ void ramCommunicationManager::update(){
 void ramCommunicationManager::draw(){
 	mainPanel.draw();
 
-	if (ofGetKeyPressed(' ')){
-		ofxOscMessage mm;
-		mm.setAddress(RAM_OSC_ADDR_COMMUNICATE_CC);
-		mm.addStringArg("myInst");
-		mm.addFloatArg(0.5);
-		mm.addFloatArg(0.5);
-		mm.addFloatArg(0.5);
-		updateWithOscMessage(mm);
-	}
 }
 
 void ramCommunicationManager::updateWithOscMessage(const ofxOscMessage &m){
