@@ -75,7 +75,7 @@ public:
 
 	void erase(const string &key)
 	{
-		if (hash.find(key) != hash.end())
+		if (hash.size() > 0 && hash.find(key) != hash.end())
 		{
 			hash.erase(key);
 			updateIndexCache();
