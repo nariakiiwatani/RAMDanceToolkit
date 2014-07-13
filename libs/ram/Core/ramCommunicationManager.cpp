@@ -40,7 +40,7 @@ void ramCommunicationManager::updateWithOscMessage(const ofxOscMessage &m){
 	const std::string addr = m.getAddress();
 	const std::string name = m.getArgAsString(0);
 
-	if (addr.substr(0,17) == "/ram/communicate/"){
+	if (addr.substr(0,17) != "/ram/communicate/"){
 		return;
 	}
 
