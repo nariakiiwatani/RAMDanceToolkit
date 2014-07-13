@@ -9,11 +9,13 @@
 #ifndef __RAMDanceToolkit__ramCommunicationManager__
 #define __RAMDanceToolkit__ramCommunicationManager__
 
+//#include "ramMain.h"
 #include "ofMain.h"
 #include "ofxOsc.h"
 #include "ramConstants.h"
 #include "ramUtils.h"
 #include "ofxGui.h"
+#include "ofxUI.h"
 
 class ramCommunicationManager
 {
@@ -46,6 +48,7 @@ private:
 	ramCommunicationManager& operator=(const ramCommunicationManager&) {return *this; }
 	~ramCommunicationManager() {};
 
+	bool bVisible;
 
 	//Gui
 	void refleshInstruments();
@@ -57,7 +60,9 @@ private:
 	ofxOscReceiver oscReceiver;
 	void	updateWithOscMessage(const ofxOscMessage &m);
 
-
+	ofEvent<ofxUIEventArgs> newGUIEvent;
+	void guiEvent(ofxUIEventArgs &e);
+	void keyPressed(ofKeyEventArgs &key);
 };
 
 #endif /* defined(__RAMDanceToolkit__ramCommunicationManager__) */

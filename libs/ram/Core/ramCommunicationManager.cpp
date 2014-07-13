@@ -15,7 +15,11 @@ void ramCommunicationManager::setup(){
 	mainPanel.setup();
 	mainPanel.setName("Communicator");
 	refleshInstruments();
-	
+
+	ofAddListener(newGUIEvent, this, &ramCommunicationManager::guiEvent);
+	ofAddListener(ofEvents().keyPressed, this, &ramCommunicationManager::keyPressed);
+
+	bVisible = true;
 }
 
 void ramCommunicationManager::update(){
@@ -29,8 +33,7 @@ void ramCommunicationManager::update(){
 }
 
 void ramCommunicationManager::draw(){
-	mainPanel.draw();
-
+	if (bVisible) mainPanel.draw();
 }
 
 void ramCommunicationManager::updateWithOscMessage(const ofxOscMessage &m){
@@ -140,4 +143,13 @@ float ramCommunicationManager::getCC(int index, int ccNum){
 		return Instruments[index]->getFloat("cc"+ofToString(ccNum));
 
 	return 0.0;
+}
+
+void ramCommunicationManager::guiEvent(ofxUIEventArgs &e){
+	cout << "GUIEVVV" << endl;
+	cout << e.widget->getName() << endl;
+}
+
+void ramCommunicationManager::keyPressed(ofKeyEventArgs &key){
+	if (key.key == OF_KEY_TAB) bVisible ^= true;
 }
