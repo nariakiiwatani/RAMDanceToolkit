@@ -54,7 +54,36 @@ public:
 
 	void drawActor(const ramActor& actor)
 	{
-
+        if (actor.getNumNode() == 0) return;
+        
+        assert(actor.getNumNode() == ramActor::NUM_JOINTS);
+        
+        ofPushStyle();
+        const ofColor& color0 = ofGetStyle().color;
+        const ofColor& color1 = ofColor::fromHsb(((int)color0.getHue() + 30) % 255, color0.getSaturation() * 0.5, color0.getBrightness(), color0.a);
+        
+        glPushMatrix();
+        for (int i = 0; i < actor.getNumNode(); i++)
+        {
+            const ramNode &node = actor.getNode(i);
+            float jointSize = (i == ramActor::JOINT_HEAD) ? 8.0 : 5.0;
+            
+            float w = getCommunicationManager().getVelocity("sampler") * 20.0;
+            
+            ofPushStyle();
+            ofSetLineWidth(w);
+            
+            ofSetColor(color0);
+            ramBox(node, jointSize);
+            
+            ofSetColor(color1);
+            ramLine(node);
+            
+            ofPopStyle();
+        }
+        glPopMatrix();
+        
+        ofPopStyle();
 	}
 
 	void drawRigid(const ramRigidBody &rigid)

@@ -32,6 +32,8 @@ void ramBaseApp::update(ofEventArgs &args)
 {
 	getActorManager().update();
 	
+	getCommunicationManager().update();
+	
 	update(); // testApp(or ofApp)
 }
 
@@ -72,6 +74,8 @@ void ramBaseApp::draw(ofEventArgs &args)
 	ramEndCamera();
 
 	glPopAttrib();
+	
+	getCommunicationManager().draw();
 	
 	draw(); // testApp(or ofApp)
 }

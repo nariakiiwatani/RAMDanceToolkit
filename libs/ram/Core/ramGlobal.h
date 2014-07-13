@@ -21,6 +21,7 @@
 
 #include "ramActorManager.h"
 #include "ramCameraManager.h"
+#include "ramCommunicationManager.h"
 //#include "ramSceneManager.h"
 
 class ramGlobalShortcut
@@ -30,6 +31,8 @@ public:
 #pragma mark - Shortcut to ramActorManager
 
 	ramActorManager& getActorManager();
+	ramCommunicationManager& getCommunicationManager();
+	
 	const vector<string>& getNodeArrayNames();
 	bool hasNodeArray(const string &key);
 	ramNodeArray& getNodeArray(string name);
