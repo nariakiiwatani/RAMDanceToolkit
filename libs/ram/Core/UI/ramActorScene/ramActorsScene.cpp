@@ -314,27 +314,27 @@ void ramActorsScene::loadFile(const string filePath)
 {
 	if (mSegmentsMap.size() >= MAX_ACTORS)
 		return;
-	
-    try
-    {
-        coder.load(filePath);
-        ramSession session = coder.get();
-        
-        SegmentsIter it = mSegmentsMap.find(session.getNodeArrayName());
-        
-        if( it != mSegmentsMap.end() ) return;
-        
-        const string name = session.getNodeArrayName();
-        
-        PlaybackSegment *seg = new PlaybackSegment(name);
-        seg->session = session;
-        seg->session.play();
-        addSegment(seg);
-    }
-    catch (std::exception &e)
-    {
-        cout << e.what() << endl;
-    }
+
+   try
+   {
+		coder.load(filePath);
+		ramSession session = coder.get();
+
+		const string name = session.getNodeArrayName();
+
+		SegmentsIter it = mSegmentsMap.find(name);
+		if( it != mSegmentsMap.end() ) return;
+
+		PlaybackSegment *seg = new PlaybackSegment(name);
+		seg->session = session;
+		seg->session.prepareForPlay();
+		seg->session.play();
+		addSegment(seg);
+   }
+   catch (std::exception &e)
+   {
+		cout << e.what() << endl;
+   }
 }
 
 
@@ -491,6 +491,7 @@ void ramActorsScene::rebuildControlPanel()
         {
             PlaybackSegment *s = new PlaybackSegment(seg->getName());
             s->session = seg->session;
+			s->session.prepareForPlay();
             s->session.play();
             addSegment(s);
         }
