@@ -161,16 +161,10 @@ void ramActorManager::setup()
 
 void ramActorManager::update()
 {
-	while (oscReceiver_actor.hasWaitingMessages())
+	while (oscReceiver.hasWaitingMessages())
 	{
 		ofxOscMessage m;
-		oscReceiver_actor.getNextMessage(&m);
-		ramActorManager::instance().updateWithOscMessage(m);
-	}
-	
-	while (oscReceiver_rigid.hasWaitingMessages()){
-		ofxOscMessage m;
-		oscReceiver_rigid.getNextMessage(&m);
+		oscReceiver.getNextMessage(&m);
 		ramActorManager::instance().updateWithOscMessage(m);
 	}
 

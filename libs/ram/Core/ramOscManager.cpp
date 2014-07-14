@@ -36,10 +36,11 @@ void ramOscManager::update(){
 
 		for (int i = 0;i < receiverList.size();i++){
 
-			if (m.getAddress().substr(0,receiverList[i]->address.length()) ==
-				receiverList[i]->address){
+			for (int j = 0;j < receiverList[i]->addr.size();j++){
+				string ad = receiverList[i]->addr[j];
 
-				receiverList[i]->addMessage(m);
+				if (m.getAddress().substr(0,ad.length()) == ad)
+					receiverList[i]->addMessage(m);
 
 			}
 

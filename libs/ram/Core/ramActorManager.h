@@ -101,11 +101,10 @@ public:
 	void updateWithOscMessage(const ofxOscMessage &m);
 	void setupOscReceiver(ramOscManager* oscMan) {
 
-		oscReceiver_actor.address = RAM_OSC_ADDR_ACTOR;
-		oscReceiver_rigid.address = RAM_OSC_ADDR_RIGID_BODY;
+		oscReceiver.addAddress(RAM_OSC_ADDR_ACTOR);
+		oscReceiver.addAddress(RAM_OSC_ADDR_RIGID_BODY);
 
-		oscMan->addReceiverTag(&oscReceiver_actor);
-		oscMan->addReceiverTag(&oscReceiver_rigid);
+		oscMan->addReceiverTag(&oscReceiver);
 
 	}
 
@@ -113,8 +112,7 @@ private:
 
 	static ramActorManager *_instance;
 
-	ramOscReceiveTag oscReceiver_actor;
-	ramOscReceiveTag oscReceiver_rigid;
+	ramOscReceiveTag oscReceiver;
 
 	// noncopyable
 	ramActorManager() {};

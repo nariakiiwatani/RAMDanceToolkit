@@ -32,7 +32,7 @@ void ramCommunicationManager::setup(ramOscManager* oscMan){
 
 	bVisible = true;
 
-	oscReceiver.address = "/ram/communicate/";
+	oscReceiver.addAddress("/ram/communicate/");
 	oscMan->addReceiverTag(&oscReceiver);
 }
 

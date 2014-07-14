@@ -31,10 +31,15 @@ class ramOscReceiveTag{
 public:
 
 	ramOscReceiveTag(string addr_){
-		address = addr_;
+		string ad = addr_;
+		addr.push_back(ad);
 	}
 	ramOscReceiveTag(){
-		address = "";
+	}
+
+	void addAddress(string addr_){
+		string ad = addr_;
+		addr.push_back(ad);
 	}
 
 	void addMessage(ofxOscMessage& m){
@@ -49,7 +54,7 @@ public:
 	bool hasWaitingMessages(){return (msg.size() > 0);};
 
 	vector<ofxOscMessage> msg;
-	string address;
+	vector <string> addr;
 
 };
 
