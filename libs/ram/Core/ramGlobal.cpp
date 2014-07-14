@@ -60,7 +60,7 @@ void ramInitialize(int oscPort, bool usePresetScenes)
 
 	ram_simple_shadow.setup();
 
-	ramOscManager::instance().setup(oscPort+1);
+	ramOscManager::instance().setup(oscPort);
 
 	ramActorManager::instance().setup();
 	ramActorManager::instance().setupOscReceiver(&ramOscManager::instance());
