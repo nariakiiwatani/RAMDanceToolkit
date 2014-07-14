@@ -58,13 +58,14 @@ string ramToResourcePath(string path);
 #pragma mark - actors
 void ramEnableShowActors(bool v);
 bool ramShowActorsEnabled();
+const ramNode& ramGetNode(unsigned int actorId, unsigned int jointId);
 
 #pragma mark - camera
 void ramBeginCamera();
 void ramEndCamera();
 void ramEnableInteractiveCamera(bool v);
 
-#pragma mark - shoadws
+#pragma mark - shadows
 void ramEnableShadow(bool v = true);
 void ramDisableShadow();
 bool ramShadowEnabled();
