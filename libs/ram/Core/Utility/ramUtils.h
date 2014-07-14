@@ -18,11 +18,6 @@
 #pragma once
 
 #include "ofMain.h"
-
-#ifndef TARGET_WIN32
-#include <tr1/unordered_map>
-#endif
-
 #include "ofxXmlSettings.h"
 
 #pragma mark - ramFading
@@ -58,11 +53,7 @@ public:
 template <typename T>
 class ramCompoundContainer
 {
-#ifndef TARGET_WIN32
-	typedef std::tr1::unordered_map<string, T> MapType;
-#else
 	typedef std::map<string, T> MapType;
-#endif
 	typedef vector<T*> ArrayType;
 
 public:
@@ -75,11 +66,8 @@ public:
 
 	void erase(const string &key)
 	{
-		if (hash.size() > 0 && hash.find(key) != hash.end())
-		{
-			hash.erase(key);
-			updateIndexCache();
-		}
+		hash.erase(key);
+		updateIndexCache();
 	}
 
 	size_t size() { return array.size(); }

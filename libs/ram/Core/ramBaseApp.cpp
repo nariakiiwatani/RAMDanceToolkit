@@ -34,7 +34,7 @@ void ramBaseApp::update(ofEventArgs &args)
 	
 	getCommunicationManager().update();
 	
-	update(); // testApp(or ofApp)
+	update(); // calling testApp(or ofApp)::update()
 }
 
 void ramBaseApp::draw(ofEventArgs &args)
@@ -77,7 +77,7 @@ void ramBaseApp::draw(ofEventArgs &args)
 	
 	getCommunicationManager().draw();
 	
-	draw(); // testApp(or ofApp)
+	draw(); // calling testApp(or ofApp)::draw()
 }
 
 void ramBaseApp::drawNodeArrays()
