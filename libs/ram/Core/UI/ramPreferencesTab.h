@@ -21,7 +21,8 @@
 
 class ramPreferencesTab : public ofxUITab {
 protected:
-	ofxUIRadio* floorStyleRadio; 
+	ofxUIRadio* floorStyleRadio;
+	ofxUILabelToggle* fullscreenToggle;
 	bool fullscreen, useShadows;
 	float floorSize, floorGridSize;
 	int floorStyle;
@@ -36,7 +37,7 @@ public:
 	,floorGridSize(50.0)
 	,bg(0)
 	{
-		addLabelToggle("Fullscreen", &fullscreen);
+		fullscreenToggle = addLabelToggle("Fullscreen", &fullscreen);
 		addLabelToggle("Use shadows", &useShadows);
 		addSpacer();
 		
@@ -53,6 +54,9 @@ public:
 		addSlider("Blue", 0, 1, &bg.b);
 		
 		autoSizeToFitWidgets();
+		
+		ofAddListener(this->newGUIEvent, this, &ramPreferencesTab::onValueChanged);
+		ofSetFullscreen(fullscreen);
 	}
 	int getFloorPattern() {
 		return getChoice(floorStyleRadio);
@@ -61,10 +65,24 @@ public:
 	float getFloorGridSize() { return floorGridSize; }
 	
 	void update() {
-		if (fullscreen != (ofGetWindowMode() == OF_FULLSCREEN)) {
-			ofSetFullscreen(fullscreen);
+		
+		if (fullscreenToggle->getValue() != (ofGetWindowMode() == OF_FULLSCREEN))
+		{
+			fullscreenToggle->setValue(ofGetWindowMode() == OF_FULLSCREEN);
+			fullscreenToggle->stateChange();
 		}
+			
 		ramEnableShadow(useShadows);
 		ofBackground(bg);
+	}
+	
+	void onValueChanged(ofxUIEventArgs& e)
+	{
+		const string widgetName = e.widget->getName();
+		
+		if (widgetName == "Fullscreen")
+		{
+			ofSetFullscreen(fullscreenToggle->getValue());
+		}
 	}
 };
