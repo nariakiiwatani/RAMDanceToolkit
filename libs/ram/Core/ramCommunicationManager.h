@@ -9,9 +9,8 @@
 #ifndef __RAMDanceToolkit__ramCommunicationManager__
 #define __RAMDanceToolkit__ramCommunicationManager__
 
-//#include "ramMain.h"
 #include "ofMain.h"
-#include "ofxOsc.h"
+#include "ramOscManager.h"
 #include "ramConstants.h"
 #include "ramUtils.h"
 #include "ofxGui.h"
@@ -21,7 +20,7 @@ class ramCommunicationManager
 {
 public:
 
-	void setup();
+	void setup(ramOscManager* oscMan);
 	void update();
 	void draw();
 
@@ -37,8 +36,6 @@ public:
 		return* __instance;
 	};
 
-	void setupOscReceiver(int port) { oscReceiver.setup(port); }
-
 private:
 	int addInstrument(string name);
 	static ramCommunicationManager *__instance;
@@ -51,14 +48,16 @@ private:
 	bool bVisible;
 
 	//Gui
-	void refleshInstruments();
-	ofxPanel mainPanel;
-	vector<ofParameterGroup* > Instruments;
+	void						refleshInstruments();
+	vector<ofParameterGroup*>	Instruments;
 
+	vector<ofxUISlider*>			velocities;
+	vector<vector<ofxUISlider*> >	ccs;
+	ofxUICanvas						UIcanvas;
 
 	//OSC
-	ofxOscReceiver oscReceiver;
-	void	updateWithOscMessage(const ofxOscMessage &m);
+	ramOscReceiveTag	oscReceiver;
+	void			updateWithOscMessage(const ofxOscMessage &m);
 
 	ofEvent<ofxUIEventArgs> newGUIEvent;
 	void guiEvent(ofxUIEventArgs &e);

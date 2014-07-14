@@ -33,6 +33,8 @@ void ramBaseApp::update(ofEventArgs &args)
 	getActorManager().update();
 	
 	getCommunicationManager().update();
+
+	getOscManager().update();
 	
 	update(); // testApp(or ofApp)
 }

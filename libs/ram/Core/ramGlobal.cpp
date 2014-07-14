@@ -25,7 +25,10 @@
 static ramSimpleShadow ram_simple_shadow;
 
 ramActorManager& ramGlobalShortcut::getActorManager() { return ramActorManager::instance(); }
+
 ramCommunicationManager& ramGlobalShortcut::getCommunicationManager() { return ramCommunicationManager::instance(); }
+
+ramOscManager& ramGlobalShortcut::getOscManager() {return ramOscManager::instance(); }
 
 const vector<string>& ramGlobalShortcut::getNodeArrayNames() { return ramActorManager::instance().getNodeArrayNames(); }
 
@@ -56,14 +59,16 @@ void ramInitialize(int oscPort, bool usePresetScenes)
 	inited = true;
 
 	ram_simple_shadow.setup();
+
+	ramOscManager::instance().setup(oscPort+1);
+
 	ramActorManager::instance().setup();
-	ramActorManager::instance().setupOscReceiver(oscPort);
+	ramActorManager::instance().setupOscReceiver(&ramOscManager::instance());
 	ramSceneManager::instance().setup();
 	ramPhysics::instance();
 	ramGetGUI().setup(usePresetScenes);
 
-	ramCommunicationManager::instance().setup();
-	ramCommunicationManager::instance().setupOscReceiver(oscPort+1);
+	ramCommunicationManager::instance().setup(&ramOscManager::instance());
 
 }
 
