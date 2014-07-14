@@ -81,8 +81,7 @@ void ramCommunicationManager::updateWithOscMessage(const ofxOscMessage &m){
 
 	else if (addr == RAM_OSC_ADDR_COMMUNICATE_CC){
 		int ccNum = m.getNumArgs();
-
-		for (int i = 0;i < ccNum;i++){
+		for (int i = 0;i < ccNum - 1;i++){
 			string ccLabel = "cc" + ofToString(i);
 
 			if (Instruments[index]->contains(ccLabel))
@@ -140,8 +139,8 @@ void ramCommunicationManager::refleshInstruments(){
 		vector<ofxUISlider*> cc;
 		ccs.push_back(cc);
 
-		for (int j = 0;j < 64;j++){
-			if (Instruments[i]->contains("cc"+ofToString(i))){
+		for (int j = 0;j < 4;j++){
+			if (Instruments[i]->contains("cc"+ofToString(j))){
 				ccs[i].push_back(UIcanvas.addSlider("cc"+ofToString(j),
 													0.0,
 													1.0,
