@@ -29,6 +29,8 @@ public:
 	float getCC(string name,int ccNum);
 	float getCC(int index,int ccNum);
 
+	ofxUICanvas* getCanvas(){return &UIcanvas;};
+
 	inline static ramCommunicationManager& instance()
 	{
 		if (__instance == NULL)
