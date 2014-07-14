@@ -88,18 +88,14 @@ ramControlPanel::~ramControlPanel()
 
 void ramControlPanel::setup(bool usePresetScenes)
 {
-	ofAddListener(ofEvents().update, this, &ramControlPanel::update);
-	
-	// preset tab
-	presetTab.setup(usePresetScenes);
 	addPanel(presetTab);
-	
-	// preference tab
 	addPanel(preferencesTab);
-	
-	ofAddListener(mSceneTabs.newGUIEvent, this, &ramControlPanel::guiEvent);
-	
 	mSceneTabs.addSpacer();
+	
+	presetTab.setup(usePresetScenes);
+	
+	ofAddListener(ofEvents().update, this, &ramControlPanel::update);
+	ofAddListener(mSceneTabs.newGUIEvent, this, &ramControlPanel::guiEvent);
 }
 
 void ramControlPanel::update(ofEventArgs &e)

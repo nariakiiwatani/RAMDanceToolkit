@@ -57,7 +57,8 @@ void ramPresetTab::setup(bool usePresetScenes)
 	cameraPresetNames.push_back("Overhead");
 	preset_cam_radio = addRadio("Camera position", cameraPresetNames);
 	preset_cam_radio->getToggles()[preset_cam_index]->setValue(true);
-	preset_cam_radio->getToggles()[preset_cam_index]->triggerSelf();
+	ramCameraManager::instance().rollbackDefaultCameraSetting(1);
+	
 	addSpacer();
 	
     // nodecam
@@ -162,7 +163,8 @@ void ramPresetTab::guiEvent(ofxUIEventArgs &e)
 	else if (name == "HC + Future") callPreset(4);
 	else if (name == "Line + Future") callPreset(5);
 	else if (name == "Particles + Future") callPreset(6);
-	else if (name == "Particles") callPreset(7);}
+	else if (name == "Particles") callPreset(7);
+}
 
 
 void ramPresetTab::callPreset(size_t preset_id)
