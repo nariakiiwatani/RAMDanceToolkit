@@ -26,8 +26,7 @@ ramPresetTab::ramPresetTab()
 ,use_node_cam(false)
 ,cam_position(false)
 ,cam_look_at(false)
-{
-}
+{}
 
 void ramPresetTab::setup(bool usePresetScenes)
 {
@@ -58,6 +57,7 @@ void ramPresetTab::setup(bool usePresetScenes)
 	cameraPresetNames.push_back("Overhead");
 	preset_cam_radio = addRadio("Camera position", cameraPresetNames);
 	preset_cam_radio->getToggles()[preset_cam_index]->setValue(true);
+	preset_cam_radio->getToggles()[preset_cam_index]->triggerSelf();
 	addSpacer();
 	
     // nodecam
@@ -84,14 +84,6 @@ void ramPresetTab::setup(bool usePresetScenes)
 
 void ramPresetTab::update(ofEventArgs& e)
 {
-    // why 10 frames?
-	if(ofGetFrameNum() < 10)
-    {
-		preset_cam_radio->getToggles()[preset_cam_index]->setValue(true);
-		preset_cam_radio->getToggles()[preset_cam_index]->triggerSelf();
-	}
-    
-    
     // nodecam
     if (cam_position)
     {
