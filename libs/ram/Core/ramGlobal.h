@@ -22,6 +22,7 @@
 #include "ramActorManager.h"
 #include "ramCameraManager.h"
 #include "ramCommunicationManager.h"
+#include "ramOscManager.h"
 //#include "ramSceneManager.h"
 
 class ramGlobalShortcut
@@ -32,7 +33,8 @@ public:
 
 	ramActorManager& getActorManager();
 	ramCommunicationManager& getCommunicationManager();
-	
+	ramOscManager& getOscManager();
+
 	const vector<string>& getNodeArrayNames();
 	bool hasNodeArray(const string &key);
 	ramNodeArray& getNodeArray(string name);

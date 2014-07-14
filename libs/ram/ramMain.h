@@ -22,6 +22,8 @@
 /// core
 #include "ramBaseApp.h"
 #include "ramActorManager.h"
+#include "ramCommunicationManager.h"
+#include "ramOscManager.h"
 #include "ramCameraManager.h"
 
 #include "ramSceneManager.h"

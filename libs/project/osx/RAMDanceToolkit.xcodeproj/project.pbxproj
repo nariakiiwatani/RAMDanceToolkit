@@ -487,6 +487,8 @@
 		9AEA65D2191CB63D001FAA18 /* ramUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AEA65AA191CB63D001FAA18 /* ramUtils.h */; };
 		C62C935E1951554400EF3B2E /* ramCommunicationManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C62C935C1951554400EF3B2E /* ramCommunicationManager.cpp */; };
 		C62C935F1951554400EF3B2E /* ramCommunicationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C62C935D1951554400EF3B2E /* ramCommunicationManager.h */; };
+		C681AB9C197386FD0076DF1D /* ramOscManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C681AB9A197386FD0076DF1D /* ramOscManager.cpp */; };
+		C681AB9D197386FD0076DF1D /* ramOscManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C681AB9B197386FD0076DF1D /* ramOscManager.h */; };
 		C6FC6B4419515D11002E18D5 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6FC6B3319515D11002E18D5 /* ofxBaseGui.cpp */; };
 		C6FC6B4519515D11002E18D5 /* ofxBaseGui.h in Headers */ = {isa = PBXBuildFile; fileRef = C6FC6B3419515D11002E18D5 /* ofxBaseGui.h */; };
 		C6FC6B4619515D11002E18D5 /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6FC6B3519515D11002E18D5 /* ofxButton.cpp */; };
@@ -994,6 +996,8 @@
 		9AEA65AA191CB63D001FAA18 /* ramUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ramUtils.h; sourceTree = "<group>"; };
 		C62C935C1951554400EF3B2E /* ramCommunicationManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ramCommunicationManager.cpp; sourceTree = "<group>"; };
 		C62C935D1951554400EF3B2E /* ramCommunicationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ramCommunicationManager.h; sourceTree = "<group>"; };
+		C681AB9A197386FD0076DF1D /* ramOscManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ramOscManager.cpp; sourceTree = "<group>"; };
+		C681AB9B197386FD0076DF1D /* ramOscManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ramOscManager.h; sourceTree = "<group>"; };
 		C6FC6B3319515D11002E18D5 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBaseGui.cpp; sourceTree = "<group>"; };
 		C6FC6B3419515D11002E18D5 /* ofxBaseGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBaseGui.h; sourceTree = "<group>"; };
 		C6FC6B3519515D11002E18D5 /* ofxButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxButton.cpp; sourceTree = "<group>"; };
@@ -1037,8 +1041,10 @@
 				9AEA6582191CB63D001FAA18 /* ramBaseApp.h */,
 				9AEA6583191CB63D001FAA18 /* ramBaseScene.h */,
 				9AEA6584191CB63D001FAA18 /* ramCameraManager.h */,
+				C62C935D1951554400EF3B2E /* ramCommunicationManager.h */,
 				9AEA6585191CB63D001FAA18 /* ramConstants.h */,
 				9AEA6586191CB63D001FAA18 /* ramGlobal.h */,
+				C681AB9B197386FD0076DF1D /* ramOscManager.h */,
 				9AEA6587191CB63D001FAA18 /* ramSceneManager.h */,
 				9AEA6588191CB63D001FAA18 /* ramUnit.h */,
 				9AEA6589191CB63D001FAA18 /* ramActor.cpp */,
@@ -1046,10 +1052,10 @@
 				9AEA658B191CB63D001FAA18 /* ramBaseApp.cpp */,
 				9AEA658C191CB63D001FAA18 /* ramBaseScene.cpp */,
 				9AEA658D191CB63D001FAA18 /* ramCameraManager.cpp */,
-				9AEA658E191CB63D001FAA18 /* ramGlobal.cpp */,
-				9AEA658F191CB63D001FAA18 /* ramSceneManager.cpp */,
-				C62C935D1951554400EF3B2E /* ramCommunicationManager.h */,
 				C62C935C1951554400EF3B2E /* ramCommunicationManager.cpp */,
+				9AEA658E191CB63D001FAA18 /* ramGlobal.cpp */,
+				C681AB9A197386FD0076DF1D /* ramOscManager.cpp */,
+				9AEA658F191CB63D001FAA18 /* ramSceneManager.cpp */,
 				9AEA6590191CB63D001FAA18 /* UI */,
 				9AEA65A0191CB63D001FAA18 /* Utility */,
 			);
@@ -2551,6 +2557,7 @@
 				9A38F53616E9E81900FF8B66 /* gim_radixsort.h in Headers */,
 				9A38F53716E9E81900FF8B66 /* gim_tri_collision.h in Headers */,
 				9A38F53816E9E81900FF8B66 /* btContinuousConvexCollision.h in Headers */,
+				C681AB9D197386FD0076DF1D /* ramOscManager.h in Headers */,
 				9A38F53916E9E81900FF8B66 /* btConvexCast.h in Headers */,
 				9A38F53A16E9E81900FF8B66 /* btConvexPenetrationDepthSolver.h in Headers */,
 				9A38F53B16E9E81900FF8B66 /* btDiscreteCollisionDetectorInterface.h in Headers */,
@@ -2747,6 +2754,7 @@
 				9A70C18216E9CE6F00A5B755 /* ContourFinder.cpp in Sources */,
 				9A70C18316E9CE6F00A5B755 /* Distance.cpp in Sources */,
 				9A70C18416E9CE6F00A5B755 /* Flow.cpp in Sources */,
+				C681AB9C197386FD0076DF1D /* ramOscManager.cpp in Sources */,
 				9A70C18516E9CE6F00A5B755 /* Helpers.cpp in Sources */,
 				9AEA65CA191CB63D001FAA18 /* ramCameraSettings.cpp in Sources */,
 				9AEA65B9191CB63D001FAA18 /* ramGlobal.cpp in Sources */,
