@@ -140,7 +140,7 @@ void ramCommunicationManager::updateWithOscMessage(const ofxOscMessage &m){
 
 	else if (addr == RAM_OSC_ADDR_COMMUNICATE_CC){
 		int ccNum = m.getNumArgs();
-		for (int i = 0;i < ccNum;i++){
+		for (int i = 0;i < ccNum - 1;i++){
 			string ccLabel = "cc" + ofToString(i);
 
 			if (Instruments[index]->contains(ccLabel))
@@ -378,4 +378,17 @@ void ramCommunicationManager::sendCC(string name, float *cc, int num){
 
 void ramCommunicationManager::sendOscMessage(ofxOscMessage &m){
 	if (oscManager != NULL) oscManager->sendMessage(m);
+}
+
+int ramCommunicationManager::getNumCCArg(string name){
+	int count = 0;
+	for (int i = 0;i < 64;i++){
+		if (getCCExist(name, i)){
+			count++;
+		}else{
+			break;
+		}
+	}
+	
+	return count;
 }

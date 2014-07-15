@@ -43,6 +43,7 @@ public:
 	bool	getVelocityExist(int index);
 	bool	getCCExist(string name,int ccNum);
 	bool	getCCExist(int index,int ccNum);
+	int		getNumCCArg(string name);
 	float	getVelocity(string name);
 	float	getVelocity(int index);
 	float	getCC(string name,int ccNum);
