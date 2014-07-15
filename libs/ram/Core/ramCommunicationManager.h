@@ -16,6 +16,28 @@
 #include "ofxGui.h"
 #include "ofxUI.h"
 
+struct ramCommunicateAssign{
+
+	ramCommunicateAssign(string name,int index, float* val){
+		target = name;
+		idx = index;
+		value = val;
+		Found = false;
+		Changed = false;
+		Pindex = -1;
+		Pposition = -1;
+	}
+
+	string	target;
+	int		idx;
+	float*	value;
+
+	bool Found;
+	bool Changed;
+	int Pindex;
+	int Pposition;
+};
+
 class ramCommunicationManager
 {
 public:
@@ -24,10 +46,19 @@ public:
 	void update();
 	void draw();
 
+	void assignVelocity(string name, float* value);
+	void assignCC(string name, int ccNum, float* value);
+
+	bool getVelocityExist(string name);
+	bool getVelocityExist(int index);
+	bool getCCExist(string name,int ccNum);
+	bool getCCExist(int index,int ccNum);
 	float getVelocity(string name);
 	float getVelocity(int index);
 	float getCC(string name,int ccNum);
 	float getCC(int index,int ccNum);
+
+	int getInstNum(string name);
 
 	ofxUICanvas* getCanvas(){return &UIcanvas;};
 
@@ -48,6 +79,7 @@ private:
 	~ramCommunicationManager() {};
 
 	bool bVisible;
+	bool bEnable;
 
 	//Gui
 	void						refleshInstruments();
@@ -56,7 +88,7 @@ private:
 	vector<ofxUISlider*>			velocities;
 	vector<vector<ofxUISlider*> >	ccs;
 	ofxUICanvas						UIcanvas;
-
+	ofxUICanvas						mainPanel;
 	//OSC
 	ramOscReceiveTag	oscReceiver;
 	void			updateWithOscMessage(const ofxOscMessage &m);
@@ -64,6 +96,10 @@ private:
 	ofEvent<ofxUIEventArgs> newGUIEvent;
 	void guiEvent(ofxUIEventArgs &e);
 	void keyPressed(ofKeyEventArgs &key);
+	void windowResized(ofResizeEventArgs &win);
+
+	//Assign
+	vector<ramCommunicateAssign> assigns;
 };
 
 #endif /* defined(__RAMDanceToolkit__ramCommunicationManager__) */

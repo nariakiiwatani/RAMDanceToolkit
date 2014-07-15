@@ -21,6 +21,11 @@ uiThemecpo(255, 192);
 
 void ramCommunicationManager::setup(ramOscManager* oscMan){
 
+	mainPanel.setName("mainPanel");
+	mainPanel.addLabel("Communicator");
+	mainPanel.addToggle("Enable", true);
+	mainPanel.autoSizeToFitWidgets();
+
 	UIcanvas.setName("Communicator");
 	UIcanvas.setAutoDraw(false);
 	UIcanvas.setUIColors(uiThemecb, uiThemeco, uiThemecoh, uiThemecf, uiThemecfh, uiThemecp, uiThemecpo);
@@ -29,10 +34,13 @@ void ramCommunicationManager::setup(ramOscManager* oscMan){
 
 	ofAddListener(newGUIEvent, this, &ramCommunicationManager::guiEvent);
 	ofAddListener(ofEvents().keyPressed, this, &ramCommunicationManager::keyPressed);
+	ofAddListener(ofEvents().windowResized, this, &ramCommunicationManager::windowResized);
 
 	bVisible = true;
 
-	oscReceiver.addAddress("/ram/communicate/");
+	oscReceiver.addAddress(RAM_OSC_ADDR_COMMUNICATE_NOTEON);
+	oscReceiver.addAddress(RAM_OSC_ADDR_COMMUNICATE_NOTEOFF);
+	oscReceiver.addAddress(RAM_OSC_ADDR_COMMUNICATE_CC);
 	oscMan->addReceiverTag(&oscReceiver);
 }
 
@@ -45,6 +53,37 @@ void ramCommunicationManager::update(){
 		ramCommunicationManager::instance().updateWithOscMessage(m);
 	}
 
+	for (int i = 0;i < assigns.size();i++){
+		if (assigns[i].idx == -1){
+			if (assigns[i].Found && assigns[i].Changed){
+
+				*assigns[i].value = Instruments[assigns[i].Pindex]->getFloat(assigns[i].Pposition);
+				assigns[i].Changed = false;
+
+			}else if (getVelocityExist(assigns[i].target)){
+
+				assigns[i].Found = true;
+				assigns[i].Pindex = getInstNum(assigns[i].target);
+				assigns[i].Pposition = 0;
+
+			}
+		}else{
+
+			if (assigns[i].Found && assigns[i].Changed){
+
+				*assigns[i].value = Instruments[assigns[i].Pindex]->getFloat(assigns[i].Pposition);
+				assigns[i].Changed = false;
+
+			}else if (getCCExist(assigns[i].target,assigns[i].idx)){
+
+				assigns[i].Found = true;
+				assigns[i].Pindex = getInstNum(assigns[i].target);
+				assigns[i].Pposition = assigns[i].idx + 1;
+
+			}
+		}
+	}
+	
 }
 
 void ramCommunicationManager::draw(){
@@ -52,10 +91,13 @@ void ramCommunicationManager::draw(){
 }
 
 void ramCommunicationManager::updateWithOscMessage(const ofxOscMessage &m){
+	if (!dynamic_cast<ofxUIToggle*>(mainPanel.getWidget("Enable"))->getValue()) return;
+	
 	const std::string addr = m.getAddress();
 	const std::string name = m.getArgAsString(0);
 
 	int index = 0;
+	int assIdx = -1;
 
 	bool isExist = false;
 	for (int i = 0;i < Instruments.size();i++){
@@ -72,16 +114,32 @@ void ramCommunicationManager::updateWithOscMessage(const ofxOscMessage &m){
 	if (addr == RAM_OSC_ADDR_COMMUNICATE_NOTEON){
 		Instruments[index]->getFloat("velocity") = m.getArgAsFloat(1);
 		velocities[index]->setValue(m.getArgAsFloat(1));
+		assIdx = 0;
+
+		for (int j = 0;j < assigns.size();j++){
+			if (assigns[j].Found &&
+				assigns[j].Pindex == index &&
+				assigns[j].Pposition == assIdx)
+				assigns[j].Changed = true;
+		}
 	}
 
 	else if (addr == RAM_OSC_ADDR_COMMUNICATE_NOTEOFF){
 		Instruments[index]->getFloat("velocity") = 0.0;
 		velocities[index]->setValue(0.0);
+		assIdx = 0;
+
+		for (int j = 0;j < assigns.size();j++){
+			if (assigns[j].Found &&
+				assigns[j].Pindex == index &&
+				assigns[j].Pposition == assIdx)
+				assigns[j].Changed = true;
+		}
 	}
 
 	else if (addr == RAM_OSC_ADDR_COMMUNICATE_CC){
 		int ccNum = m.getNumArgs();
-		for (int i = 0;i < ccNum - 1;i++){
+		for (int i = 0;i < ccNum;i++){
 			string ccLabel = "cc" + ofToString(i);
 
 			if (Instruments[index]->contains(ccLabel))
@@ -89,7 +147,14 @@ void ramCommunicationManager::updateWithOscMessage(const ofxOscMessage &m){
 
 				Instruments[index]->getFloat(ccLabel) = m.getArgAsFloat(i+1);
 				ccs[index][i]->setValue(m.getArgAsFloat(i+1));
+				assIdx = i;
 
+				for (int j = 0;j < assigns.size();j++){
+					if (assigns[j].Found &&
+						assigns[j].Pindex == index &&
+						assigns[j].Pposition == assIdx)
+						assigns[j].Changed = true;
+				}
 			}
 			else
 			{
@@ -123,7 +188,7 @@ void ramCommunicationManager::refleshInstruments(){
 	UIcanvas.removeWidgets();
 	UIcanvas.resetPlacer();
 	UIcanvas.addSpacer(0,0);
-	UIcanvas.addLabel("Communicator");
+	UIcanvas.addWidgetDown(&mainPanel);
 
 	velocities.clear();
 	ccs.clear();
@@ -139,7 +204,7 @@ void ramCommunicationManager::refleshInstruments(){
 		vector<ofxUISlider*> cc;
 		ccs.push_back(cc);
 
-		for (int j = 0;j < 4;j++){
+		for (int j = 0;j < 64;j++){
 			if (Instruments[i]->contains("cc"+ofToString(j))){
 				ccs[i].push_back(UIcanvas.addSlider("cc"+ofToString(j),
 													0.0,
@@ -149,8 +214,9 @@ void ramCommunicationManager::refleshInstruments(){
 		}
 	}
 
-	UIcanvas.setPosition(ofGetWidth()-UIcanvas.getRect()->getWidth(), 0.0);
 	UIcanvas.autoSizeToFitWidgets();
+	UIcanvas.setPosition(ofGetWidth() - UIcanvas.getRect()->getWidth(), 0.0);
+
 }
 
 float ramCommunicationManager::getVelocity(string name){
@@ -196,4 +262,68 @@ void ramCommunicationManager::guiEvent(ofxUIEventArgs &e){
 
 void ramCommunicationManager::keyPressed(ofKeyEventArgs &key){
 	if (key.key == OF_KEY_TAB) bVisible ^= true;
+}
+
+bool ramCommunicationManager::getVelocityExist(string name){
+	int index = -1;
+	for (int i = 0;i < Instruments.size();i++){
+		if (name == Instruments[i]->getName())
+			index = i;
+	}
+
+	return getVelocityExist(index);
+}
+
+bool ramCommunicationManager::getVelocityExist(int index){
+	if ((Instruments.size() == 0) || (index >= Instruments.size()) || (index < 0))
+		return false;
+	else
+		return true;
+}
+
+bool ramCommunicationManager::getCCExist(string name,int ccNum){
+	int index = -1;
+	for (int i = 0;i < Instruments.size();i++){
+		if (name == Instruments[i]->getName())
+			index = i;
+	}
+	return getCCExist(index, ccNum);
+}
+
+bool ramCommunicationManager::getCCExist(int index,int ccNum){
+	if ((Instruments.size() == 0) || index >= Instruments.size() || (index < 0))
+		return false;
+
+	if (Instruments[index]->contains("cc"+ofToString(ccNum))){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+void ramCommunicationManager::assignVelocity(string name, float *value){
+
+	assigns.push_back(ramCommunicateAssign(name, -1, value));
+
+}
+
+void ramCommunicationManager::assignCC(string name, int ccNum, float *value){
+
+	assigns.push_back(ramCommunicateAssign(name, ccNum, value));
+
+}
+
+int ramCommunicationManager::getInstNum(string name){
+	int index = -1;
+	for (int i = 0;i < Instruments.size();i++){
+		if (name == Instruments[i]->getName())
+			index = i;
+	}
+	return index;
+}
+
+void ramCommunicationManager::windowResized(ofResizeEventArgs &win){
+
+	UIcanvas.setPosition(win.width - UIcanvas.getRect()->getWidth(), 0.0);
+
 }
