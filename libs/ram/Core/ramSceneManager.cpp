@@ -45,7 +45,6 @@ void ramSceneManager::setup()
 	ofAddListener(ofEvents().draw, this, &ramSceneManager::draw);
 	ofAddListener(ofEvents().exit, this, &ramSceneManager::exit);
 	
-	// memory leak on exit
 	actorsScene = new ramActorsScene();
 	scenes.push_back(actorsScene);
 	actorsScene->setup();
@@ -86,7 +85,7 @@ ramActorsScene* ramSceneManager::getActorsScene()
 
 void ramSceneManager::setShowAllActors(bool showAllActors)
 {
-	return actorsScene->showAll(showAllActors);
+	actorsScene->showAll(showAllActors);
 }
 
 bool ramSceneManager::getShowAllActors() const

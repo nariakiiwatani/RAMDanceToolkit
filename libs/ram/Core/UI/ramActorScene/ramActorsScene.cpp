@@ -344,14 +344,18 @@ void ramActorsScene::loadFile(const string filePath)
 
 void ramActorsScene::showAll(bool bShow)
 {
+	// note that ofxUIImageToggle shows hilighted image when it's false,
+	const bool bHide = !bShow;
+	
+	bShowAllActor = bHide;
+	btnShowAll->setValue(bShow);
+	btnShowAll->stateChange();
+	
     SegmentsIter it = mSegmentsMap.begin();
     
     while (it != mSegmentsMap.end())
     {
         BaseSegment *seg = it->second;
-        
-        // note that ofxUIImageToggle shows hilighted image when it's false,
-        const bool bHide = !bShow;
         
         seg->bHideActor = bHide;
         seg->btnHideActor->setValue(bHide);
