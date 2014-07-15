@@ -199,7 +199,8 @@ void ramCommunicationManager::refleshInstruments(){
 		velocities.push_back(UIcanvas.addSlider("velocity",
 												0.0,
 												1.0,
-												Instruments[i]->getFloat("velocity")));
+												Instruments[i]->getFloat("velocity"),
+												150,3));
 
 		vector<ofxUISlider*> cc;
 		ccs.push_back(cc);
@@ -209,7 +210,7 @@ void ramCommunicationManager::refleshInstruments(){
 				ccs[i].push_back(UIcanvas.addSlider("cc"+ofToString(j),
 													0.0,
 													1.0,
-													0.0));
+													0.0,150,3));
 			}
 		}
 	}

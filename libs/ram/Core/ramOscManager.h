@@ -64,6 +64,7 @@ public:
 	void setup(int receivePort);
 	void update();
 
+	void sendMessage(ofxOscMessage& m);
 	void addSenderTag(int port,string address);
 	void addReceiverTag(ramOscReceiveTag* ptr);
 

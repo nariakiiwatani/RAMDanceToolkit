@@ -48,3 +48,10 @@ void ramOscManager::update(){
 
 	}
 }
+
+void ramOscManager::sendMessage(ofxOscMessage &m){
+	for (int i = 0;i < senderlist.size();i++){
+		sender.setup(senderlist[i].address,senderlist[i].port);
+		sender.sendMessage(m);
+	}
+}
