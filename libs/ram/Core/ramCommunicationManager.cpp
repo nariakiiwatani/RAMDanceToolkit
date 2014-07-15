@@ -38,6 +38,7 @@ void ramCommunicationManager::setup(ramOscManager* oscMan){
 
 	bVisible = true;
 
+	oscManager = oscMan;
 	oscReceiver.addAddress(RAM_OSC_ADDR_COMMUNICATE_NOTEON);
 	oscReceiver.addAddress(RAM_OSC_ADDR_COMMUNICATE_NOTEOFF);
 	oscReceiver.addAddress(RAM_OSC_ADDR_COMMUNICATE_CC);
@@ -327,4 +328,50 @@ void ramCommunicationManager::windowResized(ofResizeEventArgs &win){
 
 	UIcanvas.setPosition(win.width - UIcanvas.getRect()->getWidth(), 0.0);
 
+}
+
+void ramCommunicationManager::addSender(string address, int port){
+	if (oscManager != NULL){
+		oscManager->addSenderTag(port, address);
+	}
+}
+
+void ramCommunicationManager::sendNoteOn(string name, float velocity){
+	ofxOscMessage m;
+	m.setAddress(RAM_OSC_ADDR_COMMUNICATE_NOTEON);
+	m.addStringArg(name);
+	m.addFloatArg(velocity);
+	if (oscManager != NULL) oscManager->sendMessage(m);
+}
+
+void ramCommunicationManager::sendNoteOff(string name){
+	ofxOscMessage m;
+	m.setAddress(RAM_OSC_ADDR_COMMUNICATE_NOTEOFF);
+	m.addStringArg(name);
+	m.addFloatArg(0.0);
+	if (oscManager != NULL) oscManager->sendMessage(m);
+}
+
+void ramCommunicationManager::sendCC(string name, vector<float> cc){
+	ofxOscMessage m;
+	m.setAddress(RAM_OSC_ADDR_COMMUNICATE_CC);
+	m.addStringArg(name);
+
+	for (int i = 0;i < cc.size();i++){
+		m.addFloatArg(cc[i]);
+	}
+
+	if (oscManager != NULL) oscManager->sendMessage(m);
+}
+
+void ramCommunicationManager::sendCC(string name, float *cc, int num){
+	ofxOscMessage m;
+	m.setAddress(RAM_OSC_ADDR_COMMUNICATE_CC);
+	m.addStringArg(name);
+
+	for (int i = 0;i < num;i++){
+		m.addFloatArg(cc[i]);
+	}
+
+	if (oscManager != NULL) oscManager->sendMessage(m);
 }

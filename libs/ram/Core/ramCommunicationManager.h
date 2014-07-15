@@ -16,51 +16,39 @@
 #include "ofxGui.h"
 #include "ofxUI.h"
 
-struct ramCommunicateAssign{
 
-	ramCommunicateAssign(string name,int index, float* val){
-		target = name;
-		idx = index;
-		value = val;
-		Found = false;
-		Changed = false;
-		Pindex = -1;
-		Pposition = -1;
-	}
-
-	string	target;
-	int		idx;
-	float*	value;
-
-	bool Found;
-	bool Changed;
-	int Pindex;
-	int Pposition;
-};
+struct ramCommunicateAssign;
 
 class ramCommunicationManager
 {
 public:
 
-	void setup(ramOscManager* oscMan);
-	void update();
-	void draw();
+	void	setup(ramOscManager* oscMan);
+	void	update();
+	void	draw();
 
-	void assignVelocity(string name, float* value);
-	void assignCC(string name, int ccNum, float* value);
+	//Sender Methods
+	void	addSender(string address,int port);
+	void	sendNoteOn(string name,float velocity);
+	void	sendNoteOff(string name);
+	void	sendCC(string name,vector<float>cc);
+	void	sendCC(string name,float* cc,int num);
 
-	bool getVelocityExist(string name);
-	bool getVelocityExist(int index);
-	bool getCCExist(string name,int ccNum);
-	bool getCCExist(int index,int ccNum);
-	float getVelocity(string name);
-	float getVelocity(int index);
-	float getCC(string name,int ccNum);
-	float getCC(int index,int ccNum);
+	//Receiver Methods
+	void	assignVelocity(string name, float* value);
+	void	assignCC(string name, int ccNum, float* value);
 
-	int getInstNum(string name);
+	bool	getVelocityExist(string name);
+	bool	getVelocityExist(int index);
+	bool	getCCExist(string name,int ccNum);
+	bool	getCCExist(int index,int ccNum);
+	float	getVelocity(string name);
+	float	getVelocity(int index);
+	float	getCC(string name,int ccNum);
+	float	getCC(int index,int ccNum);
 
-	ofxUICanvas* getCanvas(){return &UIcanvas;};
+	int				getInstNum(string name);
+	ofxUICanvas*	getCanvas(){return &UIcanvas;};
 
 	inline static ramCommunicationManager& instance()
 	{
@@ -82,16 +70,18 @@ private:
 	bool bEnable;
 
 	//Gui
-	void						refleshInstruments();
-	vector<ofParameterGroup*>	Instruments;
-
+	void							refleshInstruments();
+	vector<ofParameterGroup*>		Instruments;
 	vector<ofxUISlider*>			velocities;
 	vector<vector<ofxUISlider*> >	ccs;
 	ofxUICanvas						UIcanvas;
 	ofxUICanvas						mainPanel;
+
 	//OSC
+	ramOscManager*		oscManager;
 	ramOscReceiveTag	oscReceiver;
-	void			updateWithOscMessage(const ofxOscMessage &m);
+
+	void				updateWithOscMessage(const ofxOscMessage &m);
 
 	ofEvent<ofxUIEventArgs> newGUIEvent;
 	void guiEvent(ofxUIEventArgs &e);
@@ -100,6 +90,28 @@ private:
 
 	//Assign
 	vector<ramCommunicateAssign> assigns;
+};
+
+struct ramCommunicateAssign{
+
+	ramCommunicateAssign(string name,int index, float* val){
+		target = name;
+		idx = index;
+		value = val;
+		Found = false;
+		Changed = false;
+		Pindex = -1;
+		Pposition = -1;
+	}
+
+	string	target;
+	int		idx;
+	float*	value;
+
+	bool Found;
+	bool Changed;
+	int Pindex;
+	int Pposition;
 };
 
 #endif /* defined(__RAMDanceToolkit__ramCommunicationManager__) */
