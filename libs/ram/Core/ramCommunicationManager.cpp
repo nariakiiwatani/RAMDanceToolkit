@@ -375,3 +375,7 @@ void ramCommunicationManager::sendCC(string name, float *cc, int num){
 
 	if (oscManager != NULL) oscManager->sendMessage(m);
 }
+
+void ramCommunicationManager::sendOscMessage(ofxOscMessage &m){
+	if (oscManager != NULL) oscManager->sendMessage(m);
+}

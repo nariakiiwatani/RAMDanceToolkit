@@ -29,6 +29,7 @@ public:
 
 	//Sender Methods
 	void	addSender(string address,int port);
+	void	sendOscMessage(ofxOscMessage &m);
 	void	sendNoteOn(string name,float velocity);
 	void	sendNoteOff(string name);
 	void	sendCC(string name,vector<float>cc);
