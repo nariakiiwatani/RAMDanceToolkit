@@ -25,6 +25,7 @@ void ramCommunicationManager::setup(ramOscManager* oscMan){
 	mainPanel.addLabel("Communicator");
 	mainPanel.addToggle("Enable", true);
 	mainPanel.autoSizeToFitWidgets();
+	mainPanel.setAutoDraw(false);
 
 	UIcanvas.setName("Communicator");
 	UIcanvas.setAutoDraw(false);
