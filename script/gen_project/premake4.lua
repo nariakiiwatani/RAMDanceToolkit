@@ -14,7 +14,7 @@ if not project_name then
 end
 
 local main_cpp = [[
-#include "testApp.h"
+#include "ofApp.h"
 #include "ofAppGlutWindow.h"
 
 //--------------------------------------------------------------
@@ -24,17 +24,17 @@ int main()
 
 	// set width, height, mode (OF_WINDOW or OF_FULLSCREEN)
 	ofSetupOpenGL(&window, 1024, 768, OF_WINDOW);
-	ofRunApp(new testApp); // start the app
+	ofRunApp(new ofApp); // start the app
 }
 ]]
 
-local test_app_h = [[
+local of_app_h = [[
 #pragma once
 
 #include "ofMain.h"
 #include "ramMain.h"
 
-class testApp : public ramBaseApp
+class ofApp : public ramBaseApp
 {
 public:
 
@@ -65,12 +65,12 @@ public:
 };
 ]]
 
-local test_app_cpp = [[
-#include "testApp.h"
+local of_app_cpp = [[
+#include "ofApp.h"
 
 #pragma mark - oF methods
 //--------------------------------------------------------------
-void testApp::setup()
+void ofApp::setup()
 {
 	ofSetFrameRate(60);
 	ofSetVerticalSync(true);
@@ -83,93 +83,93 @@ void testApp::setup()
 }
 
 //--------------------------------------------------------------
-void testApp::update()
+void ofApp::update()
 {
 
 }
 
 //--------------------------------------------------------------
-void testApp::draw()
+void ofApp::draw()
 {
 }
 
 #pragma mark - ram methods
 //--------------------------------------------------------------
-void testApp::drawActor(const ramActor &actor)
+void ofApp::drawActor(const ramActor &actor)
 {
 }
 
 //--------------------------------------------------------------
-void testApp::drawRigid(const ramRigidBody &rigid)
+void ofApp::drawRigid(const ramRigidBody &rigid)
 {
 }
 
 
 #pragma mark - ram Events
 //--------------------------------------------------------------
-void testApp::onActorSetup(const ramActor &actor)
+void ofApp::onActorSetup(const ramActor &actor)
 {
 }
 
 //--------------------------------------------------------------
-void testApp::onActorExit(const ramActor &actor)
+void ofApp::onActorExit(const ramActor &actor)
 {
 }
 
 //--------------------------------------------------------------
-void testApp::onRigidSetup(const ramRigidBody &rigid)
+void ofApp::onRigidSetup(const ramRigidBody &rigid)
 {
 }
 
 //--------------------------------------------------------------
-void testApp::onRigidExit(const ramRigidBody &rigid)
+void ofApp::onRigidExit(const ramRigidBody &rigid)
 {
 }
 
 
 #pragma mark - of Events
 //--------------------------------------------------------------
-void testApp::keyPressed(int key)
+void ofApp::keyPressed(int key)
 {
 }
 
 //--------------------------------------------------------------
-void testApp::keyReleased(int key)
+void ofApp::keyReleased(int key)
 {
 }
 
 //--------------------------------------------------------------
-void testApp::mouseMoved(int x, int y)
+void ofApp::mouseMoved(int x, int y)
 {
 }
 
 //--------------------------------------------------------------
-void testApp::mouseDragged(int x, int y, int button)
+void ofApp::mouseDragged(int x, int y, int button)
 {
 }
 
 //--------------------------------------------------------------
-void testApp::mousePressed(int x, int y, int button)
+void ofApp::mousePressed(int x, int y, int button)
 {
 }
 
 //--------------------------------------------------------------
-void testApp::mouseReleased(int x, int y, int button)
+void ofApp::mouseReleased(int x, int y, int button)
 {
 }
 
 //--------------------------------------------------------------
-void testApp::windowResized(int w, int h)
+void ofApp::windowResized(int w, int h)
 {
 }
 
 //--------------------------------------------------------------
-void testApp::gotMessage(ofMessage msg)
+void ofApp::gotMessage(ofMessage msg)
 {
 }
 
 //--------------------------------------------------------------
-void testApp::dragEvent(ofDragInfo dragInfo)
+void ofApp::dragEvent(ofDragInfo dragInfo)
 {
 }
 ]]
@@ -207,8 +207,8 @@ solution (project_name)
 		-- empty sorcecode if directory not exsits
 		if not os.isdir(project_name) then
 			create_file(project_name .. '/src/main.cpp', main_cpp)
-			create_file(project_name .. '/src/testApp.h', test_app_h)
-			create_file(project_name .. '/src/testApp.cpp', test_app_cpp)
+			create_file(project_name .. '/src/ofApp.h', of_app_h)
+			create_file(project_name .. '/src/ofApp.cpp', of_app_cpp)
 			create_file(project_name .. '/bin/data/.gitkeep', gitkeep)
 		end
 
@@ -299,8 +299,8 @@ solution (project_name)
 			'../../addons/ofxOpenCv/libs/**/*.cpp',
 
 			project_name .. '/src/main.cpp',
-			project_name .. '/src/testApp.h',
-			project_name .. '/src/testApp.cpp'
+			project_name .. '/src/ofApp.h',
+			project_name .. '/src/ofApp.cpp'
 		}
 
 		-- platform specific
@@ -364,24 +364,24 @@ solution (project_name)
 			libdirs {
 				-- RAM
 				'../addons/ofxBt/libs/bullet/lib/vs2010/',
-				'../../addons/ofxOpenCv/libs/opencv/lib/vs2010/',
+				'../../addons/ofxOpenCv/libs/opencv/lib/vs/',
 
 				-- oF
-				'../../libs/assimp/lib/vs2010',
-				'../../libs/cairo/lib/vs2010',
-				'../../libs/fmodex/lib/vs2010',
-				'../../libs/FreeImage/lib/vs2010',
-				'../../libs/freetype/lib/vs2010',
-				'../../libs/glew/lib/vs2010',
-				'../../libs/glu/lib/vs2010',
-				'../../libs/glut/lib/vs2010',
-				'../../libs/openFrameworks/lib/vs2010',
-				'../../libs/openFrameworksCompiled/lib/vs2010',
-				'../../libs/poco/lib/vs2010',
-				'../../libs/quicktime/lib/vs2010',
-				'../../libs/rtAudio/lib/vs2010',
-				'../../libs/tess2/lib/vs2010',
-				'../../libs/videoInput/lib/vs2010',
+				'../../libs/cairo/lib/vs',
+				'../../libs/fmodex/lib/vs',
+				'../../libs/FreeImage/lib/vs',
+				'../../libs/freetype/lib/vs',
+				'../../libs/glew/lib/vs',
+				'../../libs/glfw/lib/vs',
+				'../../libs/glu/lib/vs',
+				'../../libs/glut/lib/vs',
+				'../../libs/openFrameworksCompiled/lib/vs',
+				'../../libs/openssl/lib/vs',
+				'../../libs/poco/lib/vs',
+				'../../libs/quicktime/lib/vs',
+				'../../libs/rtAudio/lib/vs',
+				'../../libs/tess2/lib/vs',
+				'../../libs/videoInput/lib/vs',
 			}
 
 			buildoptions {
@@ -402,7 +402,7 @@ solution (project_name)
 			}
 
 			postbuildcommands { 'mkdir $(ProjectDir)bin\\data' }
-			postbuildcommands { 'xcopy /e /i /y "$(ProjectDir)..\\..\\..\\export\\vs2010\\*.dll" "$(ProjectDir)bin"' }
+			postbuildcommands { 'xcopy /e /i /y "$(ProjectDir)..\\..\\..\\export\\vs\\*.dll" "$(ProjectDir)bin"' }
 
 
 		configuration {'vs*' , "Debug"}
@@ -429,11 +429,16 @@ solution (project_name)
 				'FreeImage',
 				'libfreetype',
 				'glew32s',
+				'glfw3',
 				'glu32',
 				'glut32',
 				'openframeworksLibDebug',
+				'libeay32MD',
+				'ssleay32MD',
+				'PocoCryptomdd',
 				'PocoFoundationmdd',
 				'PocoNetmdd',
+				'PocoNetSSLmdd',
 				'PocoUtilmdd',
 				'PocoXMLmdd',
 				'qtmlClient',
@@ -482,18 +487,23 @@ solution (project_name)
 				'FreeImage',
 				'libfreetype',
 				'glew32s',
+				'glfw3',
 				'glu32',
 				'glut32',
 				'openframeworksLib',
-				'PocoFoundationmd',
-				'PocoNetmd',
-				'PocoUtilmd',
-				'PocoXMLmd',
+				'libeay32MD',
+				'ssleay32MD',
+				'PocoCryptomdd',
+				'PocoFoundationmdd',
+				'PocoNetmdd',
+				'PocoNetSSLmdd',
+				'PocoUtilmdd',
+				'PocoXMLmdd',
 				'qtmlClient',
 				'QTSClient',
 				'Rave',
 				'dsound',
-				'rtAudio',
+				'rtAudioD',
 				'tess2',
 				'videoInput',
 				'msimg32',
