@@ -13,7 +13,6 @@
 #include "ramOscManager.h"
 #include "ramConstants.h"
 #include "ramUtils.h"
-#include "ofxGui.h"
 #include "ofxUI.h"
 
 

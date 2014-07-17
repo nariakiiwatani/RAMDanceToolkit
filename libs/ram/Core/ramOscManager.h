@@ -13,7 +13,6 @@
 #include "ofxOsc.h"
 #include "ramConstants.h"
 #include "ramUtils.h"
-#include "ofxGui.h"
 #include "ofxUI.h"
 
 struct ramOscSendTag{
