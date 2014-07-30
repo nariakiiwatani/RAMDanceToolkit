@@ -17,12 +17,6 @@
 
 #include "testApp.h"
 
-//#include "ramEventMain.h"
-//#include "ramFilterMain.h"
-//#include "ramGraphicsMain.h"
-//#include "ramFilterMain.h"
-//#include "ramRecognizerMain.h"
-
 #pragma mark - oF methods
 //--------------------------------------------------------------
 void testApp::setup()
@@ -52,6 +46,7 @@ void testApp::draw()
 //--------------------------------------------------------------
 void testApp::drawActor(const ramActor &actor)
 {
+	
 }
 
 //--------------------------------------------------------------

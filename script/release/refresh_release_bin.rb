@@ -11,26 +11,14 @@ require 'find'
 # 
 # note that the source codes which is replaced by this script should not commit to develop/master branch!
 
-ram_root_dir = "../../"
+ram_root_dir = "../../apps/RAMDanceToolkit/bin/"
 FileUtils.cd(ram_root_dir, {:verbose => false})
 
 
-resource_path_before = Regexp.new("..\/..\/..\/..\/resources")
-resource_path_after = "../resources"
-release_bin_path = "apps/RAMDanceToolkit/bin/"
-
-ignore_files = [
-  ".DS_Store",
-  "preset.init.xml"
-  ]
-
-
 # kill .DS_Store etc...
-Find.find('.') {|f|
-  ignore_files.each{ |ignore|
-    if File::basename(f) == ignore
+Find.find(".") {|f|
+	  if File::basename(f) =~ /^\./
       FileUtils.rm(f, {:force=>true})
-      next
-    end
-  }
+			p "removed: " + f
+		end
 }

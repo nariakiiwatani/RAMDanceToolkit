@@ -14,7 +14,7 @@ if not project_name then
 end
 
 local main_cpp = [[
-#include "ofApp.h"
+#include "testApp.h"
 #include "ofAppGlutWindow.h"
 
 //--------------------------------------------------------------
@@ -24,17 +24,17 @@ int main()
 
 	// set width, height, mode (OF_WINDOW or OF_FULLSCREEN)
 	ofSetupOpenGL(&window, 1024, 768, OF_WINDOW);
-	ofRunApp(new ofApp); // start the app
+	ofRunApp(new testApp); // start the app
 }
 ]]
 
-local of_app_h = [[
+local test_app_h = [[
 #pragma once
 
 #include "ofMain.h"
 #include "ramMain.h"
 
-class ofApp : public ramBaseApp
+class testApp : public ramBaseApp
 {
 public:
 
@@ -65,12 +65,12 @@ public:
 };
 ]]
 
-local of_app_cpp = [[
-#include "ofApp.h"
+local test_app_cpp = [[
+#include "testApp.h"
 
 #pragma mark - oF methods
 //--------------------------------------------------------------
-void ofApp::setup()
+void testApp::setup()
 {
 	ofSetFrameRate(60);
 	ofSetVerticalSync(true);
@@ -83,93 +83,93 @@ void ofApp::setup()
 }
 
 //--------------------------------------------------------------
-void ofApp::update()
+void testApp::update()
 {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::draw()
+void testApp::draw()
 {
 }
 
 #pragma mark - ram methods
 //--------------------------------------------------------------
-void ofApp::drawActor(const ramActor &actor)
+void testApp::drawActor(const ramActor &actor)
 {
 }
 
 //--------------------------------------------------------------
-void ofApp::drawRigid(const ramRigidBody &rigid)
+void testApp::drawRigid(const ramRigidBody &rigid)
 {
 }
 
 
 #pragma mark - ram Events
 //--------------------------------------------------------------
-void ofApp::onActorSetup(const ramActor &actor)
+void testApp::onActorSetup(const ramActor &actor)
 {
 }
 
 //--------------------------------------------------------------
-void ofApp::onActorExit(const ramActor &actor)
+void testApp::onActorExit(const ramActor &actor)
 {
 }
 
 //--------------------------------------------------------------
-void ofApp::onRigidSetup(const ramRigidBody &rigid)
+void testApp::onRigidSetup(const ramRigidBody &rigid)
 {
 }
 
 //--------------------------------------------------------------
-void ofApp::onRigidExit(const ramRigidBody &rigid)
+void testApp::onRigidExit(const ramRigidBody &rigid)
 {
 }
 
 
 #pragma mark - of Events
 //--------------------------------------------------------------
-void ofApp::keyPressed(int key)
+void testApp::keyPressed(int key)
 {
 }
 
 //--------------------------------------------------------------
-void ofApp::keyReleased(int key)
+void testApp::keyReleased(int key)
 {
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseMoved(int x, int y)
+void testApp::mouseMoved(int x, int y)
 {
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseDragged(int x, int y, int button)
+void testApp::mouseDragged(int x, int y, int button)
 {
 }
 
 //--------------------------------------------------------------
-void ofApp::mousePressed(int x, int y, int button)
+void testApp::mousePressed(int x, int y, int button)
 {
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseReleased(int x, int y, int button)
+void testApp::mouseReleased(int x, int y, int button)
 {
 }
 
 //--------------------------------------------------------------
-void ofApp::windowResized(int w, int h)
+void testApp::windowResized(int w, int h)
 {
 }
 
 //--------------------------------------------------------------
-void ofApp::gotMessage(ofMessage msg)
+void testApp::gotMessage(ofMessage msg)
 {
 }
 
 //--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo)
+void testApp::dragEvent(ofDragInfo dragInfo)
 {
 }
 ]]
@@ -207,8 +207,8 @@ solution (project_name)
 		-- empty sorcecode if directory not exsits
 		if not os.isdir(project_name) then
 			create_file(project_name .. '/src/main.cpp', main_cpp)
-			create_file(project_name .. '/src/ofApp.h', of_app_h)
-			create_file(project_name .. '/src/ofApp.cpp', of_app_cpp)
+			create_file(project_name .. '/src/testApp.h', test_app_h)
+			create_file(project_name .. '/src/testApp.cpp', test_app_cpp)
 			create_file(project_name .. '/bin/data/.gitkeep', gitkeep)
 		end
 
@@ -299,8 +299,8 @@ solution (project_name)
 			'../../addons/ofxOpenCv/libs/**/*.cpp',
 
 			project_name .. '/src/main.cpp',
-			project_name .. '/src/ofApp.h',
-			project_name .. '/src/ofApp.cpp'
+			project_name .. '/src/testApp.h',
+			project_name .. '/src/testApp.cpp'
 		}
 
 		-- platform specific
@@ -363,7 +363,7 @@ solution (project_name)
 
 			libdirs {
 				-- RAM
-				'../addons/ofxBt/libs/bullet/lib/vs2010/',
+				'../addons/ofxBt/libs/bullet/lib/vs/',
 				'../../addons/ofxOpenCv/libs/opencv/lib/vs/',
 
 				-- oF
@@ -416,10 +416,10 @@ solution (project_name)
 
 			links {
 				-- RAM
-				'BulletCollision_vs2010_d',
-				'BulletDynamics_vs2010_d',
-				'BulletSoftBody_vs2010_d',
-				'LinearMath_vs2010_d',
+				'BulletCollision_Debug',
+				'BulletDynamics_Debug',
+				'BulletSoftBody_Debug',
+				'LinearMath_Debug',
 
 				-- oF
 				'cairo-static',
@@ -432,7 +432,7 @@ solution (project_name)
 				'glfw3',
 				'glu32',
 				'glut32',
-				'openframeworksLibDebug',
+				'openframeworksLib_debug',
 				'libeay32MD',
 				'ssleay32MD',
 				'PocoCryptomdd',
@@ -449,6 +449,7 @@ solution (project_name)
 				'tess2',
 				'videoInput',
 				'msimg32',
+				'crypt32',
 
 				-- oF addons
 				'opencv_calib3d231d',
@@ -474,10 +475,10 @@ solution (project_name)
 
 			links {
 				-- RAM
-				'LinearMath_vs2010',
-				'BulletCollision_vs2010',
-				'BulletDynamics_vs2010',
-				'BulletSoftBody_vs2010',
+				'LinearMath',
+				'BulletCollision',
+				'BulletDynamics',
+				'BulletSoftBody',
 
 				-- oF
 				'cairo-static',
@@ -493,20 +494,21 @@ solution (project_name)
 				'openframeworksLib',
 				'libeay32MD',
 				'ssleay32MD',
-				'PocoCryptomdd',
-				'PocoFoundationmdd',
-				'PocoNetmdd',
-				'PocoNetSSLmdd',
-				'PocoUtilmdd',
-				'PocoXMLmdd',
+				'PocoCryptomd',
+				'PocoFoundationmd',
+				'PocoNetmd',
+				'PocoNetSSLmd',
+				'PocoUtilmd',
+				'PocoXMLmd',
 				'qtmlClient',
 				'QTSClient',
 				'Rave',
 				'dsound',
-				'rtAudioD',
+				'rtAudio',
 				'tess2',
 				'videoInput',
 				'msimg32',
+				'crypt32',
 				
 				-- oF addons
 				'opencv_calib3d231',

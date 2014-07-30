@@ -34,7 +34,6 @@ void ramCameraSettings::reset()
 vector<ramCameraSettings> ramCameraSettings::loadSettings(ofxXmlSettings& setting)
 {
 	const int numCams = setting.getNumTags("cam");
-
 	vector<ramCameraSettings> settings;
 	settings.clear();
 

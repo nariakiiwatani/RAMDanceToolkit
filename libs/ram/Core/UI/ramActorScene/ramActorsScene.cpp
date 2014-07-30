@@ -59,7 +59,13 @@ void ramActorsScene::setupControlPanel()
 	{
 		ofBuffer buf("hello ram!");
 		ofBufferToFile(ramToResourcePath(initial_file_path), buf);
-		loadFile(ramToResourcePath("MotionData/Ando_1.tsv"));
+		
+		const string fake_yoko = ramToResourcePath("MotionData/Ando_1.tsv");
+		
+		if (ofFile::doesFileExist( fake_yoko ))
+		{
+			loadFile(fake_yoko);
+		}
 	}
 #endif
 }

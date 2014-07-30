@@ -104,11 +104,10 @@ bool ramTSVCoder::encode(ramSession &src)
 		return false;
 	}
 	
+	src.prepareForPlay();
+	
 	ofBuffer buf;
-	
 	ramNodeArray& sample = src.getFrame(0);
-	
-	
 	const string timestampStr = ofGetTimestampString("%Y.%m.%d_%H.%M.%S");
 	const string address = sample.isActor() ? RAM_OSC_ADDR_ACTOR : RAM_OSC_ADDR_RIGID_BODY;
 	const string entityName = sample.getName() + " " + timestampStr;

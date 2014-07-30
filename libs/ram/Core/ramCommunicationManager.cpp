@@ -9,7 +9,7 @@
 #include "ramCommunicationManager.h"
 
 ramCommunicationManager* ramCommunicationManager::__instance = NULL;
-
+/*
 ofColor
 uiThemecb(128, 192),
 uiThemeco(192, 192),
@@ -18,7 +18,7 @@ uiThemecf(255, 255),
 uiThemecfh(160, 255),
 uiThemecp(128, 192),
 uiThemecpo(255, 192);
-
+*/
 void ramCommunicationManager::setup(ramOscManager* oscMan){
 
 	mainPanel.setName("mainPanel");
@@ -29,7 +29,7 @@ void ramCommunicationManager::setup(ramOscManager* oscMan){
 
 	UIcanvas.setName("Communicator");
 	UIcanvas.setAutoDraw(false);
-	UIcanvas.setUIColors(uiThemecb, uiThemeco, uiThemecoh, uiThemecf, uiThemecfh, uiThemecp, uiThemecpo);
+	//UIcanvas.setUIColors(uiThemecb, uiThemeco, uiThemecoh, uiThemecf, uiThemecfh, uiThemecp, uiThemecpo);
 
 	refleshInstruments();
 

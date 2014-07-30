@@ -227,12 +227,12 @@ void ramSession::appendFrame(const ramNodeArray& copy)
 
 ramNodeArray& ramSession::getFrame(int index)
 {
-	ramNodeArray &NA = mBuffer.get(index);
+	mCurrentFrame = mBuffer.get(index);
 	
-	for (int i=0; i<NA.getNumNode(); i++)
+	for (int i=0; i<mCurrentFrame.getNumNode(); i++)
 	{
-		const ofVec3f pos = NA.getNode(i).getGlobalPosition();
-		const ofQuaternion quat = NA.getNode(i).getGlobalOrientation();
+		const ofVec3f pos = mCurrentFrame.getNode(i).getGlobalPosition();
+		const ofQuaternion quat = mCurrentFrame.getNode(i).getGlobalOrientation();
 		
 		ramNode &node = mCurrentFrame.getNode(i);
 		node.setGlobalPosition(pos);

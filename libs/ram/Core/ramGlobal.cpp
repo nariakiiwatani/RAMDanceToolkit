@@ -74,7 +74,14 @@ void ramInitialize(int oscPort, bool usePresetScenes)
 
 string ramToResourcePath(string path)
 {
-	return ofFilePath::join(ofToDataPath("../../resources"), path);
+	string path_prefix;
+
+#if defined WIN32
+	path_prefix = "../../../..";
+#else
+	path_prefix = "../..";
+#endif
+	return ofFilePath::join(ofToDataPath(path_prefix+"/resources"), path);
 }
 
 
