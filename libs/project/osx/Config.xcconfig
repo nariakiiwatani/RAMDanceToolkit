@@ -1,5 +1,12 @@
-OF_BASE_PATH = ../../../..
+RAM_PATH = ../../..
 
-OF_HEADER_SEARCH_PATHS = $(OF_BASE_PATH)/libs/openFrameworks/** $(OF_BASE_PATH)/libs/glew/include $(OF_BASE_PATH)/libs/tess2/include $(OF_BASE_PATH)/libs/poco/include $(OF_BASE_PATH)/libs/cairo/include/** $(OF_BASE_PATH)/libs/fmodex/include/**
+//THE PATH TO THE ROOT OF OUR OF PATH RELATIVE TO THIS PROJECT.
+//THIS NEEDS TO BE DEFINED BEFORE CoreOF.xcconfig IS INCLUDED
+OF_PATH = ../../../..
 
-HEADER_SEARCH_PATHS = $(OF_HEADER_SEARCH_PATHS) $(OF_BASE_PATH)/addons/ofxOsc/** ../../../addons/ofxBt/libs/bullet/include/bullet ../../../addons/ofxCv/src ../../../addons/ofxCv/libs/ofxCv/include/ $(OF_BASE_PATH)/addons/ofxOpenCV/libs/opencv/include
+//THIS HAS ALL THE HEADER AND LIBS FOR OF CORE
+#include "../../../../libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig"
+
+HEADER_SEARCH_PATHS = $(OF_CORE_HEADERS) $(OF_PATH)/libs/openFrameworks/** $(OF_PATH)/addons/ofxOsc/** $(RAM_PATH)/addons/ofxBt/libs/bullet/include/bullet $(RAM_PATH)/addons/ofxCv/src $(RAM_PATH)/addons/ofxCv/libs/ofxCv/include/ $(OF_PATH)/addons/ofxOpenCV/libs/opencv/include
+
+LIBRARY_SEARCH_PATHS = $(OF_PATH)/addons/ofxOpenCv/libs/opencv/lib/osx $(RAM_PATH)/addons/ofxBt/libs/bullet/lib/osx
