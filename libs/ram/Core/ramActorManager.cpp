@@ -297,7 +297,7 @@ void ramActorManager::onSelectStateChanged(ramNodeIdentifer &e)
 
 void ramActorManager::onMouseReleased(ofMouseEventArgs &e)
 {
-	if (!rootNode.hasFocusdObject())
+	if (!rootNode.hasFocusObject())
 		nodeSelector->identifer.clear();
 }
 
