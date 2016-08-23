@@ -9,7 +9,7 @@
 	url = https://github.com/kylemcdonald/ofxCv.git
 [submodule "addons/ofxNodeArray"]
 	path = addons/ofxNodeArray
-	url = https://github.com/YCAMInterlab/ofxNodeArray.git
+	url = https://github.com/nariakiiwatani/ofxNodeArray.git
 [submodule "addons/ofxBt"]
 	path = addons/ofxBt
 	url = https://github.com/motoishmz/ofxBt.git
