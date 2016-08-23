@@ -19,9 +19,6 @@
 [submodule "addons/ofxDelaunay"]
 	path = addons/ofxDelaunay
 	url = https://github.com/obviousjim/ofxDelaunay.git
-[submodule "addons/ofxDmx"]
-	path = addons/ofxDmx
-	url = https://github.com/kylemcdonald/ofxDmx.git
 [submodule "addons/ofxEvent"]
 	path = addons/ofxEvent
 	url = https://github.com/YoshitoONISHI/ofxEvent.git
