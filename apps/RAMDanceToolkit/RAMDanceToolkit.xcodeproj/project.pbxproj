@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8126C0391D6C462D002AC581 /* icon.icns in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8126C0371D6C4619002AC581 /* icon.icns */; };
 		81F0A3701D6C23DC00E1C3FC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		81F0A3711D6C23DC00E1C3FC /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
 		81F0A3721D6C23DC00E1C3FC /* BaseConstrains.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF78E835804071BECA60A71C /* BaseConstrains.cpp */; };
@@ -76,8 +77,9 @@
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 10;
+			dstSubfolderSpec = 7;
 			files = (
+				8126C0391D6C462D002AC581 /* icon.icns in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +128,8 @@
 		7279EB7C7A737CD925845E5E /* RagDoll.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = RagDoll.cpp; path = src/scenes/Ragdoll/RagDoll.cpp; sourceTree = SOURCE_ROOT; };
 		793302A659BBD4FB53E73285 /* ofxBt.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBt.h; path = ../../addons/ofxBt/src/ofxBt.h; sourceTree = SOURCE_ROOT; };
 		7C99743452AD8A2B6CFC090A /* btPicker.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btPicker.cpp; path = src/scenes/Helper/btPicker.cpp; sourceTree = SOURCE_ROOT; };
+		8126C0361D6C45C5002AC581 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../resources/Icons/icon.png; sourceTree = "<group>"; };
+		8126C0371D6C4619002AC581 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon.icns; path = ../../resources/Icons/icon.icns; sourceTree = "<group>"; };
 		818ABEE11D6BE637002DBAB2 /* RAMDanceToolkit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RAMDanceToolkit.xcodeproj; path = ../../libs/project/osx/RAMDanceToolkit.xcodeproj; sourceTree = "<group>"; };
 		818ABEEC1D6BE7FB002DBAB2 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		818ABEEF1D6BE7FB002DBAB2 /* btBulletCollisionCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = btBulletCollisionCommon.h; sourceTree = "<group>"; };
@@ -1066,6 +1070,8 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
+				8126C0371D6C4619002AC581 /* icon.icns */,
+				8126C0361D6C45C5002AC581 /* icon.png */,
 				818ABEE01D6BE62D002DBAB2 /* ram */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
