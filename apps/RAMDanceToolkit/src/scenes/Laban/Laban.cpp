@@ -131,7 +131,9 @@ void Laban::drawActor(const ramActor &actor)
                 }
                 if(nearestDistance < threshold)
                 {
-                    moments.push_back(LabanMoment(start, direction, nearestChoice));
+					LabanMoment moment(start, direction, nearestChoice);
+					moment.getLife(maxLabanMomentLife);
+                    moments.push_back(moment);
                 }
             }
             if(showPlanes)
