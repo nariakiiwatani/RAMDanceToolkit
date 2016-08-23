@@ -23,6 +23,7 @@ string getJointName(unsigned int jointId) { return ramActor::getJointName(jointI
 
 ramNode& ramNode::operator=(const ramNode& copy)
 {
+	clearParent();
 	ofxNodeArray::Node<ramNode>::operator=(copy);
 
 	name = copy.name;
