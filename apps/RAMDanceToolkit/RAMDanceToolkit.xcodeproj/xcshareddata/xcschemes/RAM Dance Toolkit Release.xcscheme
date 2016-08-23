@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-               BuildableName = "RAMDanceToolkit.app"
-               BlueprintName = "RAMDanceToolkit"
+               BlueprintIdentifier = "81F0A36A1D6C23DC00E1C3FC"
+               BuildableName = "RAM Dance Toolkit.app"
+               BlueprintName = "RAM Dance Toolkit"
                ReferencedContainer = "container:RAMDanceToolkit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-            BuildableName = "RAMDanceToolkit.app"
-            BlueprintName = "RAMDanceToolkit"
-            ReferencedContainer = "container:RAMDanceToolkit.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -55,9 +46,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-            BuildableName = "RAMDanceToolkit.app"
-            BlueprintName = "RAMDanceToolkit"
+            BlueprintIdentifier = "81F0A36A1D6C23DC00E1C3FC"
+            BuildableName = "RAM Dance Toolkit.app"
+            BlueprintName = "RAM Dance Toolkit"
             ReferencedContainer = "container:RAMDanceToolkit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -70,16 +61,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-            BuildableName = "RAMDanceToolkit.app"
-            BlueprintName = "RAMDanceToolkit"
+            BlueprintIdentifier = "81F0A36A1D6C23DC00E1C3FC"
+            BuildableName = "RAM Dance Toolkit.app"
+            BlueprintName = "RAM Dance Toolkit"
             ReferencedContainer = "container:RAMDanceToolkit.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Release">

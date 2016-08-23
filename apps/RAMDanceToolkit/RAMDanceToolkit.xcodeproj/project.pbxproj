@@ -7,37 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28B93DE673C770185276CCD9 /* SphereMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16D8E4B63762C391CEA75C24 /* SphereMesh.cpp */; };
-		2CA98AF3FBC198CBB6867742 /* btPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C99743452AD8A2B6CFC090A /* btPicker.cpp */; };
-		2EF6D0360136B462B2B37E9B /* ofxBtSoftBodyWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C8CAF8C62482E41915275BE /* ofxBtSoftBodyWorld.cpp */; };
-		3CF25D67F19910DDD3A1930C /* BaseConstrains.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF78E835804071BECA60A71C /* BaseConstrains.cpp */; };
-		46FC8120D7832001D915ED7D /* RagdollScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8AAD1763D4138F8BF3797DE3 /* RagdollScene.cpp */; };
-		52266F7039C28DA883C8C089 /* KeplerBtShapeDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E00FAE597C8B5ABECA860E0 /* KeplerBtShapeDrawer.cpp */; };
-		582BA69120484FC4328A1746 /* ChainObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A83858D0DEAD11D6F175CCA /* ChainObject.cpp */; };
-		5F91FAF3D02B20C729622C24 /* ChainBtShapeDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD94C0C6FB42FDF47662B2 /* ChainBtShapeDrawer.cpp */; };
-		6F02ECD83002E23D2BFB4DB0 /* RagDoll.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7279EB7C7A737CD925845E5E /* RagDoll.cpp */; };
-		6FB5694389DA69F2DDCEA13C /* RagdollShapeDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 399DE27B601C584EB2989C3E /* RagdollShapeDrawer.cpp */; };
-		71E11B7F0CB5398E3F2C8ED9 /* ChainBtDynamics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F065BDBC6571DA9EB44C3672 /* ChainBtDynamics.cpp */; };
-		72417D47EF8937CD10B86DAD /* ofxBtRigidBody.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D030F64D4E02C4FB850B8C8 /* ofxBtRigidBody.cpp */; };
-		737F39FC0CB7C5693BE39B5A /* ofxBtHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2386729FC50FEE6482767ADE /* ofxBtHelper.cpp */; };
-		79BEC3692151CD14B679B486 /* Chain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292C3ECF66C8AB38DF64C4CD /* Chain.cpp */; };
-		7CF92708D1675EDA6E8DE8FF /* Laban.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45B73DF707CA105018BC2674 /* Laban.cpp */; };
-		818ABEE91D6BE647002DBAB2 /* libram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 818ABEE61D6BE637002DBAB2 /* libram.a */; };
-		818ABFFB1D6BECA6002DBAB2 /* libBulletCollision.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 818ABFD51D6BE7FC002DBAB2 /* libBulletCollision.a */; settings = {ASSET_TAGS = (); }; };
-		818ABFFC1D6BECA6002DBAB2 /* libBulletDynamics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 818ABFD61D6BE7FC002DBAB2 /* libBulletDynamics.a */; settings = {ASSET_TAGS = (); }; };
-		818ABFFD1D6BECA6002DBAB2 /* libBulletSoftBody.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 818ABFD71D6BE7FC002DBAB2 /* libBulletSoftBody.a */; settings = {ASSET_TAGS = (); }; };
-		818ABFFE1D6BECA6002DBAB2 /* libLinearMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 818ABFD81D6BE7FC002DBAB2 /* libLinearMath.a */; settings = {ASSET_TAGS = (); }; };
-		8CE115CFB9668CB3638F96AF /* ofxBtJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C36959009B4EF04609217DCD /* ofxBtJoint.cpp */; };
-		98D94D6B8D500BBB3E1A82D1 /* ofxBt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B97589894EAAC100960DA588 /* ofxBt.cpp */; };
-		A54B63F1A8AA5505E438932E /* ofxBtCollisionObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BA768BFEF5E932AC799B143 /* ofxBtCollisionObject.cpp */; };
-		B532DB349BF79C4DEA99A4ED /* KeplerCube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9477FFB8AB8D9404F723B84 /* KeplerCube.cpp */; };
-		BBD9AC6C314F22DB281751F5 /* Kepler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5CD36F54B816C41482E7A65 /* Kepler.cpp */; };
-		D43D9BC0608DED4C05001FA4 /* ofxBtSoftBody.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE09462B338CB4705FB4B06B /* ofxBtSoftBody.cpp */; };
-		E2475E82C52D86ABAE5FF755 /* KeplerBtDynamics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A42B2E2ACC842B2EFD1D2A0 /* KeplerBtDynamics.cpp */; };
-		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
-		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
-		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
-		EE4C4EA8FBED2CF306B07475 /* ofxBtWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9366EC7B9A450265DE0EB86 /* ofxBtWorld.cpp */; };
+		81F0A3701D6C23DC00E1C3FC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
+		81F0A3711D6C23DC00E1C3FC /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
+		81F0A3721D6C23DC00E1C3FC /* BaseConstrains.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF78E835804071BECA60A71C /* BaseConstrains.cpp */; };
+		81F0A3731D6C23DC00E1C3FC /* Chain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292C3ECF66C8AB38DF64C4CD /* Chain.cpp */; };
+		81F0A3741D6C23DC00E1C3FC /* ChainBtDynamics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F065BDBC6571DA9EB44C3672 /* ChainBtDynamics.cpp */; };
+		81F0A3751D6C23DC00E1C3FC /* ChainBtShapeDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD94C0C6FB42FDF47662B2 /* ChainBtShapeDrawer.cpp */; };
+		81F0A3761D6C23DC00E1C3FC /* ChainObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A83858D0DEAD11D6F175CCA /* ChainObject.cpp */; };
+		81F0A3771D6C23DC00E1C3FC /* btPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C99743452AD8A2B6CFC090A /* btPicker.cpp */; };
+		81F0A3781D6C23DC00E1C3FC /* Kepler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5CD36F54B816C41482E7A65 /* Kepler.cpp */; };
+		81F0A3791D6C23DC00E1C3FC /* KeplerBtDynamics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A42B2E2ACC842B2EFD1D2A0 /* KeplerBtDynamics.cpp */; };
+		81F0A37A1D6C23DC00E1C3FC /* KeplerBtShapeDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E00FAE597C8B5ABECA860E0 /* KeplerBtShapeDrawer.cpp */; };
+		81F0A37B1D6C23DC00E1C3FC /* KeplerCube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9477FFB8AB8D9404F723B84 /* KeplerCube.cpp */; };
+		81F0A37C1D6C23DC00E1C3FC /* Laban.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45B73DF707CA105018BC2674 /* Laban.cpp */; };
+		81F0A37D1D6C23DC00E1C3FC /* RagDoll.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7279EB7C7A737CD925845E5E /* RagDoll.cpp */; };
+		81F0A37E1D6C23DC00E1C3FC /* RagdollScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8AAD1763D4138F8BF3797DE3 /* RagdollScene.cpp */; };
+		81F0A37F1D6C23DC00E1C3FC /* RagdollShapeDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 399DE27B601C584EB2989C3E /* RagdollShapeDrawer.cpp */; };
+		81F0A3801D6C23DC00E1C3FC /* SphereMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16D8E4B63762C391CEA75C24 /* SphereMesh.cpp */; };
+		81F0A3811D6C23DC00E1C3FC /* ofxBt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B97589894EAAC100960DA588 /* ofxBt.cpp */; };
+		81F0A3821D6C23DC00E1C3FC /* ofxBtCollisionObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BA768BFEF5E932AC799B143 /* ofxBtCollisionObject.cpp */; };
+		81F0A3831D6C23DC00E1C3FC /* ofxBtHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2386729FC50FEE6482767ADE /* ofxBtHelper.cpp */; };
+		81F0A3841D6C23DC00E1C3FC /* ofxBtJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C36959009B4EF04609217DCD /* ofxBtJoint.cpp */; };
+		81F0A3851D6C23DC00E1C3FC /* ofxBtRigidBody.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D030F64D4E02C4FB850B8C8 /* ofxBtRigidBody.cpp */; };
+		81F0A3861D6C23DC00E1C3FC /* ofxBtSoftBody.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE09462B338CB4705FB4B06B /* ofxBtSoftBody.cpp */; };
+		81F0A3871D6C23DC00E1C3FC /* ofxBtSoftBodyWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C8CAF8C62482E41915275BE /* ofxBtSoftBodyWorld.cpp */; };
+		81F0A3881D6C23DC00E1C3FC /* ofxBtWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9366EC7B9A450265DE0EB86 /* ofxBtWorld.cpp */; };
+		81F0A38A1D6C23DC00E1C3FC /* libLinearMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 818ABFD81D6BE7FC002DBAB2 /* libLinearMath.a */; settings = {ASSET_TAGS = (); }; };
+		81F0A38B1D6C23DC00E1C3FC /* libram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 818ABEE61D6BE637002DBAB2 /* libram.a */; };
+		81F0A38C1D6C23DC00E1C3FC /* libBulletDynamics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 818ABFD61D6BE7FC002DBAB2 /* libBulletDynamics.a */; settings = {ASSET_TAGS = (); }; };
+		81F0A38D1D6C23DC00E1C3FC /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
+		81F0A38E1D6C23DC00E1C3FC /* libBulletCollision.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 818ABFD51D6BE7FC002DBAB2 /* libBulletCollision.a */; settings = {ASSET_TAGS = (); }; };
+		81F0A38F1D6C23DC00E1C3FC /* libBulletSoftBody.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 818ABFD71D6BE7FC002DBAB2 /* libBulletSoftBody.a */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,12 +48,19 @@
 			remoteGlobalIDString = 817AF4981D6B105000FBAF51;
 			remoteInfo = RAMDanceToolkit;
 		};
-		818ABEE71D6BE641002DBAB2 /* PBXContainerItemProxy */ = {
+		81F0A36C1D6C23DC00E1C3FC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 818ABEE11D6BE637002DBAB2 /* RAMDanceToolkit.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 817AF4971D6B105000FBAF51;
 			remoteInfo = RAMDanceToolkit;
+		};
+		81F0A36E1D6C23DC00E1C3FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E4B27C1410CBEB8E00536013;
+			remoteInfo = openFrameworks;
 		};
 		E4328147138ABC890047C5CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -62,17 +69,10 @@
 			remoteGlobalIDString = E4B27C1510CBEB8E00536013;
 			remoteInfo = openFrameworks;
 		};
-		E4EEB9AB138B136A00A80321 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E4B27C1410CBEB8E00536013;
-			remoteInfo = openFrameworks;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E4C2427710CC5ABF004149E2 /* CopyFiles */ = {
+		81F0A3911D6C23DC00E1C3FC /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -345,6 +345,8 @@
 		818ABFD61D6BE7FC002DBAB2 /* libBulletDynamics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBulletDynamics.a; sourceTree = "<group>"; };
 		818ABFD71D6BE7FC002DBAB2 /* libBulletSoftBody.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBulletSoftBody.a; sourceTree = "<group>"; };
 		818ABFD81D6BE7FC002DBAB2 /* libLinearMath.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLinearMath.a; sourceTree = "<group>"; };
+		81F0A3951D6C23DC00E1C3FC /* RAM Dance Toolkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RAM Dance Toolkit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81F0A3961D6C23DC00E1C3FC /* RAMDanceToolkit copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RAMDanceToolkit copy-Info.plist"; path = "/Users/nariakiiwatani/Works/YCAM/of093/RAMDanceToolkit/apps/RAMDanceToolkit/RAMDanceToolkit copy-Info.plist"; sourceTree = "<absolute>"; };
 		8618A237A289E0A906AE437C /* Graph2D.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Graph2D.h; path = src/scenes/Graph/Graph2D.h; sourceTree = SOURCE_ROOT; };
 		8A901F350A71D6F83442ACD9 /* Particles.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Particles.h; path = src/scenes/Particles/Particles.h; sourceTree = SOURCE_ROOT; };
 		8AAD1763D4138F8BF3797DE3 /* RagdollScene.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = RagdollScene.cpp; path = src/scenes/Ragdoll/RagdollScene.cpp; sourceTree = SOURCE_ROOT; };
@@ -365,7 +367,6 @@
 		D0758086002A56783A8E1F01 /* UpsideDown.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = UpsideDown.h; path = src/scenes/UpsideDown/UpsideDown.h; sourceTree = SOURCE_ROOT; };
 		E15D847AFEED5C656E9DEC04 /* Chain.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Chain.h; path = src/scenes/Chain/Chain.h; sourceTree = SOURCE_ROOT; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
-		E4B69B5B0A3A1756003C02F2 /* RAMDanceToolkitDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAMDanceToolkitDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofApp.cpp; path = src/ofApp.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
@@ -383,16 +384,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E4B69B590A3A1756003C02F2 /* Frameworks */ = {
+		81F0A3891D6C23DC00E1C3FC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				818ABFFE1D6BECA6002DBAB2 /* libLinearMath.a in Frameworks */,
-				818ABEE91D6BE647002DBAB2 /* libram.a in Frameworks */,
-				818ABFFC1D6BECA6002DBAB2 /* libBulletDynamics.a in Frameworks */,
-				E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */,
-				818ABFFB1D6BECA6002DBAB2 /* libBulletCollision.a in Frameworks */,
-				818ABFFD1D6BECA6002DBAB2 /* libBulletSoftBody.a in Frameworks */,
+				81F0A38A1D6C23DC00E1C3FC /* libLinearMath.a in Frameworks */,
+				81F0A38B1D6C23DC00E1C3FC /* libram.a in Frameworks */,
+				81F0A38C1D6C23DC00E1C3FC /* libBulletDynamics.a in Frameworks */,
+				81F0A38D1D6C23DC00E1C3FC /* openFrameworksDebug.a in Frameworks */,
+				81F0A38E1D6C23DC00E1C3FC /* libBulletCollision.a in Frameworks */,
+				81F0A38F1D6C23DC00E1C3FC /* libBulletSoftBody.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1072,7 +1073,8 @@
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
 				BB4B014C10F69532006C3DED /* addons */,
 				6948EE371B920CB800B5AC1A /* local_addons */,
-				E4B69B5B0A3A1756003C02F2 /* RAMDanceToolkitDebug.app */,
+				81F0A3951D6C23DC00E1C3FC /* RAM Dance Toolkit.app */,
+				81F0A3961D6C23DC00E1C3FC /* RAMDanceToolkit copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1145,24 +1147,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E4B69B5A0A3A1756003C02F2 /* RAMDanceToolkit */ = {
+		81F0A36A1D6C23DC00E1C3FC /* RAM Dance Toolkit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "RAMDanceToolkit" */;
+			buildConfigurationList = 81F0A3921D6C23DC00E1C3FC /* Build configuration list for PBXNativeTarget "RAM Dance Toolkit" */;
 			buildPhases = (
-				E4B69B580A3A1756003C02F2 /* Sources */,
-				E4B69B590A3A1756003C02F2 /* Frameworks */,
-				E4B6FFFD0C3F9AB9008CF71C /* ShellScript */,
-				E4C2427710CC5ABF004149E2 /* CopyFiles */,
+				81F0A36F1D6C23DC00E1C3FC /* Sources */,
+				81F0A3891D6C23DC00E1C3FC /* Frameworks */,
+				81F0A3901D6C23DC00E1C3FC /* ShellScript */,
+				81F0A3911D6C23DC00E1C3FC /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				818ABEE81D6BE641002DBAB2 /* PBXTargetDependency */,
-				E4EEB9AC138B136A00A80321 /* PBXTargetDependency */,
+				81F0A36B1D6C23DC00E1C3FC /* PBXTargetDependency */,
+				81F0A36D1D6C23DC00E1C3FC /* PBXTargetDependency */,
 			);
-			name = RAMDanceToolkit;
+			name = "RAM Dance Toolkit";
 			productName = myOFApp;
-			productReference = E4B69B5B0A3A1756003C02F2 /* RAMDanceToolkitDebug.app */;
+			productReference = 81F0A3951D6C23DC00E1C3FC /* RAM Dance Toolkit.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1198,7 +1200,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				E4B69B5A0A3A1756003C02F2 /* RAMDanceToolkit */,
+				81F0A36A1D6C23DC00E1C3FC /* RAM Dance Toolkit */,
 			);
 		};
 /* End PBXProject section */
@@ -1221,7 +1223,7 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E4B6FFFD0C3F9AB9008CF71C /* ShellScript */ = {
+		81F0A3901D6C23DC00E1C3FC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1237,54 +1239,226 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E4B69B580A3A1756003C02F2 /* Sources */ = {
+		81F0A36F1D6C23DC00E1C3FC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
-				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
-				3CF25D67F19910DDD3A1930C /* BaseConstrains.cpp in Sources */,
-				79BEC3692151CD14B679B486 /* Chain.cpp in Sources */,
-				71E11B7F0CB5398E3F2C8ED9 /* ChainBtDynamics.cpp in Sources */,
-				5F91FAF3D02B20C729622C24 /* ChainBtShapeDrawer.cpp in Sources */,
-				582BA69120484FC4328A1746 /* ChainObject.cpp in Sources */,
-				2CA98AF3FBC198CBB6867742 /* btPicker.cpp in Sources */,
-				BBD9AC6C314F22DB281751F5 /* Kepler.cpp in Sources */,
-				E2475E82C52D86ABAE5FF755 /* KeplerBtDynamics.cpp in Sources */,
-				52266F7039C28DA883C8C089 /* KeplerBtShapeDrawer.cpp in Sources */,
-				B532DB349BF79C4DEA99A4ED /* KeplerCube.cpp in Sources */,
-				7CF92708D1675EDA6E8DE8FF /* Laban.cpp in Sources */,
-				6F02ECD83002E23D2BFB4DB0 /* RagDoll.cpp in Sources */,
-				46FC8120D7832001D915ED7D /* RagdollScene.cpp in Sources */,
-				6FB5694389DA69F2DDCEA13C /* RagdollShapeDrawer.cpp in Sources */,
-				28B93DE673C770185276CCD9 /* SphereMesh.cpp in Sources */,
-				98D94D6B8D500BBB3E1A82D1 /* ofxBt.cpp in Sources */,
-				A54B63F1A8AA5505E438932E /* ofxBtCollisionObject.cpp in Sources */,
-				737F39FC0CB7C5693BE39B5A /* ofxBtHelper.cpp in Sources */,
-				8CE115CFB9668CB3638F96AF /* ofxBtJoint.cpp in Sources */,
-				72417D47EF8937CD10B86DAD /* ofxBtRigidBody.cpp in Sources */,
-				D43D9BC0608DED4C05001FA4 /* ofxBtSoftBody.cpp in Sources */,
-				2EF6D0360136B462B2B37E9B /* ofxBtSoftBodyWorld.cpp in Sources */,
-				EE4C4EA8FBED2CF306B07475 /* ofxBtWorld.cpp in Sources */,
+				81F0A3701D6C23DC00E1C3FC /* main.cpp in Sources */,
+				81F0A3711D6C23DC00E1C3FC /* ofApp.cpp in Sources */,
+				81F0A3721D6C23DC00E1C3FC /* BaseConstrains.cpp in Sources */,
+				81F0A3731D6C23DC00E1C3FC /* Chain.cpp in Sources */,
+				81F0A3741D6C23DC00E1C3FC /* ChainBtDynamics.cpp in Sources */,
+				81F0A3751D6C23DC00E1C3FC /* ChainBtShapeDrawer.cpp in Sources */,
+				81F0A3761D6C23DC00E1C3FC /* ChainObject.cpp in Sources */,
+				81F0A3771D6C23DC00E1C3FC /* btPicker.cpp in Sources */,
+				81F0A3781D6C23DC00E1C3FC /* Kepler.cpp in Sources */,
+				81F0A3791D6C23DC00E1C3FC /* KeplerBtDynamics.cpp in Sources */,
+				81F0A37A1D6C23DC00E1C3FC /* KeplerBtShapeDrawer.cpp in Sources */,
+				81F0A37B1D6C23DC00E1C3FC /* KeplerCube.cpp in Sources */,
+				81F0A37C1D6C23DC00E1C3FC /* Laban.cpp in Sources */,
+				81F0A37D1D6C23DC00E1C3FC /* RagDoll.cpp in Sources */,
+				81F0A37E1D6C23DC00E1C3FC /* RagdollScene.cpp in Sources */,
+				81F0A37F1D6C23DC00E1C3FC /* RagdollShapeDrawer.cpp in Sources */,
+				81F0A3801D6C23DC00E1C3FC /* SphereMesh.cpp in Sources */,
+				81F0A3811D6C23DC00E1C3FC /* ofxBt.cpp in Sources */,
+				81F0A3821D6C23DC00E1C3FC /* ofxBtCollisionObject.cpp in Sources */,
+				81F0A3831D6C23DC00E1C3FC /* ofxBtHelper.cpp in Sources */,
+				81F0A3841D6C23DC00E1C3FC /* ofxBtJoint.cpp in Sources */,
+				81F0A3851D6C23DC00E1C3FC /* ofxBtRigidBody.cpp in Sources */,
+				81F0A3861D6C23DC00E1C3FC /* ofxBtSoftBody.cpp in Sources */,
+				81F0A3871D6C23DC00E1C3FC /* ofxBtSoftBodyWorld.cpp in Sources */,
+				81F0A3881D6C23DC00E1C3FC /* ofxBtWorld.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		818ABEE81D6BE641002DBAB2 /* PBXTargetDependency */ = {
+		81F0A36B1D6C23DC00E1C3FC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RAMDanceToolkit;
-			targetProxy = 818ABEE71D6BE641002DBAB2 /* PBXContainerItemProxy */;
+			targetProxy = 81F0A36C1D6C23DC00E1C3FC /* PBXContainerItemProxy */;
 		};
-		E4EEB9AC138B136A00A80321 /* PBXTargetDependency */ = {
+		81F0A36D1D6C23DC00E1C3FC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = openFrameworks;
-			targetProxy = E4EEB9AB138B136A00A80321 /* PBXContainerItemProxy */;
+			targetProxy = 81F0A36E1D6C23DC00E1C3FC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		81F0A3931D6C23DC00E1C3FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = NONE;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					src,
+					src/scenes/Abacus,
+					src/scenes/BasicActor,
+					src/scenes/BigBox,
+					src/scenes/Chain,
+					src/scenes/ColorGrid,
+					src/scenes/Donuts,
+					src/scenes/Expansion,
+					src/scenes/FourPoints,
+					src/scenes/Future,
+					src/scenes/Graph,
+					src/scenes/HastyChase,
+					src/scenes/Helper,
+					src/scenes/Kepler,
+					src/scenes/Laban,
+					src/scenes/Line,
+					src/scenes/Monster,
+					src/scenes/MovingCam,
+					src/scenes/Notation,
+					src/scenes/Particles,
+					src/scenes/Ragdoll,
+					src/scenes/SoundCube,
+					src/scenes/Stamp,
+					src/scenes/ThreePoints,
+					src/scenes/UpsideDown,
+					../../addons/ofxBt/libs,
+					../../addons/ofxBt/libs/bullet,
+					../../addons/ofxBt/libs/bullet/include,
+					../../addons/ofxBt/libs/bullet/include/bullet,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision/BroadphaseCollision,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision/CollisionDispatch,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision/CollisionShapes,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision/Gimpact,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision/NarrowPhaseCollision,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/Character,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/ConstraintSolver,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/Dynamics,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/Featherstone,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/MLCPSolvers,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/Vehicle,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletSoftBody,
+					../../addons/ofxBt/libs/bullet/include/bullet/LinearMath,
+					../../addons/ofxBt/libs/bullet/lib,
+					../../addons/ofxBt/libs/bullet/lib/osx,
+					../../addons/ofxBt/src,
+				);
+				ICON = "$(ICON_NAME_DEBUG)";
+				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
+				INFOPLIST_FILE = "RAMDanceToolkit copy-Info.plist";
+				INSTALL_PATH = /Applications;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					../../addons/ofxBt/libs/bullet/lib/osx,
+				);
+				OTHER_LDFLAGS = (
+					"$(OF_CORE_FRAMEWORKS)",
+					"$(OF_CORE_LIBS)",
+					../../addons/ofxBt/libs/bullet/lib/osx/libLinearMath.a,
+					../../addons/ofxBt/libs/bullet/lib/osx/libBulletSoftBody.a,
+					../../addons/ofxBt/libs/bullet/lib/osx/libBulletDynamics.a,
+					../../addons/ofxBt/libs/bullet/lib/osx/libBulletCollision.a,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		81F0A3941D6C23DC00E1C3FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = NONE;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					src,
+					src/scenes/Abacus,
+					src/scenes/BasicActor,
+					src/scenes/BigBox,
+					src/scenes/Chain,
+					src/scenes/ColorGrid,
+					src/scenes/Donuts,
+					src/scenes/Expansion,
+					src/scenes/FourPoints,
+					src/scenes/Future,
+					src/scenes/Graph,
+					src/scenes/HastyChase,
+					src/scenes/Helper,
+					src/scenes/Kepler,
+					src/scenes/Laban,
+					src/scenes/Line,
+					src/scenes/Monster,
+					src/scenes/MovingCam,
+					src/scenes/Notation,
+					src/scenes/Particles,
+					src/scenes/Ragdoll,
+					src/scenes/SoundCube,
+					src/scenes/Stamp,
+					src/scenes/ThreePoints,
+					src/scenes/UpsideDown,
+					../../addons/ofxBt/libs,
+					../../addons/ofxBt/libs/bullet,
+					../../addons/ofxBt/libs/bullet/include,
+					../../addons/ofxBt/libs/bullet/include/bullet,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision/BroadphaseCollision,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision/CollisionDispatch,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision/CollisionShapes,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision/Gimpact,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision/NarrowPhaseCollision,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/Character,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/ConstraintSolver,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/Dynamics,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/Featherstone,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/MLCPSolvers,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/Vehicle,
+					../../addons/ofxBt/libs/bullet/include/bullet/BulletSoftBody,
+					../../addons/ofxBt/libs/bullet/include/bullet/LinearMath,
+					../../addons/ofxBt/libs/bullet/lib,
+					../../addons/ofxBt/libs/bullet/lib/osx,
+					../../addons/ofxBt/src,
+				);
+				ICON = "$(ICON_NAME_RELEASE)";
+				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
+				INFOPLIST_FILE = "RAMDanceToolkit copy-Info.plist";
+				INSTALL_PATH = /Applications;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					../../addons/ofxBt/libs/bullet/lib/osx,
+				);
+				OTHER_LDFLAGS = (
+					"$(OF_CORE_FRAMEWORKS)",
+					"$(OF_CORE_LIBS)",
+					../../addons/ofxBt/libs/bullet/lib/osx/libLinearMath.a,
+					../../addons/ofxBt/libs/bullet/lib/osx/libBulletSoftBody.a,
+					../../addons/ofxBt/libs/bullet/lib/osx/libBulletDynamics.a,
+					../../addons/ofxBt/libs/bullet/lib/osx/libBulletCollision.a,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+				baseConfigurationReference = E4EB6923138AFD0F00A09F29;
+			};
+			name = Release;
+		};
 		E4B69B4E0A3A1720003C02F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
@@ -1459,193 +1633,23 @@
 			};
 			name = Release;
 		};
-		E4B69B600A3A1757003C02F2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_MODEL_TUNING = NONE;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					src,
-					src/scenes/Abacus,
-					src/scenes/BasicActor,
-					src/scenes/BigBox,
-					src/scenes/Chain,
-					src/scenes/ColorGrid,
-					src/scenes/Donuts,
-					src/scenes/Expansion,
-					src/scenes/FourPoints,
-					src/scenes/Future,
-					src/scenes/Graph,
-					src/scenes/HastyChase,
-					src/scenes/Helper,
-					src/scenes/Kepler,
-					src/scenes/Laban,
-					src/scenes/Line,
-					src/scenes/Monster,
-					src/scenes/MovingCam,
-					src/scenes/Notation,
-					src/scenes/Particles,
-					src/scenes/Ragdoll,
-					src/scenes/SoundCube,
-					src/scenes/Stamp,
-					src/scenes/ThreePoints,
-					src/scenes/UpsideDown,
-					../../addons/ofxBt/libs,
-					../../addons/ofxBt/libs/bullet,
-					../../addons/ofxBt/libs/bullet/include,
-					../../addons/ofxBt/libs/bullet/include/bullet,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision/BroadphaseCollision,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision/CollisionDispatch,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision/CollisionShapes,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision/Gimpact,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision/NarrowPhaseCollision,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/Character,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/ConstraintSolver,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/Dynamics,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/Featherstone,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/MLCPSolvers,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/Vehicle,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletSoftBody,
-					../../addons/ofxBt/libs/bullet/include/bullet/LinearMath,
-					../../addons/ofxBt/libs/bullet/lib,
-					../../addons/ofxBt/libs/bullet/lib/osx,
-					../../addons/ofxBt/src,
-				);
-				ICON = "$(ICON_NAME_DEBUG)";
-				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
-				INFOPLIST_FILE = "openFrameworks-Info.plist";
-				INSTALL_PATH = /Applications;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					../../addons/ofxBt/libs/bullet/lib/osx,
-				);
-				OTHER_LDFLAGS = (
-					"$(OF_CORE_FRAMEWORKS)",
-					"$(OF_CORE_LIBS)",
-					../../addons/ofxBt/libs/bullet/lib/osx/libLinearMath.a,
-					../../addons/ofxBt/libs/bullet/lib/osx/libBulletSoftBody.a,
-					../../addons/ofxBt/libs/bullet/lib/osx/libBulletDynamics.a,
-					../../addons/ofxBt/libs/bullet/lib/osx/libBulletCollision.a,
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)Debug";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		E4B69B610A3A1757003C02F2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_MODEL_TUNING = NONE;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					src,
-					src/scenes/Abacus,
-					src/scenes/BasicActor,
-					src/scenes/BigBox,
-					src/scenes/Chain,
-					src/scenes/ColorGrid,
-					src/scenes/Donuts,
-					src/scenes/Expansion,
-					src/scenes/FourPoints,
-					src/scenes/Future,
-					src/scenes/Graph,
-					src/scenes/HastyChase,
-					src/scenes/Helper,
-					src/scenes/Kepler,
-					src/scenes/Laban,
-					src/scenes/Line,
-					src/scenes/Monster,
-					src/scenes/MovingCam,
-					src/scenes/Notation,
-					src/scenes/Particles,
-					src/scenes/Ragdoll,
-					src/scenes/SoundCube,
-					src/scenes/Stamp,
-					src/scenes/ThreePoints,
-					src/scenes/UpsideDown,
-					../../addons/ofxBt/libs,
-					../../addons/ofxBt/libs/bullet,
-					../../addons/ofxBt/libs/bullet/include,
-					../../addons/ofxBt/libs/bullet/include/bullet,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision/BroadphaseCollision,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision/CollisionDispatch,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision/CollisionShapes,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision/Gimpact,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletCollision/NarrowPhaseCollision,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/Character,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/ConstraintSolver,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/Dynamics,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/Featherstone,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/MLCPSolvers,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletDynamics/Vehicle,
-					../../addons/ofxBt/libs/bullet/include/bullet/BulletSoftBody,
-					../../addons/ofxBt/libs/bullet/include/bullet/LinearMath,
-					../../addons/ofxBt/libs/bullet/lib,
-					../../addons/ofxBt/libs/bullet/lib/osx,
-					../../addons/ofxBt/src,
-				);
-				ICON = "$(ICON_NAME_RELEASE)";
-				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
-				INFOPLIST_FILE = "openFrameworks-Info.plist";
-				INSTALL_PATH = /Applications;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					../../addons/ofxBt/libs/bullet/lib/osx,
-				);
-				OTHER_LDFLAGS = (
-					"$(OF_CORE_FRAMEWORKS)",
-					"$(OF_CORE_LIBS)",
-					../../addons/ofxBt/libs/bullet/lib/osx/libLinearMath.a,
-					../../addons/ofxBt/libs/bullet/lib/osx/libBulletSoftBody.a,
-					../../addons/ofxBt/libs/bullet/lib/osx/libBulletDynamics.a,
-					../../addons/ofxBt/libs/bullet/lib/osx/libBulletCollision.a,
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-				baseConfigurationReference = E4EB6923138AFD0F00A09F29;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		81F0A3921D6C23DC00E1C3FC /* Build configuration list for PBXNativeTarget "RAM Dance Toolkit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81F0A3931D6C23DC00E1C3FC /* Debug */,
+				81F0A3941D6C23DC00E1C3FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "RAMDanceToolkit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B4E0A3A1720003C02F2 /* Debug */,
 				E4B69B4F0A3A1720003C02F2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "RAMDanceToolkit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E4B69B600A3A1757003C02F2 /* Debug */,
-				E4B69B610A3A1757003C02F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
