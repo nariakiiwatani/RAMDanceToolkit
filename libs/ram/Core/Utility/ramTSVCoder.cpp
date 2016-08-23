@@ -30,8 +30,8 @@ void ramTSVCoder::decode(ofBuffer buffer)
 			string frame = buffer.getNextLine();
 			vector<string> values = ofSplitString(frame, "\t");
 			
-			if (values.size() < 2)
-				throw std::exception();
+			if (values.size() < 2) break;
+//				throw std::exception();
 				
 			const string addr = values.at(0);
 			const string name = values.at(1);
