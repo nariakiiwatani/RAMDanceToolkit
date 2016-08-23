@@ -45,9 +45,9 @@ else
 	cd ../
 
 	# ofxNodeArray
-	git clone https://github.com/YCAMInterlab/ofxNodeArray.git
+	git clone https://github.com/nariakiiwatani/ofxNodeArray.git
 	cd ofxNodeArray
-	git checkout b21dcd5
+	git checkout d88df41
 	cd ../
 
 	# ofxQuadWarp
