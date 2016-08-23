@@ -85,9 +85,9 @@ void Laban::draw()
         ofPushStyle();
         float alpha = cur.getLife(maxLabanMomentLife);
         ofSetColor(255, 64 * alpha);
-        ofLine(cur.start, cur.start + cur.direction * lineLength);
+        ofDrawLine(cur.start, cur.start + cur.direction * lineLength);
         ofSetColor(labanColors[cur.choice], 255 * alpha);
-        ofLine(cur.start, cur.start + labanDirections[cur.choice] * lineLength);
+        ofDrawLine(cur.start, cur.start + labanDirections[cur.choice] * lineLength);
         ofPopStyle();
     }
     ramEndCamera();

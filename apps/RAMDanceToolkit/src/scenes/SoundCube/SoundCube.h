@@ -63,7 +63,7 @@ public:
 			if (player) delete player;
 			
 			player = new ofSoundPlayer;
-			player->loadSound(path);
+			player->load(path);
 			player->setLoop(loop ? OF_LOOP_NORMAL : OF_LOOP_NONE);
 			trigger_mode = trigger;
 			

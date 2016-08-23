@@ -25,9 +25,8 @@ void ramTSVCoder::decode(ofBuffer buffer)
 	{
 		clear();
 		
-		do
+		for(auto &frame : buffer.getLines())
 		{
-			string frame = buffer.getNextLine();
 			vector<string> values = ofSplitString(frame, "\t");
 			
 			if (values.size() < 2) break;
@@ -84,7 +83,7 @@ void ramTSVCoder::decode(ofBuffer buffer)
 			
 			mSession.appendFrame(NA);
 			
-		} while (!buffer.isLastLine());
+		}
 		
 //		cout << "[" << __FUNCTION__ << "] " << "File loaded! " << endl;
 //		cout << "[" << __FUNCTION__ << "] " << "Actor: " << mSession.getNodeArrayName() << endl;

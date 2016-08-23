@@ -216,7 +216,7 @@ public:
 				ofTranslate(center);
 				rotateToNormal(normal);
 				ofNoFill();
-				ofRect(projected[i].getBoundingBox());
+				ofDrawRectangle(projected[i].getBoundingBox());
 				ofPopMatrix();
 			}
 		}

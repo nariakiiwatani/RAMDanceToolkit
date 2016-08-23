@@ -46,6 +46,7 @@ public:
 		if(bufferSize != img.getWidth())
 		{
 			img.allocate((int) bufferSize, ramActor::NUM_JOINTS, OF_IMAGE_COLOR);
+			img.getTexture().setTextureMinMagFilter(GL_NEAREST, GL_NEAREST);
 			for(int y = 0; y < ramActor::NUM_JOINTS; y++) {
 				for(int x = 0; x < bufferSize; x++) {
 					img.setColor(x, y, ofColor(0));
@@ -59,7 +60,6 @@ public:
 	void drawHUD()
 	{	
 		ofSetColor(255);
-		ofSetMinMagFilters(GL_NEAREST, GL_NEAREST);
 		img.draw(0, 0, ofGetViewportWidth(), ofGetViewportHeight());
 	}
 	

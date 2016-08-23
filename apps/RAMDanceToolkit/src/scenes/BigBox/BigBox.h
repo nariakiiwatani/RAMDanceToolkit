@@ -108,7 +108,7 @@ public:
 				
 				ofSetLineWidth(mBoxLineWidth);
 				node.beginTransform();
-				ofBox(bigBoxSize);
+				ofDrawBox(bigBoxSize);
 				node.endTransform();
 				
 				ofPopStyle();

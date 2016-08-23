@@ -65,7 +65,7 @@ protected:
 	ramPrimitive *primitive;
 
 	bool collision_state;
-	int last_collision_frame;
+	uint64_t last_collision_frame;
 
 	ramTriggerTiming timing;
 

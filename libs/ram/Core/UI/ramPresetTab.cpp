@@ -121,7 +121,7 @@ void ramPresetTab::draw(ofEventArgs& e)
         
         ofPushStyle();
         ofSetColor(255, 0, 0);
-        ofLine(node_pos, pos);
+        ofDrawLine(node_pos, pos);
         ofDrawBitmapString("[Camera]", pos);
         ofPopStyle();
     }
@@ -133,7 +133,7 @@ void ramPresetTab::draw(ofEventArgs& e)
         
         ofPushStyle();
         ofSetColor(255, 0, 0);
-        ofLine(node_look_at, pos);
+        ofDrawLine(node_look_at, pos);
         ofDrawBitmapString("[LookAt]", pos);
         ofPopStyle();
     }

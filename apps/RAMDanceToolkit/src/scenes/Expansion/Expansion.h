@@ -103,7 +103,7 @@ public:
 				if (mShowBox)
 				{
 					ofSetColor(mBoxColor);
-					ofBox(boxSize);
+					ofDrawBox(boxSize);
 				}
 				
 				if (mShowAxis)
@@ -117,7 +117,7 @@ public:
 				{
 					ofSetColor(100);
 					ofSetLineWidth(1);
-					ofLine(src.getNode(nodeId), processedNA.getNode(nodeId));
+					ofDrawLine(src.getNode(nodeId), processedNA.getNode(nodeId));
 				}
 				
 				

@@ -34,7 +34,7 @@ protected:
 	virtual const ramNodeArray& filter(const ramNodeArray& src) = 0;
 
 private:
-	int last_update_frame;
+	uint64_t last_update_frame;
 };
 
 //

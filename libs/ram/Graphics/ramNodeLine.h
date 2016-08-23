@@ -96,8 +96,8 @@ public:
 			ofVec3f cp0 = control0_n.getGlobalTransformMatrix().preMult(ofVec3f(0, 0, 0));
 			ofVec3f cp1 = control1_n.getGlobalTransformMatrix().preMult(ofVec3f(0, 0, 0));
 
-			ofVec3f pp0 = (p0 - cp0).normalized() * strength;
-			ofVec3f pp1 = (p1 - cp1).normalized() * strength;
+			ofVec3f pp0 = (p0 - cp0).getNormalized() * strength;
+			ofVec3f pp1 = (p1 - cp1).getNormalized() * strength;
 
 			pp0 += p0;
 			pp1 += p1;
@@ -137,7 +137,7 @@ public:
 
 			if (i == 0)
 			{
-				axis = d.crossed(ofVec3f(0, 1, 0)).normalized();
+				axis = d.cross(ofVec3f(0, 1, 0)).normalize();
 			}
 			else
 			{
@@ -177,8 +177,8 @@ public:
 		ofVec3f &pN = polyline[polyline.size() - 1];
 		ofVec3f &pNm1 = polyline[polyline.size() - 2];
 
-		p0 += (p0 - p1).normalized() * from;
-		pN += (pN - pNm1).normalized() * to;
+		p0 += (p0 - p1).getNormalized() * from;
+		pN += (pN - pNm1).getNormalized() * to;
 
 		return *this;
 	}

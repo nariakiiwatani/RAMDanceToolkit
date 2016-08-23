@@ -90,7 +90,7 @@ public:
 		ofNoFill();
 
 		ofSetColor(127, 127);
-		ofRect(rect);
+		ofDrawRectangle(rect);
 
 		ofPushMatrix();
 		ofTranslate(rect.x, rect.y);
@@ -118,7 +118,7 @@ public:
 
 				ofPushStyle();
 				ofSetColor(o.color, 64);
-				ofLine(0, yy, rect.width, yy);
+				ofDrawLine(0, yy, rect.width, yy);
 				ofPopStyle();
 
 				ofDrawBitmapString(it->first + ":" + ofToString(o.buffer[0]), xx, yy);

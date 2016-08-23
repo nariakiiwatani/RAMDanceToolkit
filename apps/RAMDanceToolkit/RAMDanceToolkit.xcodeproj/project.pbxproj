@@ -128,7 +128,6 @@
 		7279EB7C7A737CD925845E5E /* RagDoll.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = RagDoll.cpp; path = src/scenes/Ragdoll/RagDoll.cpp; sourceTree = SOURCE_ROOT; };
 		793302A659BBD4FB53E73285 /* ofxBt.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBt.h; path = ../../addons/ofxBt/src/ofxBt.h; sourceTree = SOURCE_ROOT; };
 		7C99743452AD8A2B6CFC090A /* btPicker.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btPicker.cpp; path = src/scenes/Helper/btPicker.cpp; sourceTree = SOURCE_ROOT; };
-		8126C0361D6C45C5002AC581 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../resources/Icons/icon.png; sourceTree = "<group>"; };
 		8126C0371D6C4619002AC581 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon.icns; path = ../../resources/Icons/icon.icns; sourceTree = "<group>"; };
 		818ABEE11D6BE637002DBAB2 /* RAMDanceToolkit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RAMDanceToolkit.xcodeproj; path = ../../libs/project/osx/RAMDanceToolkit.xcodeproj; sourceTree = "<group>"; };
 		818ABEEC1D6BE7FB002DBAB2 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
@@ -1071,7 +1070,6 @@
 			isa = PBXGroup;
 			children = (
 				8126C0371D6C4619002AC581 /* icon.icns */,
-				8126C0361D6C45C5002AC581 /* icon.png */,
 				818ABEE01D6BE62D002DBAB2 /* ram */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
@@ -1535,7 +1533,7 @@
 					../../addons/ofxBt/libs/bullet/lib/osx,
 					../../addons/ofxBt/src,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
@@ -1623,7 +1621,7 @@
 					../../addons/ofxBt/libs/bullet/lib/osx,
 					../../addons/ofxBt/src,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
 					"-mtune=native",

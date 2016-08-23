@@ -208,7 +208,7 @@ public:
 			ofSetLineWidth(2);
 			if(node.hasParent())
 			{
-				ofLine(node, *node.getParent());
+				ofDrawLine(node, *node.getParent());
 			}
 		}
 		ofPopStyle();

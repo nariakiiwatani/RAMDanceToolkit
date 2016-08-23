@@ -20,7 +20,7 @@ void ramOscManager::update(){
 
 	while (receiver.hasWaitingMessages()){
 		ofxOscMessage m;
-		receiver.getNextMessage(&m);
+		receiver.getNextMessage(m);
 
 		for (int i = 0;i < receiverList.size();i++){
 

@@ -79,7 +79,7 @@ void ramActorsScene::setup()
 	
 	/// font setting to draw "RECORDING" on screen right top
 	fontSize = 30;
-	font.loadFont(ramToResourcePath(RAM_FONT_FILE), fontSize, true, true);
+	font.load(ramToResourcePath(RAM_FONT_FILE), fontSize, true, true);
 	font.setLineHeight(fontSize*1.4f);
 	font.setLetterSpacing(1.0);
 	
@@ -593,7 +593,7 @@ void ramActorsScene::drawNodes(const ramNodeArray &NA)
 		parent->beginTransform();
 		
 		ofVec3f axis(0, 0, 1);
-		ofVec3f c = node.getPosition().normalized().crossed(axis);
+		ofVec3f c = node.getPosition().getNormalized().getCrossed(axis);
 		
 		ofRotate(90, c.x, c.y, c.z);
 		
@@ -604,7 +604,7 @@ void ramActorsScene::drawNodes(const ramNodeArray &NA)
 		float offset = 0.2;
 		
 		glNormal3f(0, 0, 0);
-		ofLine(ofVec3f(0), ofVec3f(0, 0, -dist));
+		ofDrawLine(ofVec3f(0), ofVec3f(0, 0, -dist));
 		
 		if (i < 4)
 			glScalef(1., 1.8, 1);

@@ -86,7 +86,7 @@ inline void ramLine(const ramNode& node)
 {
 	if (!node.hasParent()) return;
 
-	ofLine(node.getGlobalPosition(),
+	ofDrawLine(node.getGlobalPosition(),
 		   node.getParent()->getGlobalPosition());
 }
 

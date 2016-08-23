@@ -191,17 +191,17 @@ void Kepler::drawActor(const ramActor &actor)
 		node.beginTransform();
 		ofSetColor(ramColor::BLUE_LIGHT);
         ofNoFill();
-		ofBox(jointSize);
+		ofDrawBox(jointSize);
         if (i==mNodeA || i==mNodeB) {
             ofSetColor(ramColor::RED_LIGHT);
-            ofBox(jointSize*1.5f);
+            ofDrawBox(jointSize*1.5f);
         }
 		node.endTransform();
 		
 		if (node.hasParent())
 		{
 			ofSetColor(ramColor::RED_LIGHT);
-			ofLine(node, *node.getParent());
+			ofDrawLine(node, *node.getParent());
 		}
         
 	}

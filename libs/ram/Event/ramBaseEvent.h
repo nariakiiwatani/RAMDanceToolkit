@@ -50,7 +50,7 @@ protected:
 	bool fired;
 
 	bool enabled;
-	int last_updated_frame;
+	uint64_t last_updated_frame;
 
 	virtual bool tick() = 0;
 };

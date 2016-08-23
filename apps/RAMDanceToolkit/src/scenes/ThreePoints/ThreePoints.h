@@ -116,7 +116,7 @@ public:
 				ofPushStyle();
 				ofFill();
 				ofSetColor(255, 128);
-				ofRect(0, 0, 100, 30);
+				ofDrawRectangle(0, 0, 100, 30);
 				ofPopStyle();
 			}
 			
@@ -135,7 +135,7 @@ public:
 					ofVec3f normal = (a - b).cross(c - b);
 					normal.normalize();
 					ofSetColor(magentaPrint);
-					ofLine(b - normal * crossLength, b + normal * crossLength);
+					ofDrawLine(b - normal * crossLength, b + normal * crossLength);
 					
 					ofVec3f center;
 					float radius;
@@ -149,25 +149,25 @@ public:
 					}
 					ofSetColor(yellowPrint);
 					if(showCircle) {
-						ofCircle(0, 0, radius);
+						ofDrawCircle(0, 0, radius);
 					}
 					ofPopMatrix();
 					if(showCircleBisector) {
-						ofLine(b, b + (center - b) * 2);
+						ofDrawLine(b, b + (center - b) * 2);
 					}
 					
 					ofPushMatrix();
 					ofTranslate(b);
 					rotateToNormal(normal);
 					ofSetColor(cyanPrint);
-					ofRect(-rectRadius, -rectRadius, 2*rectRadius, 2*rectRadius);
+					ofDrawRectangle(-rectRadius, -rectRadius, 2*rectRadius, 2*rectRadius);
 					if(invertSpheres) {
 						ofSetColor(255, 32);
 						ofIcoSphere(ofVec3f(), maxInvertRadius / radius);
 					}
 					if(showCenterCircles) {
 						ofSetColor(yellowPrint);
-						ofCircle(0, 0, radius);
+						ofDrawCircle(0, 0, radius);
 					}
 					ofPopMatrix();
 				}

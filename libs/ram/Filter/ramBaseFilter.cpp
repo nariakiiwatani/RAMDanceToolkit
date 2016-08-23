@@ -28,7 +28,7 @@ const ramNodeArray& ramBaseFilter::update(const ramNodeArray& src)
 	if (cache.getNumNode() != src.getNumNode())
 		cache = src;
 	
-	const int f = ofGetFrameNum();
+	const uint64_t f = ofGetFrameNum();
 	if (last_update_frame != f)
 	{
 		last_update_frame = f;

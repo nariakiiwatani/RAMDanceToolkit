@@ -119,7 +119,7 @@ void ramDrawBasicFloor(const int floorPattern,
 	{
 		ofFill();
 		ofSetColor(c1);
-		ofRect(0, 0, 0, division * tileSize, division * tileSize);
+		ofDrawRectangle(0, 0, 0, division * tileSize, division * tileSize);
 	}
 
 	for (int i = 0; i < division; i++)
@@ -132,13 +132,13 @@ void ramDrawBasicFloor(const int floorPattern,
 			case ramFloor::FLOOR_CHECKER_PATTERN:
 				ofFill();
 				ofSetColor((i % 2 == 0 && j % 2 == 0) || (i % 2 == 1 && j % 2 == 1) ? c1 : c2);
-				ofRect(i * tileSize, j * tileSize, tileSize, tileSize);
+				ofDrawRectangle(i * tileSize, j * tileSize, tileSize, tileSize);
 				break;
 
 			case ramFloor::FLOOR_GRID_LINES:
 				ofNoFill();
 				ofSetColor(c1);
-				ofRect(i * tileSize, j * tileSize, tileSize, tileSize);
+				ofDrawRectangle(i * tileSize, j * tileSize, tileSize, tileSize);
 				break;
 			}
 		}
@@ -249,7 +249,7 @@ void ramDrawNodeCorresponds(const ramNodeArray &a, const ramNodeArray &b)
 
 	for (int i = 0; i < a.getNumNode(); i++)
 	{
-		ofLine(a.getNode(i).getGlobalPosition(), b.getNode(i).getGlobalPosition());
+		ofDrawLine(a.getNode(i).getGlobalPosition(), b.getNode(i).getGlobalPosition());
 	}
 }
 

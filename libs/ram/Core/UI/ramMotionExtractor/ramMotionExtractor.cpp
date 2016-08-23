@@ -219,7 +219,7 @@ void ramMotionExtractor::draw(){
 
 			ofSetColor(255,0,0);
 			glLineWidth(3.0);
-			ofLine(ofVec3f(0,0,0),
+			ofDrawLine(ofVec3f(0,0,0),
 				   mMotionPort[i]->mVelocitySmoothed * 30.0);
 			glLineWidth(1.0);
 
