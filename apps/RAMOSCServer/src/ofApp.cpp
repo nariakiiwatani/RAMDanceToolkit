@@ -1,11 +1,11 @@
 //
-//  testApp.cpp
+//  ofApp.cpp
 //  RAMDanceToolkit
 //
 //  Created by motoishmz on 4/27/13.
 //  Copyright (c) 2013 YCAMInterlab. All rights reserved.
 
-#include "testApp.h"
+#include "ofApp.h"
 
 
 static const string kSettingFilePath = "Settings.xml";
@@ -13,7 +13,7 @@ static const int kMaxPlaybackSize = 4;
 
 
 //--------------------------------------------------------------
-void testApp::setup()
+void ofApp::setup()
 {
 	ofSetFrameRate(60);
 	ofSetVerticalSync(true);
@@ -80,18 +80,18 @@ void testApp::setup()
 	
 	
 	GUI->loadSettings(kSettingFilePath);
-	ofAddListener(GUI->newGUIEvent, this, &testApp::onValueChanged);
+	ofAddListener(GUI->newGUIEvent, this, &ofApp::onValueChanged);
 }
 
 //--------------------------------------------------------------
-void testApp::update()
+void ofApp::update()
 {
 	for(int i=0; i<playbackers.size(); i++)
 		playbackers[i].update();
 }
 
 //--------------------------------------------------------------
-void testApp::draw()
+void ofApp::draw()
 {
 	for(int i=0; i<playbackers.size(); i++)
 	{
@@ -103,13 +103,13 @@ void testApp::draw()
 }
 
 //--------------------------------------------------------------
-void testApp::exit()
+void ofApp::exit()
 {
 	GUI->saveSettings(kSettingFilePath);
 }
 
 //--------------------------------------------------------------
-void testApp::load(const string path)
+void ofApp::load(const string path)
 {
 	if (playbackers.size() > kMaxPlaybackSize)
 		return;
@@ -132,7 +132,7 @@ void testApp::load(const string path)
 }
 
 //--------------------------------------------------------------
-void testApp::setSpeed(const float new_speed)
+void ofApp::setSpeed(const float new_speed)
 {
 	speed = new_speed;
 	
@@ -141,7 +141,7 @@ void testApp::setSpeed(const float new_speed)
 }
 
 //--------------------------------------------------------------
-void testApp::dragEvent(ofDragInfo dragInfo)
+void ofApp::dragEvent(ofDragInfo dragInfo)
 {
 	for(int i=0; i<dragInfo.files.size(); i++)
 	{
@@ -151,7 +151,7 @@ void testApp::dragEvent(ofDragInfo dragInfo)
 }
 
 //--------------------------------------------------------------
-void testApp::onValueChanged(ofxUIEventArgs &e)
+void ofApp::onValueChanged(ofxUIEventArgs &e)
 {
 	const string name = e.widget->getName();
 	

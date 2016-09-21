@@ -15,7 +15,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "testApp.h"
+#include "ofApp.h"
 #include "ofAppGlutWindow.h"
 
 //--------------------------------------------------------------
@@ -25,5 +25,5 @@ int main()
 	
 	// set width, height, mode (OF_WINDOW or OF_FULLSCREEN)
 	ofSetupOpenGL(&window, 750, 768, OF_WINDOW);
-	ofRunApp(new testApp); // start the app
+	ofRunApp(new ofApp); // start the app
 }

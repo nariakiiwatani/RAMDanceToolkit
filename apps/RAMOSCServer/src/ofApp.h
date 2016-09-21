@@ -1,5 +1,5 @@
 //
-//  testApp.h
+//  ofApp.h
 //  RAMDanceToolkit
 //
 //  Created by motoishmz on 4/27/13.
@@ -12,7 +12,7 @@
 #include "ofxOscSender.h"
 #include "ramOscPlaybacker.h"
 
-class testApp : public ofBaseApp
+class ofApp : public ofBaseApp
 {
 public:
 
