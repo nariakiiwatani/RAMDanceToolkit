@@ -16,6 +16,7 @@
 // limitations under the License.
 
 #include "ramGeometry.h"
+#include "ofGraphics.h"
 
 using namespace ofxCv;
 using namespace cv;
