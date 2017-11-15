@@ -20,34 +20,6 @@
 #include "ofMain.h"
 #include "ramMain.h"
 
-// Include scenes
-#include "MovingCam.h"
-#include "LineDrawing.h"
-#include "BigBox.h"
-#include "Future.h"
-
-#include "Donuts.h"
-#include "Stamp.h"
-#include "Expansion.h"
-#include "Particles.h"
-
-#include "Abacus.h"
-#include "SoundCube.h"
-#include "UpsideDown.h"
-#include "Kepler.h"
-
-#include "HastyChase.h"
-#include "ColorGrid.h"
-#include "ThreePoints.h"
-#include "FourPoints.h"
-
-#include "Chain.h"
-#include "Monster.h"
-#include "Laban.h"
-#include "Notation.h"
-
-#include "Extractor.h"
-
 class ofApp : public rdtk::BaseApp
 {
 public:

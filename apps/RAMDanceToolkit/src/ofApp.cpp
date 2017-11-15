@@ -32,33 +32,6 @@ void ofApp::setup()
 	// ------------------
 	rdtk::SceneManager& sceneManager = rdtk::SceneManager::instance();
 
-	sceneManager.addScene<Extractor>();
-	sceneManager.addScene<MovingCam>();
-	sceneManager.addScene<LineDrawing>();
-	sceneManager.addScene<BigBox>();
-	sceneManager.addScene<Future>();
-	sceneManager.addScene<Donuts>();
-	sceneManager.addScene<Stamp>();
-	sceneManager.addScene<Expansion>();
-// ignore win32
-#ifndef TARGET_WIN32
-	sceneManager.addScene<Particles>();
-#endif
-	sceneManager.addScene<Abacus>();
-	sceneManager.addScene<SoundCube>();
-	sceneManager.addScene<UpsideDown>();
-	sceneManager.addScene<HastyChase>();
-	sceneManager.addScene<ColorGrid>();
-	sceneManager.addScene<ThreePoints>();
-	sceneManager.addScene<FourPoints>();
-	sceneManager.addScene<Monster>();
-	sceneManager.addScene<Laban>();
-	sceneManager.addScene<Notation>();
-#if !defined (DEBUG) && !defined (_DEBUG) // exclude from debug build
-    sceneManager.addScene<Kepler>();
-    sceneManager.addScene<Chain>();
-#endif
-	
 }
 
 //--------------------------------------------------------------
