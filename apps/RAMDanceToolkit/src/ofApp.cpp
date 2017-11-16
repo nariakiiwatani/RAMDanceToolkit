@@ -18,6 +18,11 @@
 #include "ofApp.h"
 #include "MirrorCamera.h"
 
+#pragma mark - RAMB
+#include "Spiderman.h"
+#include "VisualStudio.h"
+#include "Paperman.h"
+
 #pragma mark - oF methods
 //--------------------------------------------------------------
 void ofApp::setup()
@@ -34,6 +39,9 @@ void ofApp::setup()
 	rdtk::SceneManager& sceneManager = rdtk::SceneManager::instance();
 
 	sceneManager.addScene<MirrorCamera>();
+	sceneManager.addScene<Spiderman>();
+	sceneManager.addScene<VisualStudio>();
+	sceneManager.addScene<Paperman>();
 }
 
 //--------------------------------------------------------------

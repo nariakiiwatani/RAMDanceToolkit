@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		270D2D9C16E4760700D5F750 /* icon.icns in CopyFiles */ = {isa = PBXBuildFile; fileRef = 270D2D9916E475D800D5F750 /* icon.icns */; };
 		601900591644E31F001930AA /* libram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B90AB31644E21400AF2156 /* libram.a */; };
+		812CB03A1FBD6A4700AB6AAF /* Paperman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 812CB0321FBD6A4700AB6AAF /* Paperman.cpp */; };
+		812CB03B1FBD6A4700AB6AAF /* Spiderman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 812CB0351FBD6A4700AB6AAF /* Spiderman.cpp */; };
+		812CB03C1FBD6A4700AB6AAF /* VisualStudio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 812CB0381FBD6A4700AB6AAF /* VisualStudio.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -88,6 +91,12 @@
 /* Begin PBXFileReference section */
 		270D2D9916E475D800D5F750 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon.icns; path = ../../resources/Icons/icon.icns; sourceTree = "<group>"; };
 		60B90AAE1644E21400AF2156 /* RAMDanceToolkit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RAMDanceToolkit.xcodeproj; path = ../../libs/project/osx/RAMDanceToolkit.xcodeproj; sourceTree = "<group>"; };
+		812CB0321FBD6A4700AB6AAF /* Paperman.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Paperman.cpp; sourceTree = "<group>"; };
+		812CB0331FBD6A4700AB6AAF /* Paperman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Paperman.h; sourceTree = "<group>"; };
+		812CB0351FBD6A4700AB6AAF /* Spiderman.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Spiderman.cpp; sourceTree = "<group>"; };
+		812CB0361FBD6A4700AB6AAF /* Spiderman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spiderman.h; sourceTree = "<group>"; };
+		812CB0381FBD6A4700AB6AAF /* VisualStudio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VisualStudio.cpp; sourceTree = "<group>"; };
+		812CB0391FBD6A4700AB6AAF /* VisualStudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisualStudio.h; sourceTree = "<group>"; };
 		818D92EB1FBC21E600464F19 /* MirrorCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MirrorCamera.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -160,6 +169,44 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		812CB0301FBD6A4700AB6AAF /* RAMB */ = {
+			isa = PBXGroup;
+			children = (
+				812CB0311FBD6A4700AB6AAF /* Paperman */,
+				812CB0341FBD6A4700AB6AAF /* Spiderman */,
+				812CB0371FBD6A4700AB6AAF /* VisualStudio */,
+			);
+			name = RAMB;
+			path = scenes/RAMB;
+			sourceTree = "<group>";
+		};
+		812CB0311FBD6A4700AB6AAF /* Paperman */ = {
+			isa = PBXGroup;
+			children = (
+				812CB0321FBD6A4700AB6AAF /* Paperman.cpp */,
+				812CB0331FBD6A4700AB6AAF /* Paperman.h */,
+			);
+			path = Paperman;
+			sourceTree = "<group>";
+		};
+		812CB0341FBD6A4700AB6AAF /* Spiderman */ = {
+			isa = PBXGroup;
+			children = (
+				812CB0351FBD6A4700AB6AAF /* Spiderman.cpp */,
+				812CB0361FBD6A4700AB6AAF /* Spiderman.h */,
+			);
+			path = Spiderman;
+			sourceTree = "<group>";
+		};
+		812CB0371FBD6A4700AB6AAF /* VisualStudio */ = {
+			isa = PBXGroup;
+			children = (
+				812CB0381FBD6A4700AB6AAF /* VisualStudio.cpp */,
+				812CB0391FBD6A4700AB6AAF /* VisualStudio.h */,
+			);
+			path = VisualStudio;
+			sourceTree = "<group>";
+		};
 		818D92EA1FBC21E600464F19 /* MirrorCamera */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +219,7 @@
 		9A1DE6D516AA666100A10E3F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				812CB0301FBD6A4700AB6AAF /* RAMB */,
 				818D92EA1FBC21E600464F19 /* MirrorCamera */,
 			);
 			name = Scenes;
@@ -366,7 +414,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				812CB03A1FBD6A4700AB6AAF /* Paperman.cpp in Sources */,
+				812CB03B1FBD6A4700AB6AAF /* Spiderman.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
+				812CB03C1FBD6A4700AB6AAF /* VisualStudio.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
