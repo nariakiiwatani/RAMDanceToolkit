@@ -211,6 +211,12 @@
 		812CB6351FBD6C5500AB6AAF /* ofxBulletStaticPlane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 812CB4CD1FBD6C5400AB6AAF /* ofxBulletStaticPlane.cpp */; };
 		812CB6361FBD6C5500AB6AAF /* ofxBulletTriMeshShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 812CB4CF1FBD6C5400AB6AAF /* ofxBulletTriMeshShape.cpp */; };
 		812CB6791FBD6C9F00AB6AAF /* btPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 812CB6771FBD6C9F00AB6AAF /* btPicker.cpp */; };
+		812CB68A1FBD6DAF00AB6AAF /* Orbit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 812CB67C1FBD6DAF00AB6AAF /* Orbit.cpp */; };
+		812CB68B1FBD6DAF00AB6AAF /* OrbitSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 812CB67E1FBD6DAF00AB6AAF /* OrbitSystem.cpp */; };
+		812CB68C1FBD6DAF00AB6AAF /* VelocityManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 812CB6801FBD6DAF00AB6AAF /* VelocityManager.cpp */; };
+		812CB68D1FBD6DAF00AB6AAF /* Planet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 812CB6831FBD6DAF00AB6AAF /* Planet.cpp */; };
+		812CB68E1FBD6DAF00AB6AAF /* PlanetarySystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 812CB6851FBD6DAF00AB6AAF /* PlanetarySystem.cpp */; };
+		812CB68F1FBD6DAF00AB6AAF /* VelocityManager2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 812CB6881FBD6DAF00AB6AAF /* VelocityManager2.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -777,6 +783,18 @@
 		812CB4D01FBD6C5400AB6AAF /* ofxBulletTriMeshShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletTriMeshShape.h; sourceTree = "<group>"; };
 		812CB6771FBD6C9F00AB6AAF /* btPicker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = btPicker.cpp; sourceTree = "<group>"; };
 		812CB6781FBD6C9F00AB6AAF /* btPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = btPicker.h; sourceTree = "<group>"; };
+		812CB67C1FBD6DAF00AB6AAF /* Orbit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Orbit.cpp; sourceTree = "<group>"; };
+		812CB67D1FBD6DAF00AB6AAF /* Orbit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Orbit.h; sourceTree = "<group>"; };
+		812CB67E1FBD6DAF00AB6AAF /* OrbitSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OrbitSystem.cpp; sourceTree = "<group>"; };
+		812CB67F1FBD6DAF00AB6AAF /* OrbitSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrbitSystem.h; sourceTree = "<group>"; };
+		812CB6801FBD6DAF00AB6AAF /* VelocityManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VelocityManager.cpp; sourceTree = "<group>"; };
+		812CB6811FBD6DAF00AB6AAF /* VelocityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VelocityManager.h; sourceTree = "<group>"; };
+		812CB6831FBD6DAF00AB6AAF /* Planet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Planet.cpp; sourceTree = "<group>"; };
+		812CB6841FBD6DAF00AB6AAF /* Planet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Planet.h; sourceTree = "<group>"; };
+		812CB6851FBD6DAF00AB6AAF /* PlanetarySystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlanetarySystem.cpp; sourceTree = "<group>"; };
+		812CB6861FBD6DAF00AB6AAF /* PlanetarySystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetarySystem.h; sourceTree = "<group>"; };
+		812CB6881FBD6DAF00AB6AAF /* VelocityManager2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VelocityManager2.cpp; sourceTree = "<group>"; };
+		812CB6891FBD6DAF00AB6AAF /* VelocityManager2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VelocityManager2.h; sourceTree = "<group>"; };
 		818D92EB1FBC21E600464F19 /* MirrorCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MirrorCamera.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -1756,6 +1774,50 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		812CB67A1FBD6DAF00AB6AAF /* MOZZI */ = {
+			isa = PBXGroup;
+			children = (
+				812CB67B1FBD6DAF00AB6AAF /* OrbitSystem */,
+				812CB6821FBD6DAF00AB6AAF /* PlanetarySystem */,
+				812CB6871FBD6DAF00AB6AAF /* Utils */,
+			);
+			name = MOZZI;
+			path = scenes/MOZZI;
+			sourceTree = "<group>";
+		};
+		812CB67B1FBD6DAF00AB6AAF /* OrbitSystem */ = {
+			isa = PBXGroup;
+			children = (
+				812CB67C1FBD6DAF00AB6AAF /* Orbit.cpp */,
+				812CB67D1FBD6DAF00AB6AAF /* Orbit.h */,
+				812CB67E1FBD6DAF00AB6AAF /* OrbitSystem.cpp */,
+				812CB67F1FBD6DAF00AB6AAF /* OrbitSystem.h */,
+				812CB6801FBD6DAF00AB6AAF /* VelocityManager.cpp */,
+				812CB6811FBD6DAF00AB6AAF /* VelocityManager.h */,
+			);
+			path = OrbitSystem;
+			sourceTree = "<group>";
+		};
+		812CB6821FBD6DAF00AB6AAF /* PlanetarySystem */ = {
+			isa = PBXGroup;
+			children = (
+				812CB6831FBD6DAF00AB6AAF /* Planet.cpp */,
+				812CB6841FBD6DAF00AB6AAF /* Planet.h */,
+				812CB6851FBD6DAF00AB6AAF /* PlanetarySystem.cpp */,
+				812CB6861FBD6DAF00AB6AAF /* PlanetarySystem.h */,
+			);
+			path = PlanetarySystem;
+			sourceTree = "<group>";
+		};
+		812CB6871FBD6DAF00AB6AAF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				812CB6881FBD6DAF00AB6AAF /* VelocityManager2.cpp */,
+				812CB6891FBD6DAF00AB6AAF /* VelocityManager2.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		818D92EA1FBC21E600464F19 /* MirrorCamera */ = {
 			isa = PBXGroup;
 			children = (
@@ -1768,6 +1830,7 @@
 		9A1DE6D516AA666100A10E3F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				812CB67A1FBD6DAF00AB6AAF /* MOZZI */,
 				812CB03D1FBD6C0600AB6AAF /* UNI */,
 				812CB0301FBD6A4700AB6AAF /* RAMB */,
 				818D92EA1FBC21E600464F19 /* MirrorCamera */,
@@ -1986,6 +2049,7 @@
 				812CB59B1FBD6C5500AB6AAF /* btHeightfieldTerrainShape.cpp in Sources */,
 				812CB5891FBD6C5500AB6AAF /* SphereTriangleDetector.cpp in Sources */,
 				812CB5AC1FBD6C5500AB6AAF /* btTriangleMeshShape.cpp in Sources */,
+				812CB68F1FBD6DAF00AB6AAF /* VelocityManager2.cpp in Sources */,
 				812CB5C41FBD6C5500AB6AAF /* btVoronoiSimplexSolver.cpp in Sources */,
 				812CB0441FBD6C0600AB6AAF /* randomCubeUni.cpp in Sources */,
 				812CB5BD1FBD6C5500AB6AAF /* btGjkEpaPenetrationDepthSolver.cpp in Sources */,
@@ -1997,6 +2061,7 @@
 				812CB5C01FBD6C5500AB6AAF /* btPersistentManifold.cpp in Sources */,
 				812CB59C1FBD6C5500AB6AAF /* btMinkowskiSumShape.cpp in Sources */,
 				812CB62B1FBD6C5500AB6AAF /* ofxBulletConvexShape.cpp in Sources */,
+				812CB68C1FBD6DAF00AB6AAF /* VelocityManager.cpp in Sources */,
 				812CB5EE1FBD6C5500AB6AAF /* btGeometryUtil.cpp in Sources */,
 				812CB59D1FBD6C5500AB6AAF /* btMultimaterialTriangleMeshShape.cpp in Sources */,
 				812CB5951FBD6C5500AB6AAF /* btConvexPointCloudShape.cpp in Sources */,
@@ -2046,6 +2111,8 @@
 				812CB5C81FBD6C5500AB6AAF /* btFixedConstraint.cpp in Sources */,
 				812CB5E91FBD6C5500AB6AAF /* btSoftRigidDynamicsWorld.cpp in Sources */,
 				812CB5721FBD6C5500AB6AAF /* btBox2dBox2dCollisionAlgorithm.cpp in Sources */,
+				812CB68B1FBD6DAF00AB6AAF /* OrbitSystem.cpp in Sources */,
+				812CB68A1FBD6DAF00AB6AAF /* Orbit.cpp in Sources */,
 				812CB59A1FBD6C5500AB6AAF /* btEmptyShape.cpp in Sources */,
 				812CB6351FBD6C5500AB6AAF /* ofxBulletStaticPlane.cpp in Sources */,
 				812CB6301FBD6C5500AB6AAF /* ofxBulletRigidBody.cpp in Sources */,
@@ -2088,7 +2155,9 @@
 				812CB56E1FBD6C5500AB6AAF /* btOverlappingPairCache.cpp in Sources */,
 				812CB5C51FBD6C5500AB6AAF /* btKinematicCharacterController.cpp in Sources */,
 				812CB5A81FBD6C5500AB6AAF /* btTriangleCallback.cpp in Sources */,
+				812CB68E1FBD6DAF00AB6AAF /* PlanetarySystem.cpp in Sources */,
 				812CB5CC1FBD6C5500AB6AAF /* btHinge2Constraint.cpp in Sources */,
+				812CB68D1FBD6DAF00AB6AAF /* Planet.cpp in Sources */,
 				812CB62E1FBD6C5500AB6AAF /* ofxBulletEllipsoid.cpp in Sources */,
 				812CB5EF1FBD6C5500AB6AAF /* btPolarDecomposition.cpp in Sources */,
 				812CB5751FBD6C5500AB6AAF /* btCollisionDispatcher.cpp in Sources */,

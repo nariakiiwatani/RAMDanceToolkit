@@ -27,6 +27,10 @@
 #include "UniScene.h"
 #include "randomCubeUni.h"
 
+#pragma mark - MOZZI
+#include "OrbitSystem.h"
+#include "PlanetarySystem.h"
+
 #pragma mark - oF methods
 //--------------------------------------------------------------
 void ofApp::setup()
@@ -50,6 +54,8 @@ void ofApp::setup()
 	sceneManager.addScene<UniScene>();
 	sceneManager.addScene<randomCubeUni>();
 	
+	sceneManager.addScene<OrbitSystem>();
+	sceneManager.addScene<PlanetarySystem>();	
 }
 
 //--------------------------------------------------------------
