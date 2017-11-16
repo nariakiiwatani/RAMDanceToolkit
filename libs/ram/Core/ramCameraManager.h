@@ -39,6 +39,16 @@ namespace rdtk{
 		const ofCamera& getActiveCamera() const { return const_cast<ofCamera&>(*active_camera); }
 		inline void setActiveCamera(int index) { active_camera = cameras.at(index); }
 		
+		int getActiveCameraIndex() const {
+			const auto &active = getActiveCamera();
+			for(int i = 0, num = getNumCameras(); i < num; ++i) {
+				if(&active == getCamera(i)) {
+					return i;
+				}
+			}
+			return -1;
+		}
+		
 		template <typename T>
 		T* createCamera()
 		{

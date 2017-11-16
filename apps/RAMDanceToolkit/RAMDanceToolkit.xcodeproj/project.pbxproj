@@ -88,6 +88,7 @@
 /* Begin PBXFileReference section */
 		270D2D9916E475D800D5F750 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon.icns; path = ../../resources/Icons/icon.icns; sourceTree = "<group>"; };
 		60B90AAE1644E21400AF2156 /* RAMDanceToolkit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RAMDanceToolkit.xcodeproj; path = ../../libs/project/osx/RAMDanceToolkit.xcodeproj; sourceTree = "<group>"; };
+		818D92EB1FBC21E600464F19 /* MirrorCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MirrorCamera.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -159,9 +160,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		818D92EA1FBC21E600464F19 /* MirrorCamera */ = {
+			isa = PBXGroup;
+			children = (
+				818D92EB1FBC21E600464F19 /* MirrorCamera.h */,
+			);
+			name = MirrorCamera;
+			path = scenes/MirrorCamera;
+			sourceTree = "<group>";
+		};
 		9A1DE6D516AA666100A10E3F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				818D92EA1FBC21E600464F19 /* MirrorCamera */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";

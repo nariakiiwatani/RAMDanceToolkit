@@ -16,6 +16,7 @@
 // limitations under the License.
 
 #include "ofApp.h"
+#include "MirrorCamera.h"
 
 #pragma mark - oF methods
 //--------------------------------------------------------------
@@ -32,6 +33,7 @@ void ofApp::setup()
 	// ------------------
 	rdtk::SceneManager& sceneManager = rdtk::SceneManager::instance();
 
+	sceneManager.addScene<MirrorCamera>();
 }
 
 //--------------------------------------------------------------
