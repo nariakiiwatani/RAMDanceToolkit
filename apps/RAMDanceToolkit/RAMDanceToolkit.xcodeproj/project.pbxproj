@@ -217,6 +217,7 @@
 		812CB68D1FBD6DAF00AB6AAF /* Planet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 812CB6831FBD6DAF00AB6AAF /* Planet.cpp */; };
 		812CB68E1FBD6DAF00AB6AAF /* PlanetarySystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 812CB6851FBD6DAF00AB6AAF /* PlanetarySystem.cpp */; };
 		812CB68F1FBD6DAF00AB6AAF /* VelocityManager2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 812CB6881FBD6DAF00AB6AAF /* VelocityManager2.cpp */; };
+		812CB69A1FBD6F6C00AB6AAF /* Character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 812CB6921FBD6F6C00AB6AAF /* Character.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -795,6 +796,11 @@
 		812CB6861FBD6DAF00AB6AAF /* PlanetarySystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetarySystem.h; sourceTree = "<group>"; };
 		812CB6881FBD6DAF00AB6AAF /* VelocityManager2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VelocityManager2.cpp; sourceTree = "<group>"; };
 		812CB6891FBD6DAF00AB6AAF /* VelocityManager2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VelocityManager2.h; sourceTree = "<group>"; };
+		812CB6921FBD6F6C00AB6AAF /* Character.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Character.cpp; sourceTree = "<group>"; };
+		812CB6931FBD6F6C00AB6AAF /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
+		812CB6951FBD6F6C00AB6AAF /* Lines.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Lines.hpp; sourceTree = "<group>"; };
+		812CB6971FBD6F6C00AB6AAF /* MakeSound.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MakeSound.hpp; sourceTree = "<group>"; };
+		812CB6991FBD6F6C00AB6AAF /* Moji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Moji.h; sourceTree = "<group>"; };
 		818D92EB1FBC21E600464F19 /* MirrorCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MirrorCamera.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -1818,6 +1824,51 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		812CB6901FBD6F6C00AB6AAF /* KABOCHA */ = {
+			isa = PBXGroup;
+			children = (
+				812CB6911FBD6F6C00AB6AAF /* Character */,
+				812CB6941FBD6F6C00AB6AAF /* Lines */,
+				812CB6961FBD6F6C00AB6AAF /* MakeSound */,
+				812CB6981FBD6F6C00AB6AAF /* Moji */,
+			);
+			name = KABOCHA;
+			path = scenes/KABOCHA;
+			sourceTree = "<group>";
+		};
+		812CB6911FBD6F6C00AB6AAF /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				812CB6921FBD6F6C00AB6AAF /* Character.cpp */,
+				812CB6931FBD6F6C00AB6AAF /* Character.h */,
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
+		812CB6941FBD6F6C00AB6AAF /* Lines */ = {
+			isa = PBXGroup;
+			children = (
+				812CB6951FBD6F6C00AB6AAF /* Lines.hpp */,
+			);
+			path = Lines;
+			sourceTree = "<group>";
+		};
+		812CB6961FBD6F6C00AB6AAF /* MakeSound */ = {
+			isa = PBXGroup;
+			children = (
+				812CB6971FBD6F6C00AB6AAF /* MakeSound.hpp */,
+			);
+			path = MakeSound;
+			sourceTree = "<group>";
+		};
+		812CB6981FBD6F6C00AB6AAF /* Moji */ = {
+			isa = PBXGroup;
+			children = (
+				812CB6991FBD6F6C00AB6AAF /* Moji.h */,
+			);
+			path = Moji;
+			sourceTree = "<group>";
+		};
 		818D92EA1FBC21E600464F19 /* MirrorCamera */ = {
 			isa = PBXGroup;
 			children = (
@@ -1830,6 +1881,7 @@
 		9A1DE6D516AA666100A10E3F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				812CB6901FBD6F6C00AB6AAF /* KABOCHA */,
 				812CB67A1FBD6DAF00AB6AAF /* MOZZI */,
 				812CB03D1FBD6C0600AB6AAF /* UNI */,
 				812CB0301FBD6A4700AB6AAF /* RAMB */,
@@ -2051,6 +2103,7 @@
 				812CB5AC1FBD6C5500AB6AAF /* btTriangleMeshShape.cpp in Sources */,
 				812CB68F1FBD6DAF00AB6AAF /* VelocityManager2.cpp in Sources */,
 				812CB5C41FBD6C5500AB6AAF /* btVoronoiSimplexSolver.cpp in Sources */,
+				812CB69A1FBD6F6C00AB6AAF /* Character.cpp in Sources */,
 				812CB0441FBD6C0600AB6AAF /* randomCubeUni.cpp in Sources */,
 				812CB5BD1FBD6C5500AB6AAF /* btGjkEpaPenetrationDepthSolver.cpp in Sources */,
 				812CB5841FBD6C5500AB6AAF /* btSimulationIslandManager.cpp in Sources */,

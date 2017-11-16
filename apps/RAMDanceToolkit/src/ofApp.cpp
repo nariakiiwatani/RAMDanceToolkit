@@ -31,6 +31,12 @@
 #include "OrbitSystem.h"
 #include "PlanetarySystem.h"
 
+#pragma mark - KABOCHA
+#include "Character.h"
+#include "Lines.hpp"
+#include "MakeSound.hpp"
+#include "Moji.h"
+
 #pragma mark - oF methods
 //--------------------------------------------------------------
 void ofApp::setup()
@@ -56,6 +62,11 @@ void ofApp::setup()
 	
 	sceneManager.addScene<OrbitSystem>();
 	sceneManager.addScene<PlanetarySystem>();	
+
+	sceneManager.addScene<Character>();	
+	sceneManager.addScene<Lines>();	
+	sceneManager.addScene<MakeSound>();	
+	sceneManager.addScene<Moji>();	
 }
 
 //--------------------------------------------------------------
