@@ -23,6 +23,10 @@
 #include "VisualStudio.h"
 #include "Paperman.h"
 
+#pragma mark - UNI
+#include "UniScene.h"
+#include "randomCubeUni.h"
+
 #pragma mark - oF methods
 //--------------------------------------------------------------
 void ofApp::setup()
@@ -42,6 +46,10 @@ void ofApp::setup()
 	sceneManager.addScene<Spiderman>();
 	sceneManager.addScene<VisualStudio>();
 	sceneManager.addScene<Paperman>();
+	
+	sceneManager.addScene<UniScene>();
+	sceneManager.addScene<randomCubeUni>();
+	
 }
 
 //--------------------------------------------------------------
