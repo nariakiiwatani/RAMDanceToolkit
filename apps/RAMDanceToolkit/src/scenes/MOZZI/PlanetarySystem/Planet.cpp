@@ -206,6 +206,7 @@ float Planet::getOpacity()
 Planet & Planet::joint(int _joint)
 {
     mJoint = _joint;
+	return *this;
 }
 
 int Planet::getJoint()
