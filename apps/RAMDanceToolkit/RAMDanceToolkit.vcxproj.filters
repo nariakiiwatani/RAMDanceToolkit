@@ -7,78 +7,6 @@
     <Filter Include="src\scenes">
       <UniqueIdentifier>{7BF16FBA-4538-0F41-8141-CB2394A8A717}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\scenes\Abacus">
-      <UniqueIdentifier>{D9EA48D6-D548-6B4B-ACDE-4158388C08C7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\BasicActor">
-      <UniqueIdentifier>{0801E447-76CB-804B-8963-D04FCDE13D6E}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\BigBox">
-      <UniqueIdentifier>{DF44CF18-278F-9148-9F4B-0A4111771EB6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\Chain">
-      <UniqueIdentifier>{CF2862A1-46C6-5A4F-872A-011200F545E5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\ColorGrid">
-      <UniqueIdentifier>{F532070E-1269-ED46-9611-089DBE871B71}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\Donuts">
-      <UniqueIdentifier>{54159100-D1C2-464F-80FA-796E283945CF}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\Expansion">
-      <UniqueIdentifier>{A60AE156-5E74-104A-84C0-ABDED884C837}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\FourPoints">
-      <UniqueIdentifier>{6A00D078-24B5-D346-B206-30DEFAF3FF91}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\Future">
-      <UniqueIdentifier>{06131203-BBF3-2642-9D7B-9350E835C928}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\Graph">
-      <UniqueIdentifier>{BC3D807C-81D8-B342-8D47-507D2642FD8C}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\HastyChase">
-      <UniqueIdentifier>{C8951811-8477-F94F-8E03-48424076B96A}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\Helper">
-      <UniqueIdentifier>{ABCB9408-5189-8B4F-8D63-1E1CD80BD2D9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\Kepler">
-      <UniqueIdentifier>{FAB3E47B-B823-0A43-A147-BE1BC2DB5B4A}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\Laban">
-      <UniqueIdentifier>{158FF0D9-CDEB-AD46-9EE1-120028B20D62}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\Line">
-      <UniqueIdentifier>{57B362A7-837B-1F41-8477-AFA7D8937536}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\Monster">
-      <UniqueIdentifier>{3A5429E0-658C-6040-9138-80E9BED1FA1D}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\MovingCam">
-      <UniqueIdentifier>{B378405B-50F4-4548-8A5E-24B1336780C0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\Notation">
-      <UniqueIdentifier>{12682061-DC04-744B-A5FB-8DD7FE9EB74E}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\Particles">
-      <UniqueIdentifier>{52059CD0-7758-2A48-9F15-9AC29DF18AE7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\Ragdoll">
-      <UniqueIdentifier>{2BCD90B1-19A8-2A4D-9F34-825A35B08265}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\SoundCube">
-      <UniqueIdentifier>{6BEDC3EE-8DDD-C24C-9EA0-A40C4DEB81AA}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\Stamp">
-      <UniqueIdentifier>{8CF3B6A0-488C-AF4C-A66A-DE2AE2E5C337}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\ThreePoints">
-      <UniqueIdentifier>{2B4089FA-FDCF-B54D-8339-713AE643C5FB}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\scenes\UpsideDown">
-      <UniqueIdentifier>{4B35CCF6-1C39-A44D-B055-EEC9D64444C2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="libs">
       <UniqueIdentifier>{D4397EAC-72C0-D24F-A14A-667551521A38}</UniqueIdentifier>
     </Filter>
@@ -295,119 +223,14 @@
     <Filter Include="addons\ofxImGui\libs\imgui\src">
       <UniqueIdentifier>{fcb20bd0-8b39-4a5a-a5bd-6aca629c997b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="local_addons">
+      <UniqueIdentifier>{d0010951-1405-48b4-a037-2e500c4aa0a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="local_addons\ofxBullet">
+      <UniqueIdentifier>{9203cbcb-e8e0-4ff8-88cc-7483c842f087}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\scenes\Abacus\Abacus.h">
-      <Filter>src\scenes\Abacus</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\BasicActor\BasicActor.h">
-      <Filter>src\scenes\BasicActor</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\BigBox\BigBox.h">
-      <Filter>src\scenes\BigBox</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Chain\BaseConstrains.h">
-      <Filter>src\scenes\Chain</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Chain\Chain.h">
-      <Filter>src\scenes\Chain</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Chain\ChainBtDynamics.h">
-      <Filter>src\scenes\Chain</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Chain\ChainBtShapeDrawer.h">
-      <Filter>src\scenes\Chain</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Chain\ChainObject.h">
-      <Filter>src\scenes\Chain</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\ColorGrid\ColorGrid.h">
-      <Filter>src\scenes\ColorGrid</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Donuts\Donuts.h">
-      <Filter>src\scenes\Donuts</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Expansion\Expansion.h">
-      <Filter>src\scenes\Expansion</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\FourPoints\FourPoints.h">
-      <Filter>src\scenes\FourPoints</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Future\Future.h">
-      <Filter>src\scenes\Future</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Graph\Graph2D.h">
-      <Filter>src\scenes\Graph</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Graph\Graph3D.h">
-      <Filter>src\scenes\Graph</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\HastyChase\HastyChase.h">
-      <Filter>src\scenes\HastyChase</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Helper\btPicker.h">
-      <Filter>src\scenes\Helper</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Kepler\Kepler.h">
-      <Filter>src\scenes\Kepler</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Kepler\KeplerBtDynamics.h">
-      <Filter>src\scenes\Kepler</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Kepler\KeplerBtShapeDrawer.h">
-      <Filter>src\scenes\Kepler</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Kepler\KeplerCube.h">
-      <Filter>src\scenes\Kepler</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Laban\Laban.h">
-      <Filter>src\scenes\Laban</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Line\LineDrawing.h">
-      <Filter>src\scenes\Line</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Monster\Monster.h">
-      <Filter>src\scenes\Monster</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\MovingCam\MovingCam.h">
-      <Filter>src\scenes\MovingCam</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Notation\Notation.h">
-      <Filter>src\scenes\Notation</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Particles\ParticleEngine.h">
-      <Filter>src\scenes\Particles</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Particles\Particles.h">
-      <Filter>src\scenes\Particles</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Ragdoll\RagDoll.h">
-      <Filter>src\scenes\Ragdoll</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Ragdoll\RagdollScene.h">
-      <Filter>src\scenes\Ragdoll</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Ragdoll\RagdollShapeDrawer.h">
-      <Filter>src\scenes\Ragdoll</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\SoundCube\SoundCube.h">
-      <Filter>src\scenes\SoundCube</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Stamp\Stamp.h">
-      <Filter>src\scenes\Stamp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\ThreePoints\GeometryHelpers.h">
-      <Filter>src\scenes\ThreePoints</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\ThreePoints\SphereMesh.h">
-      <Filter>src\scenes\ThreePoints</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\ThreePoints\ThreePoints.h">
-      <Filter>src\scenes\ThreePoints</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\UpsideDown\UpsideDown.h">
-      <Filter>src\scenes\UpsideDown</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\libs\openFrameworks\ofMain.h">
       <Filter>libs\openFrameworks</Filter>
     </ClInclude>
@@ -1350,49 +1173,145 @@
     <ClInclude Include="..\..\libs\ram\Core\UI\ramImGuiPanel.h">
       <Filter>libs\ram\Core\UI</Filter>
     </ClInclude>
+    <ClInclude Include="src\scenes\KABOCHA\Character\Character.h">
+      <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\KABOCHA\Lines\Lines.hpp">
+      <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\KABOCHA\MakeSound\MakeSound.hpp">
+      <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\KABOCHA\Moji\Moji.h">
+      <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\MirrorCamera\MirrorCamera.h">
+      <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\MOZZI\OrbitSystem\Orbit.h">
+      <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\MOZZI\OrbitSystem\OrbitSystem.h">
+      <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\MOZZI\OrbitSystem\VelocityManager.h">
+      <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\MOZZI\PlanetarySystem\Planet.h">
+      <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\MOZZI\PlanetarySystem\PlanetarySystem.h">
+      <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\MOZZI\Utils\VelocityManager2.h">
+      <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\RAMB\Paperman\Paperman.h">
+      <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\RAMB\Spiderman\Spiderman.h">
+      <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\RAMB\VisualStudio\VisualStudio.h">
+      <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\UNI\Helper\btPicker.h">
+      <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\UNI\RandomCubeUni\randomCubeUni.h">
+      <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\UNI\UniScene\UniScene.h">
+      <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\ram\Core\UI\ramMotionExtractor\ramMotionExtractor.h">
+      <Filter>libs\ram\Core\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\events\ofxBulletCollisionData.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\events\ofxBulletMousePickEvent.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\events\ofxBulletRaycastData.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\joints\ofxBulletJoint.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\ofxBullet.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\ofxBulletConstants.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\ofxBulletUserData.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\ofxBulletUtils.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\ofxBulletWorldRigid.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\ofxBulletWorldSoft.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\render\GLDebugDrawer.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletBaseShape.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletBox.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletCapsule.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletCone.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletConvexShape.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletCustomShape.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletCylinder.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletEllipsoid.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletPatch.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletRigidBody.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletRope.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletSoftBody.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletSoftTriMesh.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletSphere.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletStaticPlane.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletTriMeshShape.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\Chain\BaseConstrains.cpp">
-      <Filter>src\scenes\Chain</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\Chain\Chain.cpp">
-      <Filter>src\scenes\Chain</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\Chain\ChainBtDynamics.cpp">
-      <Filter>src\scenes\Chain</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\Chain\ChainBtShapeDrawer.cpp">
-      <Filter>src\scenes\Chain</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\Chain\ChainObject.cpp">
-      <Filter>src\scenes\Chain</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\Helper\btPicker.cpp">
-      <Filter>src\scenes\Helper</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\Kepler\Kepler.cpp">
-      <Filter>src\scenes\Kepler</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\Kepler\KeplerBtDynamics.cpp">
-      <Filter>src\scenes\Kepler</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\Kepler\KeplerBtShapeDrawer.cpp">
-      <Filter>src\scenes\Kepler</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\Kepler\KeplerCube.cpp">
-      <Filter>src\scenes\Kepler</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\Ragdoll\RagDoll.cpp">
-      <Filter>src\scenes\Ragdoll</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\Ragdoll\RagdollScene.cpp">
-      <Filter>src\scenes\Ragdoll</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\Ragdoll\RagdollShapeDrawer.cpp">
-      <Filter>src\scenes\Ragdoll</Filter>
     </ClCompile>
     <ClCompile Include="..\..\libs\ram\Core\ramActor.cpp">
       <Filter>libs\ram\Core</Filter>
@@ -1610,12 +1529,6 @@
     <ClCompile Include="..\..\libs\ram\Core\ramBaseHasFbo.cpp">
       <Filter>libs\ram\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\scenes\Laban\Laban.cpp">
-      <Filter>src\scenes\Laban</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\ThreePoints\SphereMesh.cpp">
-      <Filter>src\scenes\ThreePoints</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32\NetworkingUtils.cpp">
       <Filter>addons\ofxOsc\libs\oscpack\src\ip\win32</Filter>
     </ClCompile>
@@ -1792,6 +1705,108 @@
     </ClCompile>
     <ClCompile Include="..\..\libs\ram\Core\UI\ramImGuiManager.cpp">
       <Filter>libs\ram\Core\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\KABOCHA\Character\Character.cpp">
+      <Filter>src\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\MOZZI\OrbitSystem\Orbit.cpp">
+      <Filter>src\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\MOZZI\OrbitSystem\OrbitSystem.cpp">
+      <Filter>src\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\MOZZI\OrbitSystem\VelocityManager.cpp">
+      <Filter>src\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\MOZZI\PlanetarySystem\Planet.cpp">
+      <Filter>src\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\MOZZI\PlanetarySystem\PlanetarySystem.cpp">
+      <Filter>src\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\MOZZI\Utils\VelocityManager2.cpp">
+      <Filter>src\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\RAMB\Paperman\Paperman.cpp">
+      <Filter>src\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\RAMB\Spiderman\Spiderman.cpp">
+      <Filter>src\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\RAMB\VisualStudio\VisualStudio.cpp">
+      <Filter>src\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\UNI\Helper\btPicker.cpp">
+      <Filter>src\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\UNI\RandomCubeUni\randomCubeUni.cpp">
+      <Filter>src\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\UNI\UniScene\UniScene.cpp">
+      <Filter>src\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\ram\Core\UI\ramMotionExtractor\ramMotionExtractor.cpp">
+      <Filter>libs\ram\Core\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\joints\ofxBulletJoint.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\ofxBulletWorldRigid.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\ofxBulletWorldSoft.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\render\GLDebugDrawer.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletBaseShape.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletBox.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletCapsule.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletCone.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletConvexShape.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletCustomShape.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletCylinder.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletEllipsoid.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletPatch.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletRigidBody.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletRope.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletSoftBody.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletSoftTriMesh.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletSphere.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletStaticPlane.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletTriMeshShape.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
