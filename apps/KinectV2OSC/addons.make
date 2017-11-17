@@ -1,0 +1,2 @@
+ofxOsc
+addons/ofxKinect2
