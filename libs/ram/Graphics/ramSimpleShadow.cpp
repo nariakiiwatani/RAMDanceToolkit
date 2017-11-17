@@ -33,7 +33,7 @@ void SimpleShadow::setup()
 
 #define _S(src) # src
 
-	const char *vs = _S(
+	const char *vs = "#version 120\n" _S(
 			uniform vec4 shadow_color;
 			uniform mat4 shadow_matrix;
 			uniform mat4 modelview_matrix;
