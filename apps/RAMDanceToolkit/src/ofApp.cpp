@@ -37,6 +37,29 @@
 #include "MakeSound.hpp"
 #include "Moji.h"
 
+#pragma mark - Regular
+#include "MovingCam.h"
+#include "LineDrawing.h"
+#include "BigBox.h"
+#include "Future.h"
+#include "Donuts.h"
+#include "Stamp.h"
+#include "Expansion.h"
+#include "Abacus.h"
+#include "SoundCube.h"
+#include "UpsideDown.h"
+#include "HastyChase.h"
+#include "ColorGrid.h"
+#include "ThreePoints.h"
+#include "FourPoints.h"
+#include "Monster.h"
+#include "Laban.h"
+#include "Notation.h"
+#if !defined (DEBUG) && !defined (_DEBUG) // exclude from debug build
+#include "Kepler.h"
+#include "Chain.h"
+#endif
+
 #pragma mark - oF methods
 //--------------------------------------------------------------
 void ofApp::setup()
@@ -66,7 +89,35 @@ void ofApp::setup()
 	sceneManager.addScene<Character>();	
 	sceneManager.addScene<Lines>();	
 	sceneManager.addScene<MakeSound>();	
-	sceneManager.addScene<Moji>();	
+	sceneManager.addScene<Moji>();
+
+	sceneManager.addScene<MovingCam>();
+	sceneManager.addScene<LineDrawing>();
+	sceneManager.addScene<BigBox>();
+	sceneManager.addScene<Future>();
+	sceneManager.addScene<Donuts>();
+	sceneManager.addScene<Stamp>();
+	sceneManager.addScene<Expansion>();
+	// ignore win32
+#ifndef TARGET_WIN32
+	sceneManager.addScene<Particles>();
+#endif
+	sceneManager.addScene<Abacus>();
+	sceneManager.addScene<SoundCube>();
+	sceneManager.addScene<UpsideDown>();
+	sceneManager.addScene<HastyChase>();
+	sceneManager.addScene<ColorGrid>();
+	sceneManager.addScene<ThreePoints>();
+	sceneManager.addScene<FourPoints>();
+	sceneManager.addScene<Monster>();
+	sceneManager.addScene<Laban>();
+	sceneManager.addScene<Notation>();
+#if !defined (DEBUG) && !defined (_DEBUG) // exclude from debug build
+	sceneManager.addScene<Kepler>();
+	sceneManager.addScene<Chain>();
+#endif
+
+
 }
 
 //--------------------------------------------------------------
