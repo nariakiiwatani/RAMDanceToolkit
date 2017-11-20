@@ -88,7 +88,7 @@ public:
     }
     
     int getNEdges() const { return mNEdges; }
-    
+
 private:
     // ------------------------
     ChainBtDynamics *mDynamics;
@@ -114,6 +114,8 @@ public:
 	void drawActor(const rdtk::Actor &actor);
     
     string getName() const { return "Chain"; }
+
+	void drawImGui();
     
 private:
 	void onKeyPressed(ofKeyEventArgs &e);
