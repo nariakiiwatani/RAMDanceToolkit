@@ -476,8 +476,6 @@ void ActorsScene::addSegment(BaseSegment *newSegment)
 
 void ActorsScene::removeControlSegment(const string& name)
 {
-    ActorManager::instance().removeNodeArray(name);
-	
 	SegmentsIter it = mSegmentsMap.find(name);
 	
 	if (it == mSegmentsMap.end())
