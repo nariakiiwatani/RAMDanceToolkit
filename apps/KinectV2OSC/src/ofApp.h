@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxKinect2.h"
 #include "ofxOscSender.h"
+#include "ofxImGui.h"
 
 class ofApp : public ofBaseApp{
 
@@ -26,4 +27,13 @@ class ofApp : public ofBaseApp{
 		ofxKinect2::Device device_;
 		ofxKinect2::BodyStream body_;
 		ofxOscSender sender_;
+	private:
+		ofxImGui::Gui gui_;
+		ofEasyCam preview_camera_;
+		ofCamera virtual_camera_;
+
+		bool view_from_virtual_camera_ = false;
+		float preview_scale_ = 100;
+		void save();
+		void load();
 };

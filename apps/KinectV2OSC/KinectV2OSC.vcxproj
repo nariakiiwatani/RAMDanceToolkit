@@ -95,7 +95,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxOsc\libs;..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\addons\ofxOsc\src;addons\ofxKinect2\src;addons\ofxKinect2\src\utils;$(KINECTSDK20_DIR)inc</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxOsc\libs;..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\addons\ofxOsc\src;addons\ofxKinect2\src;addons\ofxKinect2\src\utils;..\..\addons\ofxImGui\libs;..\..\addons\ofxImGui\libs\imgui;..\..\addons\ofxImGui\libs\imgui\src;..\..\addons\ofxImGui\src;$(KINECTSDK20_DIR)inc</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
@@ -114,7 +114,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxOsc\libs;..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\addons\ofxOsc\src;addons\ofxKinect2\src;addons\ofxKinect2\src\utils;$(KINECTSDK20_DIR)inc</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxOsc\libs;..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\addons\ofxOsc\src;addons\ofxKinect2\src;addons\ofxKinect2\src\utils;..\..\addons\ofxImGui\libs;..\..\addons\ofxImGui\libs\imgui;..\..\addons\ofxImGui\libs\imgui\src;..\..\addons\ofxImGui\src;$(KINECTSDK20_DIR)inc</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -133,7 +133,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxOsc\libs;..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\addons\ofxOsc\src;addons\ofxKinect2\src;addons\ofxKinect2\src\utils;$(KINECTSDK20_DIR)inc</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxOsc\libs;..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\addons\ofxOsc\src;addons\ofxKinect2\src;addons\ofxKinect2\src\utils;..\..\addons\ofxImGui\libs;..\..\addons\ofxImGui\libs\imgui;..\..\addons\ofxImGui\libs\imgui\src;..\..\addons\ofxImGui\src;$(KINECTSDK20_DIR)inc</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -155,7 +155,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxOsc\libs;..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\addons\ofxOsc\src;addons\ofxKinect2\src;addons\ofxKinect2\src\utils;$(KINECTSDK20_DIR)inc</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxOsc\libs;..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\addons\ofxOsc\src;addons\ofxKinect2\src;addons\ofxKinect2\src\utils;..\..\addons\ofxImGui\libs;..\..\addons\ofxImGui\libs\imgui;..\..\addons\ofxImGui\libs\imgui\src;..\..\addons\ofxImGui\src;$(KINECTSDK20_DIR)inc</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
@@ -186,9 +186,19 @@
     <ClCompile Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscReceivedElements.cpp" />
     <ClCompile Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscTypes.cpp" />
     <ClCompile Include="addons\ofxKinect2\src\ofxKinect2.cpp" />
+    <ClCompile Include="..\..\addons\ofxImGui\src\BaseEngine.cpp" />
+    <ClCompile Include="..\..\addons\ofxImGui\src\BaseTheme.cpp" />
+    <ClCompile Include="..\..\addons\ofxImGui\src\EngineGLFW.cpp" />
+    <ClCompile Include="..\..\addons\ofxImGui\src\EngineOpenGLES.cpp" />
+    <ClCompile Include="..\..\addons\ofxImGui\src\Gui.cpp" />
+    <ClCompile Include="..\..\addons\ofxImGui\src\Helpers.cpp" />
+    <ClCompile Include="..\..\addons\ofxImGui\libs\imgui\src\imgui.cpp" />
+    <ClCompile Include="..\..\addons\ofxImGui\libs\imgui\src\imgui_demo.cpp" />
+    <ClCompile Include="..\..\addons\ofxImGui\libs\imgui\src\imgui_draw.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h" />
+    <ClInclude Include="src\ramActor.h" />
     <ClInclude Include="..\..\..\addons\ofxOsc\src\ofxOsc.h" />
     <ClInclude Include="..\..\..\addons\ofxOsc\src\ofxOscArg.h" />
     <ClInclude Include="..\..\..\addons\ofxOsc\src\ofxOscBundle.h" />
@@ -215,7 +225,20 @@
     <ClInclude Include="addons\ofxKinect2\src\utils\DepthRemapToRange.h" />
     <ClInclude Include="addons\ofxKinect2\src\utils\DoubleBuffer.h" />
     <ClInclude Include="addons\ofxKinect2\src\utils\MeshGenerator.h" />
-    <ClInclude Include="src\ramActor.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\src\BaseEngine.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\src\BaseTheme.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\src\EngineGLFW.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\src\EngineOpenGLES.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\src\Gui.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\src\Helpers.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\src\imconfig.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\src\ofxImGui.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\src\ThemeTest.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\imgui.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\imgui_internal.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\stb_rect_pack.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\stb_textedit.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\stb_truetype.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

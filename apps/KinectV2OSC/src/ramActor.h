@@ -90,16 +90,6 @@ public:
 		nodes_[L_COLLAR] = mid(nodes_[CHEST], nodes_[L_SHOULDER]);
 		nodes_[R_COLLAR] = mid(nodes_[CHEST], nodes_[R_SHOULDER]);
 		
-		float ymin = 0;
-		for(int i = 0; i < NUM_JOINTS; ++i) {
-			ymin = min(ymin, nodes_[i].getGlobalPosition().y);
-		}
-		if(ymin < 0) {
-			for(int i = 0; i < NUM_JOINTS; ++i) {
-				nodes_[i].move(ofVec3f(0,-ymin,0));
-			}
-		}
-
 		for(int i = 0; i < NUM_JOINTS; ++i) {
 			ofVec3f pos = nodes_[i].getPosition();
 			pos.x *= -1;

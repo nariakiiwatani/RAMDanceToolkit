@@ -32,6 +32,16 @@ namespace {
 		return kinectToRam(joint_id) != -1;
 	}
 }
+void ofApp::save()
+{
+	ofBuffer buf(ofToString(virtual_camera_.getGlobalTransformMatrix()));
+	ofBufferToFile("settings.txt", buf);
+}
+void ofApp::load()
+{
+	ofBuffer buf = ofBufferFromFile("settings.txt");
+	virtual_camera_.setTransformMatrix(ofFromString<ofMatrix4x4>(buf.getText()));
+}
 
 //--------------------------------------------------------------
 void ofApp::setup(){
@@ -39,10 +49,22 @@ void ofApp::setup(){
 		body_.open();
 	}
 	sender_.setup("localhost", 10000);
+	gui_.setup();
+	ofBackground(0);
+
+	load();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+	if (!ImGui::IsMouseHoveringAnyWindow()) {
+		preview_camera_.enableMouseInput();
+	}
+	else {
+		preview_camera_.disableMouseInput();
+	}
+
+
 	device_.update();
 	auto bodies = body_.getBodies();
 	for (auto &b : bodies) {
@@ -74,9 +96,10 @@ void ofApp::update(){
 		m.addIntArg(ramActor::NUM_JOINTS);
 		for (int i = 0; i < ramActor::NUM_JOINTS; ++i) {
 			m.addStringArg(ramActor::getJointName(i));
-			auto &node = actor.nodes_[i];
-			auto pos = node.getGlobalPosition();
-			auto ori = node.getGlobalOrientation();
+			auto mat = actor.nodes_[i].getGlobalTransformMatrix();
+			mat.postMult(virtual_camera_.getGlobalTransformMatrix().getInverse());
+			auto pos = mat.getTranslation();
+			auto ori = mat.getRotate();
 			m.addFloatArg(pos.x);
 			m.addFloatArg(pos.y);
 			m.addFloatArg(pos.z);
@@ -92,12 +115,78 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	body_.draw();
+
+	if (view_from_virtual_camera_) {
+		virtual_camera_.begin();
+	}
+	else {
+		preview_camera_.begin();
+	}
+	virtual_camera_.transformGL();
+	ofPushMatrix();
+	ofRotateZ(90);
+	ofDrawGridPlane(50);
+	ofPopMatrix();
+	ofDrawAxis(100);
+	virtual_camera_.restoreTransformGL();
+
+	ofPushStyle();
+	ofSetColor(ofColor::yellow);
+	auto bodies = body_.getBodies();
+	for (auto &b : bodies) {
+		for(int i = 0, num = b.getNumJoints(); i < num; ++i) {
+			ofPoint p = ofPoint(b.getJoint(i).Position.X, b.getJoint(i).Position.Y, b.getJoint(i).Position.Z)*preview_scale_;
+			ofDrawBox(p,5);
+		}
+	}
+	ofPopStyle();
+	if (view_from_virtual_camera_) {
+		virtual_camera_.end();
+	}
+	else {
+		preview_camera_.end();
+	}
+
+
+	gui_.begin();
+	if (ImGui::Begin("Settings")) {
+		if (ImGui::Button("Save")) {
+			save();
+		}
+		if (ImGui::Button("Load")) {
+			load();
+		}
+		ofVec3f move(0,0,0);
+		if (ImGui::DragFloat3("Move", &move[0], 0.01f)) {
+			virtual_camera_.move(move);
+		}
+		float roll(0);
+		if (ImGui::DragFloat("Roll", &roll, 0.01f)) {
+			virtual_camera_.roll(roll);
+		}
+		float pitch(0);
+		if (ImGui::DragFloat("Pitch", &pitch, 0.01f)) {
+			virtual_camera_.tilt(pitch);
+		}
+		float yaw(0);
+		if (ImGui::DragFloat("Yaw", &yaw, 0.01f)) {
+			virtual_camera_.pan(yaw);
+		}
+	}
+	ImGui::End();
+	gui_.end();
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
+	switch (key) {
+	case 's': 
+		save();
+		break;
+	case 'l': 
+		load();
+		break;
+	}
 }
 
 //--------------------------------------------------------------
