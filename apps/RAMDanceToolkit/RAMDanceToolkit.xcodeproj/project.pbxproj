@@ -835,6 +835,7 @@
 		812CB6D81FCD9F4800AB6AAF /* ofxWatchFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxWatchFile.h; sourceTree = "<group>"; };
 		812CB6DD1FCD9F6F00AB6AAF /* BaseSceneWithJsonSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseSceneWithJsonSettings.h; sourceTree = "<group>"; };
 		818D92EB1FBC21E600464F19 /* MirrorCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MirrorCamera.h; sourceTree = "<group>"; };
+		81B784B91FCDAC1400011634 /* AutoSwitcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoSwitcher.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -2046,9 +2047,19 @@
 			path = scenes/MirrorCamera;
 			sourceTree = "<group>";
 		};
+		81B784B81FCDAC1400011634 /* AutoSwitcher */ = {
+			isa = PBXGroup;
+			children = (
+				81B784B91FCDAC1400011634 /* AutoSwitcher.h */,
+			);
+			name = AutoSwitcher;
+			path = scenes/AutoSwitcher;
+			sourceTree = "<group>";
+		};
 		9A1DE6D516AA666100A10E3F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				81B784B81FCDAC1400011634 /* AutoSwitcher */,
 				812CB6901FBD6F6C00AB6AAF /* KABOCHA */,
 				812CB67A1FBD6DAF00AB6AAF /* MOZZI */,
 				812CB03D1FBD6C0600AB6AAF /* UNI */,
