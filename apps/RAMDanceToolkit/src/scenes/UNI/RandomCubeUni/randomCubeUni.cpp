@@ -229,6 +229,27 @@ void randomCubeUni::drawImGui(){
     //length
 }
 
+void randomCubeUni::loadJson(const ofJson &json)
+{
+	ofxJsonUtils::load(json
+					   ,kv(distance)
+					   ,kv(spd)
+					   ,kv(boxSize)
+					   ,kv(maxHeight)
+					   ,kv(showDebug)
+					   );
+}
+ofJson randomCubeUni::createJson()
+{
+	return ofxJsonUtils::create(
+					   kv(distance)
+					   ,kv(spd)
+					   ,kv(boxSize)
+					   ,kv(maxHeight)
+					   ,kv(showDebug)
+	);
+}
+
 //--------------------------------------------------------------
 void randomCubeUni::onActorSetup(const rdtk::Actor &actor)
 {

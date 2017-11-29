@@ -1,8 +1,9 @@
 #pragma once
 
 #include "imgui.h"
+#include "BaseSceneWithJsonSettings.h"
 
-class AutoSwitcher : public rdtk::BaseScene
+class AutoSwitcher : public BaseSceneWithJsonSettings
 {
 public:
 	void addScene(ofPtr<rdtk::BaseScene> scene) {
@@ -12,7 +13,7 @@ public:
 	
 	void drawImGui()
 	{
-		ImGui::SliderFloat("interval", &interval_, 1, 30);
+		ImGui::SliderFloat("interval", &interval_, 0, 30);
 		ImGui::SliderFloat("timer", &timer_, 0, interval_);
 	}
 

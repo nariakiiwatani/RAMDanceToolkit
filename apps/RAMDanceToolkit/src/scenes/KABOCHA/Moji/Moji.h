@@ -8,9 +8,9 @@
 
 #include "ramMain.h"
 #include "ofMain.h"
+#include "BaseSceneWithJsonSettings.h"
 
-
-class Moji : public rdtk::BaseScene
+class Moji : public BaseSceneWithJsonSettings
 {
     public:
     Moji(){
@@ -94,6 +94,20 @@ class Moji : public rdtk::BaseScene
         ImGui::Columns(1);
         if (updated) selectPoints(selectedJoint);
     }
+	void onEnable() {
+		nodes.clear();
+	}
+	void loadJson(const ofJson &json) {
+		ofxJsonUtils::load(json
+						   ,kv(mMinDistance)
+						   ,kv(selectedJoint));
+	}
+	ofJson createJson() {
+		return ofxJsonUtils::create(
+									kv(mMinDistance)
+									,kv(selectedJoint));
+
+	}
     int getChoice(ofxUIToggleMatrix* matrix) {
         vector<ofxUIToggle*> toggles = matrix->getToggles();
         for(int i = 0; i < toggles.size(); i++) {

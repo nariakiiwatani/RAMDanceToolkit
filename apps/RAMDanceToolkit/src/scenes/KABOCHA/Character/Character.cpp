@@ -110,6 +110,33 @@ void Character::drawImGui(){
     ImGui::SliderFloat("minScale", &minScale, 0, 5);
     
 }
+
+void Character::loadJson(const ofJson &json)
+{
+	ofxJsonUtils::load(json
+					   ,"Character0",isChacterOn[0]
+					   ,"Character1",isChacterOn[1]
+					   ,"Character2",isChacterOn[2]
+					   ,"Character3",isChacterOn[3]
+					   ,kv(handsOnly)
+					   ,kv(maxScale)
+					   ,kv(minScale)
+					   );
+}
+
+ofJson Character::createJson()
+{
+	return ofxJsonUtils::create(
+					   "Character0",isChacterOn[0]
+					   ,"Character1",isChacterOn[1]
+					   ,"Character2",isChacterOn[2]
+					   ,"Character3",isChacterOn[3]
+					   ,kv(handsOnly)
+					   ,kv(maxScale)
+					   ,kv(minScale)
+					   );
+}
+
 void Character::update(){
     
     

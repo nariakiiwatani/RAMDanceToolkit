@@ -10,9 +10,9 @@
 
 #include "ramMain.h"
 #include "ofMain.h"
+#include "BaseSceneWithJsonSettings.h"
 
-
-class Character : public rdtk::BaseScene
+class Character : public BaseSceneWithJsonSettings
 {
 public:
     Character();
@@ -24,6 +24,7 @@ public:
     void update();
     void draw();
     string getName() const { return "Character"; }
+
 private:
     ofTrueTypeFont font;
     map<int,vector<string>> characterSet;
@@ -31,4 +32,7 @@ private:
     bool handsOnly;
     float maxScale,minScale;
     bool isChacterOn[4] = {false,false,false,false};
+
+	void loadJson(const ofJson &json);
+	ofJson createJson();
 };

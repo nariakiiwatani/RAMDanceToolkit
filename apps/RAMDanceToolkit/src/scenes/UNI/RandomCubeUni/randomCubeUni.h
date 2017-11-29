@@ -15,10 +15,11 @@ randomCubeUni.h
 
 #include "ofxBullet.h"
 #include "BulletSoftBody/btSoftRigidDynamicsWorld.h"
+#include "BaseSceneWithJsonSettings.h"
 
 const int maxSize = 500;
 
-class randomCubeUni : public rdtk::BaseScene
+class randomCubeUni : public BaseSceneWithJsonSettings
 {
 private:
     
@@ -70,4 +71,6 @@ public:
     void onActorSetup(const rdtk::Actor &actor);
     void drawActor(const rdtk::Actor &actor);
     
+	void loadJson(const ofJson &json);
+	ofJson createJson();
 };

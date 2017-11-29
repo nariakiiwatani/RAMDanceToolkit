@@ -1,6 +1,7 @@
 #pragma once
+#include "BaseSceneWithJsonSettings.h"
 
-class Lines : public rdtk::BaseScene{
+class Lines : public BaseSceneWithJsonSettings{
 public:
     float threshold = 40.;
     float opacity = 0.3;
@@ -15,6 +16,22 @@ public:
         
         ImGui::SliderFloat("lineWidth", &lineWidth, 0.0, 10.0);
     };
+	void loadJson(const ofJson &json) {
+		ofxJsonUtils::load(json
+						   ,kv(threshold)
+						   ,kv(opacity)
+						   ,kv(mode)
+						   ,kv(lineWidth));
+	}
+	ofJson createJson() {
+		return ofxJsonUtils::create(
+									kv(threshold)
+									,kv(opacity)
+									,kv(mode)
+									,kv(lineWidth));
+
+	}
+
     void setup(){
         
         vector<ofVec3f> plane;

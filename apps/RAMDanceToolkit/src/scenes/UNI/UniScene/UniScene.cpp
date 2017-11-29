@@ -237,6 +237,26 @@ void UniScene::drawImGui()
     }
 }
 
+void UniScene::onEnable()
+{
+	clearSpheres();
+	BaseSceneWithJsonSettings::onEnabled();
+	world.setGravity(ofVec3f(0., gavity, 0.));
+	add();
+}
+void UniScene::loadJson(const ofJson &json)
+{
+	ofxJsonUtils::load(json
+					   ,kv(sphere_size)
+					   ,kv(gavity));
+}
+ofJson UniScene::createJson()
+{
+	return ofxJsonUtils::create(
+								kv(sphere_size)
+								,kv(gavity));
+}
+
 
 
 void UniScene::add() {

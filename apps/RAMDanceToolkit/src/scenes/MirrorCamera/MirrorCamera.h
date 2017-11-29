@@ -3,8 +3,9 @@
 #include "ramMain.h"
 #include "ramCameraManager.h"
 #include "imgui.h"
+#include "BaseSceneWithJsonSettings.h"
 
-class MirrorCamera : public rdtk::BaseScene
+class MirrorCamera : public BaseSceneWithJsonSettings
 {
 public:
 	ofCamera *camera_=nullptr;
@@ -36,13 +37,13 @@ public:
 		auto &cm = rdtk::CameraManager::instance();
 		active_camera_cache_ = cm.getActiveCameraIndex();
 		cm.setActiveCamera(my_camera_index_);
-		Unit::onEnabled();
+		BaseSceneWithJsonSettings::onEnabled();
 	}
 	
 	void onDisabled() {
 		auto &cm = rdtk::CameraManager::instance();
 		cm.setActiveCamera(active_camera_cache_);
-		Unit::onDisabled();
+		BaseSceneWithJsonSettings::onDisabled();
 	}
 
 	void setup()

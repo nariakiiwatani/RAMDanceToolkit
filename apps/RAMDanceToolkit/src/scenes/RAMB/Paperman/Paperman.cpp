@@ -130,6 +130,35 @@ void Paperman::drawImGui()
     mEx.drawImGui();
 }
 
+void Paperman::onEnable()
+{
+	resetPos();
+	mPlanes.clear();
+	addPlane();
+}
+void Paperman::loadJson(const ofJson &json)
+{
+	ofxJsonUtils::load(json
+					   ,kv(mIsResetPos)
+					   ,kv(mEnableSound)
+					   ,kv(mTrackDistance)
+					   ,kv(mPlayingMethod)
+					   ,kv(mManualControlMethod)
+					   );
+	mEx.load("motionExt_"+getName()+".xml");
+}
+ofJson Paperman::createJson()
+{
+	mEx.save("motionExt_"+getName()+".xml");
+	return ofxJsonUtils::create(
+					   kv(mIsResetPos)
+					   ,kv(mEnableSound)
+					   ,kv(mTrackDistance)
+					   ,kv(mPlayingMethod)
+					   ,kv(mManualControlMethod)
+	);
+}
+
 void Paperman::updateAuto()
 {
     for(auto& p : mPlanes)
@@ -218,7 +247,7 @@ void Paperman::updateManual()
     
     // picking joint drawing
     for (int i = 0;i < mEx.getNumPort();i++) {
-        
+        if(!mEx.getNodeAt(i).getParent()) continue;
         //! Get extractor informations
         const ofMatrix4x4 mat = mEx.getNodeAt(i).getGlobalTransformMatrix();
         const ofVec3f pos = mEx.getPositionAt(i);

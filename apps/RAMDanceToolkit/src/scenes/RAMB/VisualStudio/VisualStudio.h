@@ -1,7 +1,8 @@
 #include "ramMain.h"
 #include "ramMotionExtractor.h"
+#include "BaseSceneWithJsonSettings.h"
 
-class VisualStudio : public ramBaseScene{
+class VisualStudio : public BaseSceneWithJsonSettings{
 public:
     
     VisualStudio();
@@ -18,6 +19,10 @@ public:
         return "VisualStudio";
     }
     
+	void onEnable();
+	void loadJson(const ofJson &json);
+	ofJson createJson();
+
 private:
     
     ramMotionExtractor    motionExtractor;
