@@ -34,6 +34,30 @@ void VisualStudio::drawImGui()
     motionExtractor.drawImGui();
 }
 
+void VisualStudio::onEnable()
+{
+}
+void VisualStudio::loadJson(const ofJson &json)
+{
+	ofxJsonUtils::load(json
+					  ,kv(mBox1H)
+					  ,kv(mBox2H)
+					  ,kv(mBox3H)
+					  ,kv(mBox4H)
+					  );
+	motionExtractor.load("motionExt_"+getName()+".xml");
+}
+ofJson VisualStudio::createJson()
+{
+	motionExtractor.save("motionExt_"+getName()+".xml");
+	return ofxJsonUtils::create(
+								kv(mBox1H)
+								,kv(mBox2H)
+								,kv(mBox3H)
+								,kv(mBox4H)
+	);
+}
+
 void VisualStudio::update(){
     
     /*=== update ===*/

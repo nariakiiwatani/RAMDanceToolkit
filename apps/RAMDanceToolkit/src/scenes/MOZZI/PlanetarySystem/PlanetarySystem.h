@@ -11,10 +11,11 @@
 #include "ofxOsc.h"
 #include "Planet.h"
 #include "VelocityManager2.h"
+#include "BaseSceneWithJsonSettings.h"
 
 #define USE_MOTIONER
 
-class PlanetarySystem final : public rdtk::BaseScene {
+class PlanetarySystem final : public BaseSceneWithJsonSettings {
     
 public:
     PlanetarySystem();
@@ -26,6 +27,9 @@ public:
     void drawRigid(const rdtk::RigidBody &rigid) override;
 
     void drawImGui() override;
+	void loadJson(const ofJson &json) override;
+	ofJson createJson() override;
+	void onEnabled() override;
     
     string getName() const override { return "Planetary System"; }
     

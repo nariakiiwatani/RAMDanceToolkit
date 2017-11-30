@@ -9,6 +9,7 @@
 #pragma once
 
 #include "ramMain.h"
+#include "BaseSceneWithJsonSettings.h"
 
 struct Plane {
     int index;
@@ -20,7 +21,7 @@ struct Plane {
     deque<ofVec3f> pathVertices;
 };
 
-class Paperman : public rdtk::BaseScene
+class Paperman : public BaseSceneWithJsonSettings
 {
 public:
     
@@ -40,6 +41,10 @@ public:
     void resetPos();
     
     bool checkSetPort;
+
+	void onEnable();
+	void loadJson(const ofJson &json);
+	ofJson createJson();
 
 private:
     bool mIsAddPlane;

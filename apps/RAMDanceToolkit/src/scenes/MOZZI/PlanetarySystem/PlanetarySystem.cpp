@@ -375,3 +375,51 @@ void PlanetarySystem::drawImGui()
     
     ImGui::Checkbox("Show Helpers", &mShowHelpers);
 }
+
+void PlanetarySystem::loadJson(const ofJson &json)
+{
+	ofxJsonUtils::load(json
+					   ,kv(mTrailOpacity)
+					   ,kv(mLineOpacity)
+					   ,"mMode", (int&)mMode
+					   ,kv(mMaxNumPlanets)
+					   ,kv(mScale)
+					   ,kv(mExapandSpeed)
+					   ,kv(mVelocityThreshold)
+					   ,"mLineMode", (int&)mLineMode
+					   ,"mCamera", (int&)mCamera
+					   ,kv(mCamRotateSpeed)
+					   ,kv(mCamZoom)
+					   ,kv(mShowHelpers)
+					   );
+}
+ofJson PlanetarySystem::createJson()
+{
+	return ofxJsonUtils::create(
+					   kv(mTrailOpacity)
+					   ,kv(mLineOpacity)
+					   ,"mMode", (int)mMode
+					   ,kv(mMaxNumPlanets)
+					   ,kv(mScale)
+					   ,kv(mExapandSpeed)
+					   ,kv(mVelocityThreshold)
+					   ,"mLineMode", (int)mLineMode
+					   ,"mCamera", (int)mCamera
+					   ,kv(mCamRotateSpeed)
+					   ,kv(mCamZoom)
+					   ,kv(mShowHelpers)
+	);
+}
+void PlanetarySystem::onEnabled()
+{
+	BaseSceneWithJsonSettings::onEnabled();
+	reset();
+	for(int i = 0; i < 3; ++i) {
+		auto planet = this->addPlanet();
+		planet->speed(0.002);
+		planet->radius(0);
+		planet->rotate(ofVec3f(0.0, ofRandom(-120.0, 120.0), ofRandom(-120.0, 120.0)));
+		planet->rotateSpeed(ofVec3f(0.0, ofRandom(-0.05, 0.05), ofRandom(-0.05, 0.05)));
+	}
+	randomize();
+}

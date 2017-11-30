@@ -229,6 +229,15 @@
     <Filter Include="local_addons\ofxBullet">
       <UniqueIdentifier>{9203cbcb-e8e0-4ff8-88cc-7483c842f087}</UniqueIdentifier>
     </Filter>
+    <Filter Include="local_addons\ofxJsonUtils">
+      <UniqueIdentifier>{0f63c52d-accd-4bbe-9f9d-3d1eaf49f8bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="local_addons\ofxJsonUtilsUtils">
+      <UniqueIdentifier>{1a340c2d-8e37-4497-80ba-33fcf5cc5a20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="local_addons\ofxWatchFile">
+      <UniqueIdentifier>{3fd8acab-7dd0-4aa2-868e-f322b1efedd1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\libs\openFrameworks\ofMain.h">
@@ -1176,87 +1185,6 @@
     <ClInclude Include="..\..\libs\ram\Core\UI\ramMotionExtractor\ramMotionExtractor.h">
       <Filter>libs\ram\Core\UI</Filter>
     </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\events\ofxBulletCollisionData.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\events\ofxBulletMousePickEvent.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\events\ofxBulletRaycastData.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\joints\ofxBulletJoint.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\ofxBullet.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\ofxBulletConstants.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\ofxBulletUserData.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\ofxBulletUtils.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\ofxBulletWorldRigid.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\ofxBulletWorldSoft.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\render\GLDebugDrawer.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletBaseShape.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletBox.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletCapsule.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletCone.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletConvexShape.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletCustomShape.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletCylinder.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletEllipsoid.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletPatch.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletRigidBody.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletRope.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletSoftBody.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletSoftTriMesh.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletSphere.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletStaticPlane.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletTriMeshShape.h">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClInclude>
     <ClInclude Include="src\scenes\KABOCHA\Character\Character.h">
       <Filter>src\scenes</Filter>
     </ClInclude>
@@ -1418,6 +1346,144 @@
     </ClInclude>
     <ClInclude Include="src\scenes\Helper\btPicker.h">
       <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BaseSceneWithJsonSettings.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\AutoSwitcher\AutoSwitcher.h">
+      <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\events\ofxBulletCollisionData.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\events\ofxBulletMousePickEvent.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\events\ofxBulletRaycastData.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\joints\ofxBulletJoint.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\ofxBullet.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\ofxBulletConstants.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\ofxBulletUserData.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\ofxBulletUtils.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\ofxBulletWorldRigid.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\ofxBulletWorldSoft.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\render\GLDebugDrawer.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletBaseShape.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletBox.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletCapsule.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletCone.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletConvexShape.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletCustomShape.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletCylinder.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletEllipsoid.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletPatch.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletRigidBody.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletRope.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletSoftBody.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletSoftTriMesh.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletSphere.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletStaticPlane.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxBullet\src\shapes\ofxBulletTriMeshShape.h">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxJsonUtils\libs\bbb\json\libs\nlohmann_json\src\json.hpp">
+      <Filter>local_addons\ofxJsonUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxJsonUtils\libs\bbb\json\utils\common.hpp">
+      <Filter>local_addons\ofxJsonUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxJsonUtils\libs\bbb\json\utils\constants.hpp">
+      <Filter>local_addons\ofxJsonUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxJsonUtils\libs\bbb\json\utils\convert.hpp">
+      <Filter>local_addons\ofxJsonUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxJsonUtils\libs\bbb\json\utils\parse.hpp">
+      <Filter>local_addons\ofxJsonUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxJsonUtils\libs\bbb\json\utils\utility.hpp">
+      <Filter>local_addons\ofxJsonUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxJsonUtils\libs\bbb\json\utils.hpp">
+      <Filter>local_addons\ofxJsonUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxJsonUtils\libs\bbb\json.hpp">
+      <Filter>local_addons\ofxJsonUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxJsonUtils\src\ofJson_compatible.h">
+      <Filter>local_addons\ofxJsonUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxJsonUtils\src\ofxJsonConvertFunctions.h">
+      <Filter>local_addons\ofxJsonUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxJsonUtils\src\ofxJsonify.h">
+      <Filter>local_addons\ofxJsonUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxJsonUtils\src\ofxJsonParseFunctions.h">
+      <Filter>local_addons\ofxJsonUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxJsonUtils\src\ofxJsonUtils.h">
+      <Filter>local_addons\ofxJsonUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxJsonUtilsUtils\src\ofxJsonUtilsUtils.h">
+      <Filter>local_addons\ofxJsonUtilsUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxJsonUtilsUtils\src\ofxJsonUtilsUtilsContainer.h">
+      <Filter>local_addons\ofxJsonUtilsUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxJsonUtilsUtils\src\ofxJsonUtilsUtilsEx_ImGui.h">
+      <Filter>local_addons\ofxJsonUtilsUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="addons\ofxWatchFile\src\ofxWatchFile.h">
+      <Filter>local_addons\ofxWatchFile</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1820,66 +1886,6 @@
     <ClCompile Include="..\..\libs\ram\Core\UI\ramMotionExtractor\ramMotionExtractor.cpp">
       <Filter>libs\ram\Core\UI</Filter>
     </ClCompile>
-    <ClCompile Include="addons\ofxBullet\src\joints\ofxBulletJoint.cpp">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClCompile>
-    <ClCompile Include="addons\ofxBullet\src\ofxBulletWorldRigid.cpp">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClCompile>
-    <ClCompile Include="addons\ofxBullet\src\ofxBulletWorldSoft.cpp">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClCompile>
-    <ClCompile Include="addons\ofxBullet\src\render\GLDebugDrawer.cpp">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClCompile>
-    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletBaseShape.cpp">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClCompile>
-    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletBox.cpp">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClCompile>
-    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletCapsule.cpp">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClCompile>
-    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletCone.cpp">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClCompile>
-    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletConvexShape.cpp">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClCompile>
-    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletCustomShape.cpp">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClCompile>
-    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletCylinder.cpp">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClCompile>
-    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletEllipsoid.cpp">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClCompile>
-    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletPatch.cpp">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClCompile>
-    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletRigidBody.cpp">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClCompile>
-    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletRope.cpp">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClCompile>
-    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletSoftBody.cpp">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClCompile>
-    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletSoftTriMesh.cpp">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClCompile>
-    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletSphere.cpp">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClCompile>
-    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletStaticPlane.cpp">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClCompile>
-    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletTriMeshShape.cpp">
-      <Filter>local_addons\ofxBullet</Filter>
-    </ClCompile>
     <ClCompile Include="src\scenes\KABOCHA\Character\Character.cpp">
       <Filter>src\scenes</Filter>
     </ClCompile>
@@ -1963,6 +1969,69 @@
     </ClCompile>
     <ClCompile Include="src\scenes\Helper\btPicker.cpp">
       <Filter>src\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\joints\ofxBulletJoint.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\ofxBulletWorldRigid.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\ofxBulletWorldSoft.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\render\GLDebugDrawer.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletBaseShape.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletBox.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletCapsule.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletCone.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletConvexShape.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletCustomShape.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletCylinder.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletEllipsoid.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletPatch.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletRigidBody.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletRope.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletSoftBody.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletSoftTriMesh.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletSphere.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletStaticPlane.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxBullet\src\shapes\ofxBulletTriMeshShape.cpp">
+      <Filter>local_addons\ofxBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="addons\ofxWatchFile\src\ofxWatchFile.cpp">
+      <Filter>local_addons\ofxWatchFile</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

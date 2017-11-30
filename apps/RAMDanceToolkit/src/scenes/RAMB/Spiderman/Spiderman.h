@@ -9,6 +9,7 @@
 #pragma once
 
 #include "ramMain.h"
+#include "BaseSceneWithJsonSettings.h"
 
 struct Particle{
     ofVec3f pos;
@@ -22,7 +23,7 @@ struct Particle{
     float angle;
 };
 
-class Spiderman : public rdtk::BaseScene
+class Spiderman : public BaseSceneWithJsonSettings
 {
 public:
     
@@ -37,7 +38,11 @@ public:
     float gaussFunction(float sumDistance);
     ofColor errorToRGB(float err, float errMin, float errMax);
     void addParticle(ofVec3f pos, ofVec3f vel, float life, int jointIdx);
-    
+  
+	void onEnable();
+	void loadJson(const ofJson &json);
+	ofJson createJson();
+
 private:
     
     bool mIsFirstFrame;

@@ -10,8 +10,9 @@
 #include "ramMain.h"
 #include "Orbit.h"
 #include "VelocityManager.h"
+#include "BaseSceneWithJsonSettings.h"
 
-class OrbitSystem final : public rdtk::BaseScene {
+class OrbitSystem final : public BaseSceneWithJsonSettings {
     
 public:
     enum class Mode {STABLE, FOLLOW};
@@ -23,6 +24,9 @@ public:
     void drawRigid(const rdtk::RigidBody &rigid) override;
     
     void drawImGui() override;
+	void loadJson(const ofJson &json) override;
+	ofJson createJson() override;
+	void onEnabled();
     
     string getName() const override { return "OrbitSystem"; }
     

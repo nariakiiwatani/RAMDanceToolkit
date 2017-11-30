@@ -148,6 +148,36 @@ void Spiderman::drawImGui()
     ImGui::DragFloat("Threshold", &mThreshold, 0.1, 0.0, 100.0);
 }
 
+void Spiderman::onEnable()
+{
+}
+void Spiderman::loadJson(const ofJson &json)
+{
+	ofxJsonUtils::load(json
+					   ,kv(mEnableColor)
+					   ,kv(mIsDrawEdge)
+					   ,kv(mLife)
+					   ,kv(mSize)
+					   ,kv(mDamping)
+					   ,kv(mTimestep)
+					   ,kv(mGravity)
+					   ,kv(mThreshold)
+					   );
+}
+ofJson Spiderman::createJson()
+{
+	return ofxJsonUtils::create(
+						kv(mEnableColor)
+					   ,kv(mIsDrawEdge)
+					   ,kv(mLife)
+					   ,kv(mSize)
+					   ,kv(mDamping)
+					   ,kv(mTimestep)
+					   ,kv(mGravity)
+					   ,kv(mThreshold)
+					);
+}
+
 void Spiderman::addParticle(ofVec3f pos, ofVec3f vel, float life, int jointIndex)
 {
     Particle p;

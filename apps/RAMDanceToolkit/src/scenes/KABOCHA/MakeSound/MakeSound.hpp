@@ -1,5 +1,8 @@
 #pragma once
-class MakeSound : public rdtk::BaseScene {
+
+#include "BaseSceneWithJsonSettings.h"
+
+class MakeSound : public BaseSceneWithJsonSettings {
 public:
     MakeSound():volume(0.001), isSound(true), isDrawLine(true){
         
@@ -11,6 +14,20 @@ public:
         ImGui::Checkbox("head synth", &isHeadSynth);
         
     }
+	void loadJson(const ofJson &json) {
+		ofxJsonUtils::load(json
+						   ,kv(isSound)
+						   ,kv(isDrawLine)
+						   ,kv(volume)
+						   ,kv(isHeadSynth));
+	}
+	ofJson createJson() {
+		return ofxJsonUtils::create(
+									kv(isSound)
+									,kv(isDrawLine)
+									,kv(volume)
+									,kv(isHeadSynth));
+	}
     void setup(){
         vector<ofVec3f> hl;
         hl.assign(6, ofVec3f());

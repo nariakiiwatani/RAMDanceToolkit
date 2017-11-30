@@ -8,8 +8,9 @@
  */
 #include "ofxBullet.h"
 #include "btPicker.h"
+#include "BaseSceneWithJsonSettings.h"
 
-class UniScene : public rdtk::BaseScene
+class UniScene : public BaseSceneWithJsonSettings
 {
 public:
     std::string getName() const { return "Floating"; }
@@ -20,6 +21,9 @@ public:
     void drawImGui();
     void drawActor(const rdtk::Actor &actor);
     
+	void onEnable();
+	void loadJson(const ofJson &json);
+	ofJson createJson();
 private:
     
     // Bullet example code from SoftBodyExample

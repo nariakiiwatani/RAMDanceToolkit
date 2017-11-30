@@ -17,6 +17,7 @@
 
 #include "ofApp.h"
 #include "MirrorCamera.h"
+#include "AutoSwitcher.h"
 
 #pragma mark - RAMB
 #include "Spiderman.h"
@@ -75,21 +76,23 @@ void ofApp::setup()
 	// ------------------
 	rdtk::SceneManager& sceneManager = rdtk::SceneManager::instance();
 
+	auto switcher = sceneManager.addScene<AutoSwitcher>();
 	sceneManager.addScene<MirrorCamera>();
-	sceneManager.addScene<Spiderman>();
-	sceneManager.addScene<VisualStudio>();
-	sceneManager.addScene<Paperman>();
 	
-	sceneManager.addScene<UniScene>();
-	sceneManager.addScene<randomCubeUni>();
+	switcher->addScene(sceneManager.addScene<Spiderman>());
+	switcher->addScene(sceneManager.addScene<VisualStudio>());
+	switcher->addScene(sceneManager.addScene<Paperman>());
 	
-	sceneManager.addScene<OrbitSystem>();
-	sceneManager.addScene<PlanetarySystem>();	
+	switcher->addScene(sceneManager.addScene<UniScene>());
+	switcher->addScene(sceneManager.addScene<randomCubeUni>());
+	
+	switcher->addScene(sceneManager.addScene<OrbitSystem>());
+	switcher->addScene(sceneManager.addScene<PlanetarySystem>());	
 
-	sceneManager.addScene<Character>();	
-	sceneManager.addScene<Lines>();	
-	sceneManager.addScene<MakeSound>();	
-	sceneManager.addScene<Moji>();
+	switcher->addScene(sceneManager.addScene<Character>());	
+	switcher->addScene(sceneManager.addScene<Lines>());
+	switcher->addScene(sceneManager.addScene<MakeSound>());	
+	switcher->addScene(sceneManager.addScene<Moji>());
 
 	sceneManager.addScene<MovingCam>();
 	sceneManager.addScene<LineDrawing>();
@@ -116,8 +119,7 @@ void ofApp::setup()
 	sceneManager.addScene<Kepler>();
 	sceneManager.addScene<Chain>();
 #endif
-
-
+	switcher->enable();
 }
 
 //--------------------------------------------------------------

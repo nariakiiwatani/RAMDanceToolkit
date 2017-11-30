@@ -232,3 +232,27 @@ void OrbitSystem::drawImGui()
     ImGui::SliderFloat("Scale", &mScale, 0.0, 30);
     
 }
+
+void OrbitSystem::onEnabled()
+{
+	BaseSceneWithJsonSettings::onEnabled();
+	reset();
+	add();
+	add();
+	add();
+	randomize();
+}
+void OrbitSystem::loadJson(const ofJson &json)
+{
+	ofxJsonUtils::load(json
+					   ,kv(easing)
+					   ,kv(bounce)
+					   ,kv(mScale));
+}
+ofJson OrbitSystem::createJson()
+{
+	return ofxJsonUtils::create(
+								kv(easing)
+								,kv(bounce)
+								,kv(mScale));
+}
