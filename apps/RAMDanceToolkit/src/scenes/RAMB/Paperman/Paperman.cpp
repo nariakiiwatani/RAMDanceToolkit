@@ -246,7 +246,7 @@ void Paperman::updateManual()
 //    }
     
     // picking joint drawing
-    for (int i = 0;i < mEx.getNumPort();i++) {
+    for (int i = 0;i < min<int>(mPlanes.size(),mEx.getNumPort());i++) {
         if(!mEx.getNodeAt(i).getParent()) continue;
         //! Get extractor informations
         const ofMatrix4x4 mat = mEx.getNodeAt(i).getGlobalTransformMatrix();

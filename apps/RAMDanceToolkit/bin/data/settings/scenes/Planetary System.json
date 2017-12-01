@@ -2,13 +2,13 @@
     "mCamRotateSpeed": 8.0,
     "mCamZoom": 350.0,
     "mCamera": 0,
-    "mExapandSpeed": 0.100000001490116,
-    "mLineMode": 4,
-    "mLineOpacity": 0.0,
+    "mExapandSpeed": 0.821000039577484,
+    "mLineMode": 5,
+    "mLineOpacity": 0.646000027656555,
     "mMaxNumPlanets": 6,
     "mMode": 1,
-    "mScale": 1.0,
+    "mScale": 0.480000019073486,
     "mShowHelpers": false,
-    "mTrailOpacity": 1.0,
+    "mTrailOpacity": 0.821000039577484,
     "mVelocityThreshold": 1.0
 }

@@ -25,20 +25,20 @@ void UniScene::setup()
     ground->setProperties(.01, .01);
     ground->add();
     
-    wall[0].create(world.world, ofVec3f(300., 300., 0.), 0., 1.f, 600.f, 600.f);
+    wall[0].create(world.world, ofVec3f(300., 300., 0.), 0., 1.f, 200.f, 600.f);
     ground->setProperties(.01, .01);
     wall[0].add();
     
-    wall[1].create(world.world, ofVec3f(-300., 300., 0.), 0., 1.f, 600.f, 600.f);
+    wall[1].create(world.world, ofVec3f(-300., 300., 0.), 0., 1.f, 200.f, 600.f);
     ground->setProperties(.01, .01);
     wall[1].add();
     
     
-    wall[2].create(world.world, ofVec3f(0., 300., -300.), 0., 600.f, 600.f, 1.f);
+    wall[2].create(world.world, ofVec3f(0., 300., -300.), 0., 600.f, 200.f, 1.f);
     ground->setProperties(.01, .01);
     wall[2].add();
     
-    wall[2].create(world.world, ofVec3f(0., 300., 300.), 0., 600.f, 600.f, 1.f);
+    wall[2].create(world.world, ofVec3f(0., 300., 300.), 0., 600.f, 200.f, 1.f);
     ground->setProperties(.01, .01);
     wall[2].add();
     //!
@@ -49,7 +49,7 @@ void UniScene::setup()
     
     sphere.push_back( new ofxBulletSphere());
     int n = sphere.size() - 1;
-    sphere[n]->create(world.world, ofVec3f(ofRandom(-300,300),30.0,ofRandom(-300,300)), 0.01f, sphere_size);
+    sphere[n]->create(world.world, ofVec3f(0,300.0,0), 0.01f, sphere_size);
     sphere[n]->add();
 
     for (int i = 0;i<5;i++){
@@ -110,7 +110,8 @@ void UniScene::update()
 void UniScene::draw()
 {
     
-    glEnable( GL_DEPTH_TEST );
+	ofPushStyle();
+//    glEnable( GL_DEPTH_TEST );
     rdtk::BeginCamera(); {
         ofSetLineWidth(1.f);
         //    if(bDrawDebug) world.drawDebug();
@@ -120,10 +121,10 @@ void UniScene::draw()
         //   ofDrawSphere(mousePos, .15f);
         
         //!
-        ofEnableLighting();
-        light.enable();
+//        ofEnableLighting();
+//        light.enable();
         //    light.setPosition( mousePos );
-        light.setPosition( ofVec3f(0, 500, 0) );
+//        light.setPosition( ofVec3f(0, 100, -1000) );
         
         //!
         ofSetColor(100, 100, 100);
@@ -146,13 +147,13 @@ void UniScene::draw()
             sphere_mouse[i].draw();
             sphere_mouse2[i].draw();
         }
-        light.disable();
-        ofDisableLighting();
+//        light.disable();
+//        ofDisableLighting();
     }
     
     rdtk::EndCamera();
-    glDisable(GL_DEPTH_TEST);
-    
+//    glDisable(GL_DEPTH_TEST);
+    ofPopStyle();
 }
 
 void UniScene::drawActor(const rdtk::Actor &actor)
@@ -160,18 +161,9 @@ void UniScene::drawActor(const rdtk::Actor &actor)
     //   pushAll();
     
 
-    
-    if(actorName == ""){
-        cout<<actor.getName()<<endl;
-        actorName = actor.getName();
-        
-    }
-    
-    if (actorName!="wayson")
-    {
-    
-    glEnable(GL_DEPTH_TEST);
-    glDisable(GL_LIGHTING);
+	ofPushStyle();
+//    glEnable(GL_DEPTH_TEST);
+//    glDisable(GL_LIGHTING);
     
 
     
@@ -218,9 +210,7 @@ void UniScene::drawActor(const rdtk::Actor &actor)
             picker2[4].updatePosition(btVector3(hipp.x, hipp.y, hipp.z));
         }
     }
-    
-    }
-    
+	ofPopStyle();
     //    ofDrawSphere(lhp.x, lhp.y, lhp.z, 50.f);
     //    popAll();
 }
@@ -262,11 +252,14 @@ ofJson UniScene::createJson()
 void UniScene::add() {
     
     sphere.push_back( new ofxBulletSphere());
-    sphere[sphere.size()-1]->create(world.world, ofVec3f(ofRandom(-300,300),30.0,ofRandom(-300,300)), 0.01f, sphere_size);
-    sphere[sphere.size()-1]->add();
+	sphere[sphere.size()-1]->create(world.world, ofVec3f(0,600.0,0), 0.01f, sphere_size);
+	sphere[sphere.size()-1]->add();
 }
 
 void UniScene::clearSpheres(){
+	for(auto &s : sphere) {
+		s->remove();
+	}
     sphere.clear();
 }
 

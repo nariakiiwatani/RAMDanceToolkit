@@ -1,6 +1,11 @@
 <Smooth>10.000000000</Smooth>
 <MPort>
     <ActorIndex>0</ActorIndex>
-    <Name>00000022</Name>
+    <Name>Richi_2</Name>
+    <Joint>17</Joint>
+</MPort>
+<MPort>
+    <ActorIndex>0</ActorIndex>
+    <Name>jin</Name>
     <Joint>9</Joint>
 </MPort>

@@ -1,7 +1,7 @@
 {
     "mEnableSound": false,
     "mIsResetPos": false,
-    "mManualControlMethod": 0,
+    "mManualControlMethod": 1,
     "mPlayingMethod": 1,
     "mTrackDistance": 256.0
 }

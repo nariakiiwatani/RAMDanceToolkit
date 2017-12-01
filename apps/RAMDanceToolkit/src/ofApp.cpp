@@ -47,6 +47,7 @@
 #include "Stamp.h"
 #include "Expansion.h"
 #include "Abacus.h"
+#include "Particles.h"
 #include "SoundCube.h"
 #include "UpsideDown.h"
 #include "HastyChase.h"
