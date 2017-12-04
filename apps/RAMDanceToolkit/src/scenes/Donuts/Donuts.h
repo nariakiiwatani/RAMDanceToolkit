@@ -18,8 +18,9 @@
 #pragma once
 
 #include "ramActor.h"
+#include "BaseSceneWithJsonSettings.h"
 
-class Donuts : public rdtk::BaseScene
+class Donuts : public BaseSceneWithJsonSettings
 {
 	
 	ofxUIToggle *mToggles[rdtk::Actor::NUM_JOINTS];
@@ -118,6 +119,9 @@ public:
 		}
 		ImGui::Columns(1);
 	}
+
+	void loadJson(const ofJson &json){}
+	ofJson createJson(){return ofJson();}
 
 	
 	void setup()

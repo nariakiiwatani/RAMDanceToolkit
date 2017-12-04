@@ -19,8 +19,9 @@
 
 #include "ofxXmlSettings.h"
 #include "ramNodeLine.h"
+#include "BaseSceneWithJsonSettings.h"
 
-class LineDrawing : public rdtk::BaseScene
+class LineDrawing : public BaseSceneWithJsonSettings
 {
 	
 public:
@@ -116,6 +117,9 @@ public:
 			
 		}
 		
+		void loadJson(const ofJson &json){}
+		ofJson createJson(){return ofJson();}
+
 		void setupControlPanel()
 		{
 			

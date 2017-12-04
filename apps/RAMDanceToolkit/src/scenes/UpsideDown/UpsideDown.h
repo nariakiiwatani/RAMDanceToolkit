@@ -16,8 +16,9 @@
 // limitations under the License.
 
 #pragma once
+#include "BaseSceneWithJsonSettings.h"
 
-class UpsideDown : public rdtk::BaseScene
+class UpsideDown : public BaseSceneWithJsonSettings
 {
 	
 public:
@@ -86,9 +87,11 @@ public:
 			mAutoRotateSpeed.set(1.0f);
 			mOffset = -3.0f;
 		}
-		
 	}
 	
+	void loadJson(const ofJson &json){}
+	ofJson createJson(){return ofJson();}
+
 	void setup()
 	{
         mAutoRotateSpeed.set(1.0f);

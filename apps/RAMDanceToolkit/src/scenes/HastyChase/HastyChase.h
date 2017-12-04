@@ -18,8 +18,9 @@
 #pragma once
 
 #include "ramMain.h"
+#include "BaseSceneWithJsonSettings.h"
 
-class HastyChase : public rdtk::BaseScene
+class HastyChase : public BaseSceneWithJsonSettings
 {
 public:
 	
@@ -63,6 +64,9 @@ public:
 		ImGui::ColorEdit3("chaser color", &joint_color[0]);
 	}
 	
+	void loadJson(const ofJson &json){}
+	ofJson createJson(){return ofJson();}
+
 	void setup()
 	{
 		buffer_time = 3600;

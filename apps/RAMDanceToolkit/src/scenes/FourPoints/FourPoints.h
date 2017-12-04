@@ -21,8 +21,9 @@
 
 #include "SphereMesh.h"
 #include "ramGeometry.h"
+#include "BaseSceneWithJsonSettings.h"
 
-class FourPoints : public rdtk::BaseScene
+class FourPoints : public BaseSceneWithJsonSettings
 {
 public:
 	
@@ -139,6 +140,9 @@ public:
 									  currentSelected[3]);
 	}
 	
+	void loadJson(const ofJson &json){}
+	ofJson createJson(){return ofJson();}
+
 	void setup()
 	{		
 		_ofSetIcoSphereResolution(3);

@@ -18,8 +18,9 @@
 #pragma once
 
 #include "ramMain.h"
+#include "BaseSceneWithJsonSettings.h"
 
-class SoundCube : public rdtk::BaseScene
+class SoundCube : public BaseSceneWithJsonSettings
 {
 public:
 	
@@ -151,6 +152,9 @@ public:
 		ImGui::Checkbox("show box", &show_box);
 	}
 	
+	void loadJson(const ofJson &json){}
+	ofJson createJson(){return ofJson();}
+
 	void setup()
 	{
 		show_box = true;

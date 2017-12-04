@@ -32,8 +32,9 @@
 #include "KeplerBtDynamics.h"
 #include "KeplerCube.h"
 #include "btBulletDynamicsCommon.h"
+#include "BaseSceneWithJsonSettings.h"
 
-class Kepler : public rdtk::BaseScene
+class Kepler : public BaseSceneWithJsonSettings
 {
 public:
     // ------------------------
@@ -41,7 +42,9 @@ public:
 	void setup();
 	void update();
 	void draw();
-    
+	void loadJson(const ofJson &json){}
+	ofJson createJson(){return ofJson();}
+
 	// ------------------------
 	void drawActor(const rdtk::Actor &actor);
     

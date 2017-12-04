@@ -17,8 +17,9 @@
 
 #pragma once
 
+#include "BaseSceneWithJsonSettings.h"
 
-class Expansion : public rdtk::BaseScene
+class Expansion : public BaseSceneWithJsonSettings
 {
 	
 public:
@@ -63,7 +64,10 @@ public:
 		}
 		ImGui::Columns(1);
 	}
-	
+
+	void loadJson(const ofJson &json){}
+	ofJson createJson(){return ofJson();}
+
 	void setupControlPanel()
 	{
 		

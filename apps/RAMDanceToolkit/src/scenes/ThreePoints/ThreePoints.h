@@ -21,12 +21,13 @@
 
 #include "SphereMesh.h"
 #include "ramGeometry.h"
+#include "BaseSceneWithJsonSettings.h"
 
 static const ofColor cyanPrint = ofColor::fromHex(0x00abec);
 static const ofColor magentaPrint = ofColor::fromHex(0xec008c);
 static const ofColor yellowPrint = ofColor::fromHex(0xffee00);
 
-class ThreePoints : public rdtk::BaseScene
+class ThreePoints : public BaseSceneWithJsonSettings
 {
 public:
 	
@@ -99,6 +100,9 @@ public:
 		ImGui::Columns(1);
 	}
 	
+	void loadJson(const ofJson &json){}
+	ofJson createJson(){return ofJson();}
+
 	void setup()
 	{		
 		_ofSetIcoSphereResolution(3);

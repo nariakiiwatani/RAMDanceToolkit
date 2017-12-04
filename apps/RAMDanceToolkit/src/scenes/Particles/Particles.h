@@ -18,8 +18,9 @@
 #pragma once
 
 #include "ParticleEngine.h"
+#include "BaseSceneWithJsonSettings.h"
 
-class Particles : public rdtk::BaseScene
+class Particles : public BaseSceneWithJsonSettings
 {
 	
 	ParticleEngine pe;
@@ -53,6 +54,9 @@ public:
 		ImGui::DragFloat("Gravity", &gravity->force, 0.005, -0.1, 0.1);
 	}
 	
+	void loadJson(const ofJson &json){}
+	ofJson createJson(){return ofJson();}
+
 	void setup()
 	{
 		pe.setup(50000);

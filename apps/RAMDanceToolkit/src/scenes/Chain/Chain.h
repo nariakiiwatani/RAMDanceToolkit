@@ -32,6 +32,7 @@
 #include "ChainBtDynamics.h"
 #include "ChainObject.h"
 #include "btBulletDynamicsCommon.h"
+#include "BaseSceneWithJsonSettings.h"
 
 // ------------------------
 class AttachableChain {
@@ -101,7 +102,8 @@ private:
 };
 // ------------------------
 
-class Chain : public rdtk::BaseScene
+
+class Chain : public BaseSceneWithJsonSettings
 {
 public:
     // ------------------------
@@ -116,7 +118,9 @@ public:
     string getName() const { return "Chain"; }
 
 	void drawImGui();
-    
+	void loadJson(const ofJson &json){}
+	ofJson createJson(){return ofJson();}
+
 private:
 	void onKeyPressed(ofKeyEventArgs &e);
     void onValueChanged(ofxUIEventArgs& e);

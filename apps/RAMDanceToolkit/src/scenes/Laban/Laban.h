@@ -18,6 +18,7 @@
 #pragma once
 
 #include "ramMain.h"
+#include "BaseSceneWithJsonSettings.h"
 
 class LabanMoment
 {
@@ -45,7 +46,7 @@ public:
     }
 };
 
-class Laban : public rdtk::BaseScene
+class Laban : public BaseSceneWithJsonSettings
 {
 public:
 
@@ -53,6 +54,8 @@ public:
 
     void setupControlPanel();
 	void drawImGui();
+	void loadJson(const ofJson &json){}
+	ofJson createJson(){return ofJson();}
     void setup();
     void update();
     void draw();

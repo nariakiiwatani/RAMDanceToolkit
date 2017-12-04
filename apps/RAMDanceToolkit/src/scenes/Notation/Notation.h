@@ -20,6 +20,7 @@
 #include "ramMain.h"
 #include "ofxCv.h"
 #include "ramPlanarGestureRecognizer.h"
+#include "BaseSceneWithJsonSettings.h"
 
 class HistoryPoint : public rdtk::Fading
 {
@@ -62,7 +63,7 @@ public:
 	}
 };
 
-class Notation : public rdtk::BaseScene
+class Notation : public BaseSceneWithJsonSettings
 {
 public:
 	

@@ -16,8 +16,9 @@
 // limitations under the License.
 
 #pragma once
+#include "BaseSceneWithJsonSettings.h"
 
-class Stamp : public rdtk::BaseScene
+class Stamp : public BaseSceneWithJsonSettings
 {
 	
 	rdtk::Stamp mStamp;
@@ -62,6 +63,9 @@ public:
 		ImGui::DragFloat("Line Width", &line_width, 0.1, 0, 6);
 	}
 	
+	void loadJson(const ofJson &json){}
+	ofJson createJson(){return ofJson();}
+
 	void setup()
 	{
 		mStamp.clear();

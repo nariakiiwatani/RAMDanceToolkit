@@ -18,8 +18,9 @@
 #pragma once
 
 #include "ramMain.h"
+#include "BaseSceneWithJsonSettings.h"
 
-class Monster : public rdtk::BaseScene
+class Monster : public BaseSceneWithJsonSettings
 {
 public:
 	
@@ -64,6 +65,9 @@ public:
 		ImGui::SliderFloat("Randomization amount", &randomizationAmount, 0, 1);
 	}
 	
+	void loadJson(const ofJson &json){}
+	ofJson createJson(){return ofJson();}
+
 	void setup()
 	{
 		int treeArray[] = {

@@ -17,7 +17,9 @@
 
 #pragma once
 
-class BigBox : public rdtk::BaseScene
+#include "BaseSceneWithJsonSettings.h"
+
+class BigBox : public BaseSceneWithJsonSettings
 {
 	vector<float> mSizeArray;
 	float mBoxLineWidth;
@@ -81,9 +83,11 @@ public:
 			ImGui::NextColumn();
 		}
 		ImGui::Columns(1);
-		
 	}
 	
+	void loadJson(const ofJson &json){}
+	ofJson createJson(){return ofJson();}
+
 	void draw()
 	{
 		rdtk::BeginCamera();

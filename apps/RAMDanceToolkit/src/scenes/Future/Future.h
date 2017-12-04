@@ -18,8 +18,9 @@
 #pragma once
 
 #include "ParticleEngine.h"
+#include "BaseSceneWithJsonSettings.h"
 
-class Future : public rdtk::BaseScene
+class Future : public BaseSceneWithJsonSettings
 {
 	
 	ramFilterEach<rdtk::Ghost> ghostFilters;
@@ -96,6 +97,9 @@ public:
 		if (ImGui::DragFloat("Speed", &speed, 1, 0, 255)) updateFilters();
 		
 	}
+
+	void loadJson(const ofJson &json){}
+	ofJson createJson(){return ofJson();}
 
 	void draw()
 	{
