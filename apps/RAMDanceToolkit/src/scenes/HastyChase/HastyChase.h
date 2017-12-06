@@ -19,6 +19,7 @@
 
 #include "ramMain.h"
 #include "BaseSceneWithJsonSettings.h"
+#include "ofxJsonUtilsUtils.h"
 
 class HastyChase : public BaseSceneWithJsonSettings
 {
@@ -64,9 +65,8 @@ public:
 		ImGui::ColorEdit3("chaser color", &joint_color[0]);
 	}
 	
-	void loadJson(const ofJson &json){}
-	ofJson createJson(){return ofJson();}
-
+	JSON_FUNCS(buffer_time,rate,draw_line,show_box,fill_chaser,joint_color);
+	
 	void setup()
 	{
 		buffer_time = 3600;

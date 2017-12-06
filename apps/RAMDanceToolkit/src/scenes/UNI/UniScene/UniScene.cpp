@@ -240,7 +240,7 @@ void UniScene::loadJson(const ofJson &json)
 					   ,kv(sphere_size)
 					   ,kv(gavity));
 }
-ofJson UniScene::createJson()
+ofJson UniScene::toJson() const
 {
 	return ofxJsonUtils::create(
 								kv(sphere_size)

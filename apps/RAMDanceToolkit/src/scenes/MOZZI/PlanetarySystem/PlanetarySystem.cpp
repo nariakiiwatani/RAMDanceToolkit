@@ -393,7 +393,7 @@ void PlanetarySystem::loadJson(const ofJson &json)
 					   ,kv(mShowHelpers)
 					   );
 }
-ofJson PlanetarySystem::createJson()
+ofJson PlanetarySystem::toJson() const
 {
 	return ofxJsonUtils::create(
 					   kv(mTrailOpacity)

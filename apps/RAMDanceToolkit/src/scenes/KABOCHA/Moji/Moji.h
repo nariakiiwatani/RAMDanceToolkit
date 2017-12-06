@@ -102,7 +102,7 @@ class Moji : public BaseSceneWithJsonSettings
 						   ,kv(mMinDistance)
 						   ,kv(selectedJoint));
 	}
-	ofJson createJson() {
+	ofJson toJson() const {
 		return ofxJsonUtils::create(
 									kv(mMinDistance)
 									,kv(selectedJoint));

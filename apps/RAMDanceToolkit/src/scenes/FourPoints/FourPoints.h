@@ -22,6 +22,7 @@
 #include "SphereMesh.h"
 #include "ramGeometry.h"
 #include "BaseSceneWithJsonSettings.h"
+#include "ofxJsonUtilsUtils.h"
 
 class FourPoints : public BaseSceneWithJsonSettings
 {
@@ -29,7 +30,7 @@ public:
 	
 	ofxUIToggleMatrix *m4p1, *m4p2, *m4p3, *m4p4;
 	
-	int currentSelected[4] = {0,0,0,0};
+	vector<int> currentSelected;
 	bool showFourPointTwist, showFourPointSphere;
 	bool pickExtents, pickCore, pickKneesElbows;
 	float twistResolution, twistExtensionWidth, twistExtensionHeight, pointSize;
@@ -140,12 +141,13 @@ public:
 									  currentSelected[3]);
 	}
 	
-	void loadJson(const ofJson &json){}
-	ofJson createJson(){return ofJson();}
+	JSON_FUNCS(showFourPointSphere,showFourPointTwist,twistResolution,twistExtensionWidth,twistExtensionHeight
+			   ,currentSelected);
 
 	void setup()
 	{		
 		_ofSetIcoSphereResolution(3);
+		currentSelected.resize(4);
 	}
 	
 	void update()

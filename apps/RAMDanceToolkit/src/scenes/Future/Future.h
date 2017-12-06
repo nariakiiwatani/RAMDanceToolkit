@@ -19,6 +19,7 @@
 
 #include "ParticleEngine.h"
 #include "BaseSceneWithJsonSettings.h"
+#include "ofxJsonUtilsUtils.h"
 
 class Future : public BaseSceneWithJsonSettings
 {
@@ -98,9 +99,8 @@ public:
 		
 	}
 
-	void loadJson(const ofJson &json){}
-	ofJson createJson(){return ofJson();}
-
+	JSON_FUNCS(distance,speed);
+	
 	void draw()
 	{
 		const vector<rdtk::NodeArray>& NAs = ghostFilters.update(getAllNodeArrays());

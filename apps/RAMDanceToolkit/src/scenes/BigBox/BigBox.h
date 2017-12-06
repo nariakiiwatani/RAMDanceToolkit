@@ -18,6 +18,7 @@
 #pragma once
 
 #include "BaseSceneWithJsonSettings.h"
+#include "ofxJsonUtilsUtils.h"
 
 class BigBox : public BaseSceneWithJsonSettings
 {
@@ -85,8 +86,7 @@ public:
 		ImGui::Columns(1);
 	}
 	
-	void loadJson(const ofJson &json){}
-	ofJson createJson(){return ofJson();}
+	JSON_FUNCS(mUseSingleColor,mLineColor,mBoxLineWidth,mMasterBoxSize,mSizeArray);
 
 	void draw()
 	{

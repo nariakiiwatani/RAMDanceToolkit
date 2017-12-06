@@ -239,7 +239,7 @@ void randomCubeUni::loadJson(const ofJson &json)
 					   ,kv(showDebug)
 					   );
 }
-ofJson randomCubeUni::createJson()
+ofJson randomCubeUni::toJson() const
 {
 	return ofxJsonUtils::create(
 					   kv(distance)

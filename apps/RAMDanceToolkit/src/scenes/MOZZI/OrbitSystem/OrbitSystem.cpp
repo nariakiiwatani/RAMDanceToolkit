@@ -249,7 +249,7 @@ void OrbitSystem::loadJson(const ofJson &json)
 					   ,kv(bounce)
 					   ,kv(mScale));
 }
-ofJson OrbitSystem::createJson()
+ofJson OrbitSystem::toJson() const
 {
 	return ofxJsonUtils::create(
 								kv(easing)

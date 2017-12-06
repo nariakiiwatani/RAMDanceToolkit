@@ -47,7 +47,7 @@ void VisualStudio::loadJson(const ofJson &json)
 					  );
 	motionExtractor.load("motionExt_"+getName()+".xml");
 }
-ofJson VisualStudio::createJson()
+ofJson VisualStudio::toJson() const
 {
 	motionExtractor.save("motionExt_"+getName()+".xml");
 	return ofxJsonUtils::create(

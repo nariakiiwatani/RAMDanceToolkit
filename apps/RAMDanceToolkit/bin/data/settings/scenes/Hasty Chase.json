@@ -1,1 +1,13 @@
-null
+{
+    "buffer_time": 3600.0,
+    "draw_line": false,
+    "fill_chaser": false,
+    "joint_color": {
+        "a": 1.0,
+        "b": 0.800000071525574,
+        "g": 0.600000023841858,
+        "r": 0.0
+    },
+    "rate": 1.5,
+    "show_box": false
+}

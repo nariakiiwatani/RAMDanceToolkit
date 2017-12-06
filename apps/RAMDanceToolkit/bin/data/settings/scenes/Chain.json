@@ -1,1 +1,11 @@
-null
+{
+    "mAttachingEdge": 0.0,
+    "mEdgeLength": 50.0,
+    "mGravity": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "mNumEdges": 3.0,
+    "mThickness": 5.0
+}

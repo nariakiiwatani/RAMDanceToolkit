@@ -1,1 +1,5 @@
-null
+{
+    "maxScale": 2.0,
+    "minScale": 0.5,
+    "randomizationAmount": 0.5
+}

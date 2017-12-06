@@ -19,6 +19,7 @@
 
 #include "ramMain.h"
 #include "BaseSceneWithJsonSettings.h"
+#include "ofxJsonUtilsUtils.h"
 
 class Monster : public BaseSceneWithJsonSettings
 {
@@ -65,8 +66,7 @@ public:
 		ImGui::SliderFloat("Randomization amount", &randomizationAmount, 0, 1);
 	}
 	
-	void loadJson(const ofJson &json){}
-	ofJson createJson(){return ofJson();}
+	JSON_FUNCS(minScale,maxScale,randomizationAmount);
 
 	void setup()
 	{

@@ -19,6 +19,7 @@
 
 #include "ramMain.h"
 #include "BaseSceneWithJsonSettings.h"
+#include "ofxJsonUtilsUtils.h"
 
 class LabanMoment
 {
@@ -54,14 +55,14 @@ public:
 
     void setupControlPanel();
 	void drawImGui();
-	void loadJson(const ofJson &json){}
-	ofJson createJson(){return ofJson();}
     void setup();
     void update();
     void draw();
     void drawActor(const rdtk::Actor &actor);
     void drawRigid(rdtk::RigidBody &rigid);
 
+	JSON_FUNCS(threshold,lineWidth,lineLength,scale,ticks,showLines,showPlanes,onlyLimbs,labanColors,labanDirections,maxLabanMomentLife);
+	
     float threshold, lineWidth, lineLength, scale, ticks;
     bool showLines, showPlanes, onlyLimbs;
     

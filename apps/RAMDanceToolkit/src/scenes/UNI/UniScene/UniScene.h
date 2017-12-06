@@ -23,7 +23,7 @@ public:
     
 	void onEnable();
 	void loadJson(const ofJson &json);
-	ofJson createJson();
+	ofJson toJson() const;
 private:
     
     // Bullet example code from SoftBodyExample

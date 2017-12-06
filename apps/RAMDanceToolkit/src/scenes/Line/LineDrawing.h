@@ -20,6 +20,7 @@
 #include "ofxXmlSettings.h"
 #include "ramNodeLine.h"
 #include "BaseSceneWithJsonSettings.h"
+#include "ofxJsonUtilsUtils.h"
 
 class LineDrawing : public BaseSceneWithJsonSettings
 {
@@ -117,8 +118,7 @@ public:
 			
 		}
 		
-		void loadJson(const ofJson &json){}
-		ofJson createJson(){return ofJson();}
+		JSON_FUNCS(active,color,line_width,curve,spiral_radius,spiral_num_rotate,noise_scale,noise_freq,extend_from,extend_to);
 
 		void setupControlPanel()
 		{
@@ -264,12 +264,13 @@ public:
 		NUM_LINE = 3
 	};
 	
-	LineContext lines[NUM_LINE];
+	vector<LineContext> lines;
 	float random_change_time;
 	float last_changed_time;
 	
 	LineDrawing()
 	{
+		lines.resize(NUM_LINE);
 	}
 	
 	void drawImGui()
@@ -293,6 +294,8 @@ public:
 			ImGui::PopID();
 		}
 	}
+	
+	JSON_FUNCS(random_change_time,lines);
 	
 	void setupControlPanel()
 	{

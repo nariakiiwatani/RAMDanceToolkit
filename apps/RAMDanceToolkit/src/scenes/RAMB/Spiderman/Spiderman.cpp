@@ -164,7 +164,7 @@ void Spiderman::loadJson(const ofJson &json)
 					   ,kv(mThreshold)
 					   );
 }
-ofJson Spiderman::createJson()
+ofJson Spiderman::toJson() const
 {
 	return ofxJsonUtils::create(
 						kv(mEnableColor)

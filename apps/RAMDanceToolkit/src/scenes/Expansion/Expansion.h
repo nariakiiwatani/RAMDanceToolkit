@@ -18,6 +18,7 @@
 #pragma once
 
 #include "BaseSceneWithJsonSettings.h"
+#include "ofxJsonUtilsUtils.h"
 
 class Expansion : public BaseSceneWithJsonSettings
 {
@@ -33,6 +34,11 @@ public:
     mBoxSize(10.0),
     mBoxSizeRatio(5.0) {}
     
+	void setup() 
+	{
+		mNodeVisibility.resize(rdtk::Actor::NUM_JOINTS);
+		mBiggerSize.resize(rdtk::Actor::NUM_JOINTS);
+	}
 
 	void drawImGui()
 	{
@@ -56,17 +62,22 @@ public:
 		for (int i = 0;i < rdtk::Actor::NUM_JOINTS; i++)
 		{
 			ImGui::PushID(ofToString(i).c_str());
-			ImGui::Checkbox(rdtk::Actor::getJointName(i).c_str(), &mNodeVisibility[i]);
+			bool flag = mNodeVisibility[i];
+			if(ImGui::Checkbox(rdtk::Actor::getJointName(i).c_str(), &flag)) {
+				mNodeVisibility[i] = flag;
+			}
 			ImGui::NextColumn();
-			ImGui::Checkbox("Bigger", &mBiggerSize[i]);
+			flag = mBiggerSize[i];
+			if(ImGui::Checkbox("Bigger", &flag)) {
+				mBiggerSize[i] = flag;
+			}
 			ImGui::NextColumn();
 			ImGui::PopID();
 		}
 		ImGui::Columns(1);
 	}
 
-	void loadJson(const ofJson &json){}
-	ofJson createJson(){return ofJson();}
+	JSON_FUNCS(mShowName,mShowBox,mShowAxis,mShowLine,mBoxColor,mExpasionRatio,mBoxSize,mBoxSizeRatio,mNodeVisibility,mBiggerSize);
 
 	void setupControlPanel()
 	{
@@ -97,14 +108,14 @@ public:
             mBiggerSize[i] = false;
             mNodeVisibility[i] = true;
             
-            string name = (i<10 ? " " : "") + ofToString(i);
-			ofxUIToggle *toggleSize = new ofxUIToggle("Size" + name, &mBiggerSize[i], 8, 8);
-			panel->addWidgetDown(toggleSize);
-			mToggleSize[i] = toggleSize;
-			
-			ofxUIToggle *toggleVisible = new ofxUIToggle(rdtk::Actor::getJointName(i), &mNodeVisibility[i], 8, 8);
-			panel->addWidgetRight(toggleVisible);
-			mToggleDraw[i] = toggleVisible;
+//            string name = (i<10 ? " " : "") + ofToString(i);
+//			ofxUIToggle *toggleSize = new ofxUIToggle("Size" + name, &mBiggerSize[i], 8, 8);
+//			panel->addWidgetDown(toggleSize);
+//			mToggleSize[i] = toggleSize;
+//			
+//			ofxUIToggle *toggleVisible = new ofxUIToggle(rdtk::Actor::getJointName(i), &mNodeVisibility[i], 8, 8);
+//			panel->addWidgetRight(toggleVisible);
+//			mToggleDraw[i] = toggleVisible;
 		}
 		
 		ofAddListener(panel->newGUIEvent, this, &Expansion::onValueChanged);
@@ -230,10 +241,10 @@ private:
 	ramFilterEach<rdtk::LowPassFilter> mLowpass;
     
 	ofxUIToggle *mToggleDraw[rdtk::Actor::NUM_JOINTS];
-	bool mNodeVisibility[rdtk::Actor::NUM_JOINTS];
+	vector<int> mNodeVisibility;
 	
 	ofxUIToggle *mToggleSize[rdtk::Actor::NUM_JOINTS];
-	bool mBiggerSize[rdtk::Actor::NUM_JOINTS];
+	vector<int> mBiggerSize;
 	
 	bool mShowAxis;
 	bool mShowBox;

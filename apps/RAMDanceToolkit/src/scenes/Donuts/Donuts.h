@@ -19,12 +19,13 @@
 
 #include "ramActor.h"
 #include "BaseSceneWithJsonSettings.h"
+#include "ofxJsonUtilsUtils.h"
 
 class Donuts : public BaseSceneWithJsonSettings
 {
 	
 	ofxUIToggle *mToggles[rdtk::Actor::NUM_JOINTS];
-	bool mNodeVisibility[rdtk::Actor::NUM_JOINTS];
+	vector<int> mNodeVisibility;
 
 	float mNumDuplicate;
 	float mRadius;
@@ -66,7 +67,7 @@ public:
 		for (int i=0; i<rdtk::Actor::NUM_JOINTS; i++)
 		{
 			mNodeVisibility[i] = (i == rdtk::Actor::JOINT_RIGHT_HAND || i == rdtk::Actor::JOINT_LEFT_HAND);
-			mToggles[i] = panel->addToggle(rdtk::Actor::getJointName(i), &mNodeVisibility[i], 8, 8);
+//			mToggles[i] = panel->addToggle(rdtk::Actor::getJointName(i), &mNodeVisibility[i], 8, 8);
 		}
 		
 		clear();
@@ -114,19 +115,20 @@ public:
 		ImGui::Columns(3, NULL, true);
 		for (int i=0; i<rdtk::Actor::NUM_JOINTS; i++)
 		{
-			ImGui::Checkbox(rdtk::Actor::getJointName(i).c_str(), &mNodeVisibility[i]);
+			bool visible = mNodeVisibility[i];
+			if(ImGui::Checkbox(rdtk::Actor::getJointName(i).c_str(), &visible)) {
+				mNodeVisibility[i] = visible;
+			}
 			ImGui::NextColumn();
 		}
 		ImGui::Columns(1);
 	}
 
-	void loadJson(const ofJson &json){}
-	ofJson createJson(){return ofJson();}
-
+	JSON_FUNCS(mScale,mTranslate,mNumDuplicate,mRadius,mBoxSize,mShowActor,mToggleAll,mNodeVisibility);
 	
 	void setup()
 	{
-		
+		mNodeVisibility.resize(rdtk::Actor::NUM_JOINTS);
 	}
 	
 	void update()
@@ -246,7 +248,7 @@ public:
 		for (int i=0; i<rdtk::Actor::NUM_JOINTS; i++)
 		{
 			mNodeVisibility[i] = (i == rdtk::Actor::JOINT_RIGHT_HAND || i == rdtk::Actor::JOINT_LEFT_HAND);
-			mToggles[i]->setValue(mNodeVisibility[i]);
+//			mToggles[i]->setValue(mNodeVisibility[i]);
 		}
 		
 		mNumDuplicate = 20;
@@ -263,7 +265,7 @@ public:
 	void setAllVisiblity(bool b)
 	{
 		for (int i=0; i<rdtk::Actor::NUM_JOINTS; i++)
-			mToggles[i]->setValue(b);
+			mNodeVisibility[i] = b;
 	}
 };
 

@@ -72,5 +72,5 @@ public:
     void drawActor(const rdtk::Actor &actor);
     
 	void loadJson(const ofJson &json);
-	ofJson createJson();
+	ofJson toJson() const;
 };

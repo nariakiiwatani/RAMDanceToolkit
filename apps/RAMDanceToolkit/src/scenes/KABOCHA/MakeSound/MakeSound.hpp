@@ -10,7 +10,7 @@ public:
     void drawImGui(){
         ImGui::Checkbox("sound", &isSound);
         ImGui::Checkbox("draw line", &isDrawLine);
-        ImGui::SliderFloat("volume", &volume, 0.0000001, 0.1);
+        ImGui::SliderFloat("volume", &volume, 0.0000001, 1);
         ImGui::Checkbox("head synth", &isHeadSynth);
         
     }
@@ -21,7 +21,7 @@ public:
 						   ,kv(volume)
 						   ,kv(isHeadSynth));
 	}
-	ofJson createJson() {
+	ofJson toJson() const {
 		return ofxJsonUtils::create(
 									kv(isSound)
 									,kv(isDrawLine)

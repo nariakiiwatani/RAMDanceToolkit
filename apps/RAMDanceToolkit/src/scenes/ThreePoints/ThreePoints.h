@@ -22,6 +22,7 @@
 #include "SphereMesh.h"
 #include "ramGeometry.h"
 #include "BaseSceneWithJsonSettings.h"
+#include "ofxJsonUtilsUtils.h"
 
 static const ofColor cyanPrint = ofColor::fromHex(0x00abec);
 static const ofColor magentaPrint = ofColor::fromHex(0xec008c);
@@ -32,7 +33,7 @@ class ThreePoints : public BaseSceneWithJsonSettings
 public:
 	
 	ofxUIToggle *mToggles[rdtk::Actor::NUM_JOINTS];
-	bool mNodeVisibility[rdtk::Actor::NUM_JOINTS];
+	vector<int> mNodeVisibility;
 	
 	bool showRects, showCircle, showSpheres, invertSpheres, showCircleBisector, showCenterCircles;
 	float pointSize, crossLength, rectRadius, maxInvertRadius, circleResolution;
@@ -94,18 +95,21 @@ public:
 		ImGui::Columns(3, NULL, true);
 		for (int i = 0;i < rdtk::Actor::NUM_JOINTS; i++)
 		{
-			ImGui::Checkbox(rdtk::Actor::getJointName(i).c_str(), &mNodeVisibility[i]);
+			bool flag = mNodeVisibility[i];
+			if(ImGui::Checkbox(rdtk::Actor::getJointName(i).c_str(), &flag)) {
+				mNodeVisibility[i] = flag;
+			}
 			ImGui::NextColumn();
 		}
 		ImGui::Columns(1);
 	}
-	
-	void loadJson(const ofJson &json){}
-	ofJson createJson(){return ofJson();}
 
+	JSON_FUNCS(showSpheres,showRects,showCircle,invertSpheres,showCircleBisector,showCenterCircles,pointSize,crossLength,rectRadius,maxInvertRadius,circleResolution,mNodeVisibility);
+	
 	void setup()
 	{		
 		_ofSetIcoSphereResolution(3);
+		mNodeVisibility.resize(rdtk::Actor::NUM_JOINTS);
 	}
 	
 	void update()

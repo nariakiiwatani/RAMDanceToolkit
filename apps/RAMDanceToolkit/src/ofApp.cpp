@@ -73,6 +73,8 @@ void ofApp::setup()
 	// ------------------
 	rdtk::Initialize(10000, true);
 	
+	ofSoundStreamSetup(2, 0);
+
 	/// scenes setup
 	// ------------------
 	rdtk::SceneManager& sceneManager = rdtk::SceneManager::instance();
@@ -92,7 +94,8 @@ void ofApp::setup()
 
 	switcher->addScene(sceneManager.addScene<Character>());	
 	switcher->addScene(sceneManager.addScene<Lines>());
-	switcher->addScene(sceneManager.addScene<MakeSound>());	
+	switcher->addScene(sceneManager.addScene<MakeSound>());
+	sound_scenes_.push_back(sceneManager.getScene(sceneManager.getNumScenes()-1));
 	switcher->addScene(sceneManager.addScene<Moji>());
 
 //	sceneManager.addScene<MovingCam>();
@@ -107,7 +110,7 @@ void ofApp::setup()
 	switcher->addScene(sceneManager.addScene<Particles>());
 #endif
 //	switcher->addScene(sceneManager.addScene<Abacus>());
-//	switcher->addScene(sceneManager.addScene<SoundCube>());
+	switcher->addScene(sceneManager.addScene<SoundCube>());
 	switcher->addScene(sceneManager.addScene<UpsideDown>());
 	switcher->addScene(sceneManager.addScene<HastyChase>());
 //	switcher->addScene(sceneManager.addScene<ColorGrid>());
@@ -134,6 +137,13 @@ void ofApp::draw()
 {
 	
 }
+
+void ofApp::audioOut(float * output, int bufferSize, int nChannels){
+	for(auto &s : sound_scenes_) {
+		s->audioOut(output, bufferSize, nChannels);
+	}
+}
+
 
 
 

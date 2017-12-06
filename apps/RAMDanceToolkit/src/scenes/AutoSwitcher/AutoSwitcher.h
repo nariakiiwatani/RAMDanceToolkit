@@ -2,6 +2,7 @@
 
 #include "imgui.h"
 #include "BaseSceneWithJsonSettings.h"
+#include "ofxJsonUtilsUtils.h"
 
 class AutoSwitcher : public BaseSceneWithJsonSettings
 {
@@ -16,6 +17,8 @@ public:
 		ImGui::SliderFloat("interval", &interval_, 0, 30);
 		ImGui::SliderFloat("timer", &timer_, 0, interval_);
 	}
+	
+	JSON_FUNCS(interval_);
 
 	void setup()
 	{

@@ -147,7 +147,7 @@ void Paperman::loadJson(const ofJson &json)
 					   );
 	mEx.load("motionExt_"+getName()+".xml");
 }
-ofJson Paperman::createJson()
+ofJson Paperman::toJson() const
 {
 	mEx.save("motionExt_"+getName()+".xml");
 	return ofxJsonUtils::create(

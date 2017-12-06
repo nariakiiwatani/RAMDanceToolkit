@@ -19,6 +19,7 @@
 
 #include "ramMain.h"
 #include "BaseSceneWithJsonSettings.h"
+#include "ofxJsonUtilsUtils.h"
 
 class SoundCube : public BaseSceneWithJsonSettings
 {
@@ -152,8 +153,7 @@ public:
 		ImGui::Checkbox("show box", &show_box);
 	}
 	
-	void loadJson(const ofJson &json){}
-	ofJson createJson(){return ofJson();}
+	JSON_FUNCS(line_width,fade,show_box);
 
 	void setup()
 	{
@@ -209,10 +209,10 @@ public:
 		
 		string default_xml = _S(
 <scene>
-<shape type="cube" x="-100" y="50" z="0" rx="0" ry="90" rz="0" sx="200" sy="100" sz="100" color="FFFFFF" sound="../../../../resources/Sounds/1.aif" trigger="off" loop="on"/>
-<shape type="cube" x="200" y="50" z="0" rx="0" ry="0" rz="0" sx="100" sy="100" sz="100" color="FFFFFF" sound="../../../../resources/Sounds/2.aif" trigger="on" loop="on"/>
-<shape type="cube" x="200" y="50" z="200" rx="0" ry="0" rz="0" sx="100" sy="100" sz="100" color="FFFFFF" sound="../../../../resources/Sounds/3.aif" trigger="off" loop="on"/>
-<shape type="cube" x="200" y="50" z="-200" rx="0" ry="0" rz="0" sx="100" sy="100" sz="100" color="FFFFFF" sound="../../../../resources/Sounds/4.aif" trigger="on" loop="on"/>
+<shape type="cube" x="-100" y="50" z="0" rx="0" ry="90" rz="0" sx="200" sy="100" sz="100" color="FFFFFF" sound="Sounds/1.aif" trigger="off" loop="on"/>
+<shape type="cube" x="200" y="50" z="0" rx="0" ry="0" rz="0" sx="100" sy="100" sz="100" color="FFFFFF" sound="Sounds/2.aif" trigger="on" loop="on"/>
+<shape type="cube" x="200" y="50" z="200" rx="0" ry="0" rz="0" sx="100" sy="100" sz="100" color="FFFFFF" sound="Sounds/3.aif" trigger="off" loop="on"/>
+<shape type="cube" x="200" y="50" z="-200" rx="0" ry="0" rz="0" sx="100" sy="100" sz="100" color="FFFFFF" sound="Sounds/4.aif" trigger="on" loop="on"/>
 </scene>
 		);
 

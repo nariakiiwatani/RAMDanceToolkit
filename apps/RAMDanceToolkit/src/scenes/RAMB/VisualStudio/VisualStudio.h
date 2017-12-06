@@ -21,11 +21,11 @@ public:
     
 	void onEnable();
 	void loadJson(const ofJson &json);
-	ofJson createJson();
+	ofJson toJson() const;
 
 private:
     
-    ramMotionExtractor    motionExtractor;
+	rdtk::MotionExtractor    motionExtractor;
     
     float mBox1H;
     float mBox2H;

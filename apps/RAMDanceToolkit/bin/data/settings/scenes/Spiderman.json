@@ -1,10 +1,10 @@
 {
-    "mDamping": 0.950000047683716,
+    "mDamping": 1.0,
     "mEnableColor": false,
-    "mGravity": -1.20000004768372,
+    "mGravity": 0.0,
     "mIsDrawEdge": true,
-    "mLife": 80,
+    "mLife": 200,
     "mSize": 2.0,
-    "mThreshold": 19.8000011444092,
+    "mThreshold": 15.0,
     "mTimestep": 0.660000026226044
 }

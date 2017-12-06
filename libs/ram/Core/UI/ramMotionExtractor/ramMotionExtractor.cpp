@@ -484,7 +484,7 @@ void MotionExtractor::clearPorts(){
 	}
 }
 
-void MotionExtractor::save(string file){
+void MotionExtractor::save(string file) const{
 
 	ofxXmlSettings xml;
 

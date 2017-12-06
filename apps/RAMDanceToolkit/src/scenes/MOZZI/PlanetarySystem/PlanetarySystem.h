@@ -28,7 +28,7 @@ public:
 
     void drawImGui() override;
 	void loadJson(const ofJson &json) override;
-	ofJson createJson() override;
+	ofJson toJson() const override;
 	void onEnabled() override;
     
     string getName() const override { return "Planetary System"; }

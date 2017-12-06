@@ -1,1 +1,38 @@
-null
+{
+    "mBoxSize": 3.0,
+    "mNodeVisibility": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+    ],
+    "mNumDuplicate": 20.0,
+    "mRadius": 110.0,
+    "mScale": 1.0,
+    "mShowActor": false,
+    "mToggleAll": false,
+    "mTranslate": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    }
+}

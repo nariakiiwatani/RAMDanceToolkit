@@ -40,6 +40,9 @@ public:
 	void dragEvent(ofDragInfo dragInfo);
 	void gotMessage(ofMessage msg);
 	
+	void audioOut(float * output, int bufferSize, int nChannels);
+	
+
 	// ram methods
 	// ------------------------
 	void drawActor(const rdtk::Actor &actor);
@@ -48,5 +51,7 @@ public:
 	void onActorExit(const rdtk::Actor &actor);
 	void onRigidSetup(const rdtk::RigidBody &rigid);
 	void onRigidExit(const rdtk::RigidBody &rigid);
+	
+	std::vector<ofPtr<rdtk::BaseScene>> sound_scenes_;
 
 };

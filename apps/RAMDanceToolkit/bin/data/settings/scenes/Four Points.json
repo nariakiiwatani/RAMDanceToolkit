@@ -1,1 +1,13 @@
-null
+{
+    "currentSelected": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "showFourPointSphere": false,
+    "showFourPointTwist": true,
+    "twistExtensionHeight": 1.0,
+    "twistExtensionWidth": 1.0,
+    "twistResolution": 20.0
+}

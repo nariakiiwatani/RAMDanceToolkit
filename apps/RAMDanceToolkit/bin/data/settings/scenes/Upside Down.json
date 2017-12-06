@@ -1,1 +1,13 @@
-null
+{
+    "mAutoRotate": {
+        "x": false,
+        "y": false,
+        "z": false
+    },
+    "mEuler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "mOffset": -2.99999713897705
+}

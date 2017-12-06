@@ -1,1 +1,7 @@
-null
+{
+    "gravity->force": 0.000100004675914533,
+    "particle_amount": 4.0,
+    "pe.particle_life": 2.0,
+    "pe.particle_velocity": 2.0,
+    "useGhost": false
+}

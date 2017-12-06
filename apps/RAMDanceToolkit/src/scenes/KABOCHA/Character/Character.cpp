@@ -124,7 +124,7 @@ void Character::loadJson(const ofJson &json)
 					   );
 }
 
-ofJson Character::createJson()
+ofJson Character::toJson() const
 {
 	return ofxJsonUtils::create(
 					   "Character0",isChacterOn[0]

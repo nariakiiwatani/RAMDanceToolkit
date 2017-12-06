@@ -48,6 +48,8 @@ namespace rdtk{
 		virtual void onRigidSetup(const RigidBody &rigid);
 		virtual void onRigidExit(const RigidBody &rigid);
 		
+		virtual void audioOut(float * output, int bufferSize, int nChannels){}
+		
 	};
 }
 

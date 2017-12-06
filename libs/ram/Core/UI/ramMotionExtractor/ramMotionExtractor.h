@@ -55,7 +55,7 @@ namespace rdtk{
 		
 		/*=== Utilities ===*/
 		void clearPorts();
-		void save(string file);
+		void save(string file) const;
 		void load(string file);
 		
 		void pushFromID(int actorId, int jointId);

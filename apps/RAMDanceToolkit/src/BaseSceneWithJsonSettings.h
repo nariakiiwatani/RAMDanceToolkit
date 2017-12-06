@@ -16,7 +16,7 @@ class BaseSceneWithJsonSettings : public rdtk::BaseScene
 public:
 	BaseSceneWithJsonSettings() {
 		settings_.setWillSaveListener([this](const ofJson &src, ofJson &dst) {
-			dst = this->createJson();
+			dst = this->toJson();
 		});
 	}
 	void onEnabled() {
@@ -29,5 +29,5 @@ public:
 protected:
 	ofxJsonContainer<ofJson> settings_;
 	virtual void loadJson(const ofJson &json){}
-	virtual ofJson createJson(){return ofJson();}
+	virtual ofJson toJson() const{return ofJson();}
 };

@@ -34,5 +34,5 @@ private:
     bool isChacterOn[4] = {false,false,false,false};
 
 	void loadJson(const ofJson &json);
-	ofJson createJson();
+	ofJson toJson() const;
 };

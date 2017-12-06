@@ -4,6 +4,7 @@
 #include "ramCameraManager.h"
 #include "imgui.h"
 #include "BaseSceneWithJsonSettings.h"
+#include "ofxJsonUtilsUtils.h"
 
 class MirrorCamera : public BaseSceneWithJsonSettings
 {
@@ -32,6 +33,8 @@ public:
 			ImGui::TreePop();
 		}
 	}
+	
+	JSON_FUNCS(mirror_width_,scale_);
 	
 	void onEnabled() {
 		auto &cm = rdtk::CameraManager::instance();

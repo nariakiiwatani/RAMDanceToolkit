@@ -16,7 +16,9 @@
 // limitations under the License.
 
 #pragma once
+
 #include "BaseSceneWithJsonSettings.h"
+#include "ofxJsonUtilsUtils.h"
 
 class UpsideDown : public BaseSceneWithJsonSettings
 {
@@ -30,7 +32,10 @@ public:
     float mOffset;
     
     ofVec3f mAutoRotateSpeed;
-    struct { bool x, y, z; } mAutoRotate;
+    struct {
+		bool x, y, z; 
+		JSON_FUNCS(x,y,z);
+	} mAutoRotate;
 	
 	void setupControlPanel()
 	{
@@ -88,10 +93,9 @@ public:
 			mOffset = -3.0f;
 		}
 	}
-	
-	void loadJson(const ofJson &json){}
-	ofJson createJson(){return ofJson();}
 
+	JSON_FUNCS(mEuler,mAutoRotate,mOffset);
+	
 	void setup()
 	{
         mAutoRotateSpeed.set(1.0f);

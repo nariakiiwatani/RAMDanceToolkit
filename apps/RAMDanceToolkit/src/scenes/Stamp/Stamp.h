@@ -16,7 +16,9 @@
 // limitations under the License.
 
 #pragma once
+
 #include "BaseSceneWithJsonSettings.h"
+#include "ofxJsonUtilsUtils.h"
 
 class Stamp : public BaseSceneWithJsonSettings
 {
@@ -63,9 +65,8 @@ public:
 		ImGui::DragFloat("Line Width", &line_width, 0.1, 0, 6);
 	}
 	
-	void loadJson(const ofJson &json){}
-	ofJson createJson(){return ofJson();}
-
+	JSON_FUNCS(use_idle_timer,mShowActor,color,line_width);
+	
 	void setup()
 	{
 		mStamp.clear();

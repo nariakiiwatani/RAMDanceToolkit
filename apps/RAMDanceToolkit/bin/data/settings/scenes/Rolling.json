@@ -2,6 +2,6 @@
     "boxSize": 130.0,
     "distance": 33.0,
     "maxHeight": 42,
-    "showDebug": false,
+    "showDebug": true,
     "spd": 0.00999999977648258
 }

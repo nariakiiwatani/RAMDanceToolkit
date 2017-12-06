@@ -21,6 +21,7 @@
 #include "ofxCv.h"
 #include "ramPlanarGestureRecognizer.h"
 #include "BaseSceneWithJsonSettings.h"
+#include "ofxJsonUtilsUtils.h"
 
 class HistoryPoint : public rdtk::Fading
 {
@@ -109,6 +110,8 @@ public:
 		ImGui::DragFloat("Center lerp rate", &centerLerpRate, 0.02, 0.0, 1.0);
 		ImGui::DragFloat("Normal lerp rate", &normalLerpRate, 0.02, 0.0, 1.0);
 	}
+	
+	JSON_FUNCS(onlyLimbs,drawDebug,maxNotationLife,maxMarkLife,threshold,centerLerpRate,normalLerpRate);
 	
 	void setup()
 	{

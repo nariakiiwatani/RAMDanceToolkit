@@ -33,6 +33,7 @@
 #include "ChainObject.h"
 #include "btBulletDynamicsCommon.h"
 #include "BaseSceneWithJsonSettings.h"
+#include "ofxJsonUtilsUtils.h"
 
 // ------------------------
 class AttachableChain {
@@ -118,8 +119,8 @@ public:
     string getName() const { return "Chain"; }
 
 	void drawImGui();
-	void loadJson(const ofJson &json){}
-	ofJson createJson(){return ofJson();}
+	
+	JSON_FUNCS(mGravity,mNumEdges,mAttachingEdge,mEdgeLength,mThickness);
 
 private:
 	void onKeyPressed(ofKeyEventArgs &e);

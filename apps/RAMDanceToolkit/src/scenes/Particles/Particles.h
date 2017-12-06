@@ -19,6 +19,7 @@
 
 #include "ParticleEngine.h"
 #include "BaseSceneWithJsonSettings.h"
+#include "ofxJsonUtilsUtils.h"
 
 class Particles : public BaseSceneWithJsonSettings
 {
@@ -54,8 +55,7 @@ public:
 		ImGui::DragFloat("Gravity", &gravity->force, 0.005, -0.1, 0.1);
 	}
 	
-	void loadJson(const ofJson &json){}
-	ofJson createJson(){return ofJson();}
+	JSON_FUNCS(useGhost,particle_amount,pe.particle_life,pe.particle_velocity,gravity->force);
 
 	void setup()
 	{

@@ -23,7 +23,7 @@ public:
 						   ,kv(mode)
 						   ,kv(lineWidth));
 	}
-	ofJson createJson() {
+	ofJson toJson() const {
 		return ofxJsonUtils::create(
 									kv(threshold)
 									,kv(opacity)

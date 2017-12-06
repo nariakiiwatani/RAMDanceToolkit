@@ -1,1 +1,56 @@
-null
+{
+    "lines": [
+        {
+            "active": true,
+            "color": {
+                "a": 1.0,
+                "b": 0.0,
+                "g": 0.0,
+                "r": 1.0
+            },
+            "curve": 138.000015258789,
+            "extend_from": 300.0,
+            "extend_to": 260.0,
+            "line_width": 2.0,
+            "noise_freq": 0.0,
+            "noise_scale": 0.0,
+            "spiral_num_rotate": 0.0,
+            "spiral_radius": 0.0
+        },
+        {
+            "active": true,
+            "color": {
+                "a": 1.0,
+                "b": 0.0,
+                "g": 1.0,
+                "r": 1.0
+            },
+            "curve": 138.000015258789,
+            "extend_from": 360.0,
+            "extend_to": 300.0,
+            "line_width": 2.0,
+            "noise_freq": 0.0,
+            "noise_scale": 0.0,
+            "spiral_num_rotate": 0.0,
+            "spiral_radius": 0.0
+        },
+        {
+            "active": true,
+            "color": {
+                "a": 1.0,
+                "b": 0.0,
+                "g": 1.0,
+                "r": 0.0
+            },
+            "curve": 250.0,
+            "extend_from": 300.0,
+            "extend_to": 260.0,
+            "line_width": 2.0,
+            "noise_freq": 0.0,
+            "noise_scale": 0.0,
+            "spiral_num_rotate": 0.0,
+            "spiral_radius": 0.0
+        }
+    ],
+    "random_change_time": 60.0
+}
