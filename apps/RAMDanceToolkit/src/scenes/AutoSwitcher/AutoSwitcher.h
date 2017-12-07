@@ -16,12 +16,15 @@ public:
 	{
 		ImGui::SliderFloat("interval", &interval_, 0, 30);
 		ImGui::SliderFloat("timer", &timer_, 0, interval_);
+		ImGui::DragFloat2("string offset", &string_offset_[0]);
+		ImGui::ColorEdit4("string color", &string_color_[0]);
 	}
 	
-	JSON_FUNCS(interval_);
+	JSON_FUNCS(interval_,string_offset_,string_color_);
 
 	void setup()
 	{
+		font_.load(rdtk::ToResourcePath(RAM_FONT_FILE),64,true,true,true);
 	}
 	
 	void update()
@@ -37,14 +40,24 @@ public:
 	void draw()
 	{
 	}
+	void drawHUD()
+	{
+		if(auto scene = getScene(active_scene_index_)) {
+			ofPushStyle();
+			ofSetColor(string_color_);
+			ofRectangle rect = font_.getStringBoundingBox(scene->getName(),0,0);
+			font_.drawString(scene->getName(), ofGetWidth()-rect.getWidth()+string_offset_.x, rect.getBottom()+string_offset_.y);
+			ofPopStyle();
+		}
+	}
 private:
+	ofPtr<rdtk::BaseScene> getScene(int index) {
+		if(0 <= index && index < scenes_.size()) {
+			return scenes_[index];
+		}
+		return nullptr;
+	};
 	void nextScene() {
-		auto getScene = [this](int index) -> ofPtr<rdtk::BaseScene> {
-			if(0 <= index && index < scenes_.size()) {
-				return scenes_[index];
-			}
-			return nullptr;
-		};
 		if(auto scene = getScene(active_scene_index_)) {
 			scene->setEnabled(false);
 		}
@@ -58,7 +71,10 @@ private:
 	
 	float interval_=20;
 	float timer_=0;
+	ofVec2f string_offset_;
+	ofFloatColor string_color_;
 	
 	std::vector<ofPtr<rdtk::BaseScene>> scenes_;
 	int active_scene_index_=-1;
+	ofTrueTypeFont font_;
 };
