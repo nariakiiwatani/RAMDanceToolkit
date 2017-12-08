@@ -94,20 +94,11 @@ class Moji : public BaseSceneWithJsonSettings
         ImGui::Columns(1);
         if (updated) selectPoints(selectedJoint);
     }
-	void onEnable() {
+	void onEnabled() {
+		BaseSceneWithJsonSettings::onEnabled();
 		nodes.clear();
 	}
-	void loadJson(const ofJson &json) {
-		ofxJsonUtils::load(json
-						   ,kv(mMinDistance)
-						   ,kv(selectedJoint));
-	}
-	ofJson toJson() const {
-		return ofxJsonUtils::create(
-									kv(mMinDistance)
-									,kv(selectedJoint));
-
-	}
+	JSON_FUNCS(mMinDistance,selectedJoint);
     int getChoice(ofxUIToggleMatrix* matrix) {
         vector<ofxUIToggle*> toggles = matrix->getToggles();
         for(int i = 0; i < toggles.size(); i++) {

@@ -10,7 +10,7 @@ public:
     void drawImGui(){
         ImGui::Checkbox("sound", &isSound);
         ImGui::Checkbox("draw line", &isDrawLine);
-        ImGui::SliderFloat("volume", &volume, 0.0000001, 1);
+        ImGui::SliderFloat("volume", &volume, 0.0000001, 10);
         ImGui::Checkbox("head synth", &isHeadSynth);
         
     }
@@ -136,8 +136,9 @@ public:
         
         if (isDrawLine) {
             for (int j = 0; j < getNumNodeArray(); j++) {
+				if(soundline[j].size() == 0) continue;
                 ofPushMatrix();
-                ofScale(100, -100);
+                ofScale(ofGetWidth()/(float)(pointsIndex1.size()-1), -ofGetHeight()/2.f);
                 ofTranslate(0, -1);
                 ofSetColor(255);
                 soundline[j].draw();

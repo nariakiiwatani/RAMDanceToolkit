@@ -62,10 +62,13 @@
 #include "Chain.h"
 #endif
 
+#include "ofxWatchdog.h"
+
 #pragma mark - oF methods
 //--------------------------------------------------------------
 void ofApp::setup()
 {
+//	ofxWatchdog::watch(3000, true);
 	ofSetFrameRate(60);
 	ofSetVerticalSync(true);
 	
@@ -80,11 +83,12 @@ void ofApp::setup()
 	rdtk::SceneManager& sceneManager = rdtk::SceneManager::instance();
 
 	auto switcher = sceneManager.addScene<AutoSwitcher>();
-	sceneManager.addScene<MirrorCamera>();
+	sceneManager.addScene<MirrorCamera>()->setEnabled(true);
 	
 	switcher->addScene(sceneManager.addScene<Spiderman>());
 	switcher->addScene(sceneManager.addScene<VisualStudio>());
 	switcher->addScene(sceneManager.addScene<Paperman>());
+	sound_scenes_.push_back(sceneManager.getScene(sceneManager.getNumScenes()-1));
 	
 	switcher->addScene(sceneManager.addScene<UniScene>());
 	switcher->addScene(sceneManager.addScene<randomCubeUni>());
@@ -123,7 +127,9 @@ void ofApp::setup()
 	switcher->addScene(sceneManager.addScene<Kepler>());
 	switcher->addScene(sceneManager.addScene<Chain>());
 #endif
-	switcher->enable();
+	switcher->setEnabled(true);
+	
+	ofSetFullscreen(true);
 }
 
 //--------------------------------------------------------------
@@ -140,7 +146,9 @@ void ofApp::draw()
 
 void ofApp::audioOut(float * output, int bufferSize, int nChannels){
 	for(auto &s : sound_scenes_) {
-		s->audioOut(output, bufferSize, nChannels);
+		if(s->isEnabled()) {
+			s->audioOut(output, bufferSize, nChannels);
+		}
 	}
 }
 
@@ -192,7 +200,10 @@ void ofApp::onRigidExit(const rdtk::RigidBody &rigid)
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key)
 {
-    
+	switch(key) {
+		case 'f': ofSetFullscreen(true); break;
+		case 'F': ofSetFullscreen(false); break;
+	}
 }
 
 //--------------------------------------------------------------

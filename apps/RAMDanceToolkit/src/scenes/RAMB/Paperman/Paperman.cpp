@@ -144,6 +144,7 @@ void Paperman::loadJson(const ofJson &json)
 					   ,kv(mTrackDistance)
 					   ,kv(mPlayingMethod)
 					   ,kv(mManualControlMethod)
+					   ,kv(volume)
 					   );
 	mEx.load("motionExt_"+getName()+".xml");
 }
@@ -151,11 +152,12 @@ ofJson Paperman::toJson() const
 {
 	mEx.save("motionExt_"+getName()+".xml");
 	return ofxJsonUtils::create(
-					   kv(mIsResetPos)
-					   ,kv(mEnableSound)
-					   ,kv(mTrackDistance)
-					   ,kv(mPlayingMethod)
-					   ,kv(mManualControlMethod)
+								kv(mIsResetPos)
+								,kv(mEnableSound)
+								,kv(mTrackDistance)
+								,kv(mPlayingMethod)
+								,kv(mManualControlMethod)
+								,kv(volume)
 	);
 }
 
@@ -371,8 +373,10 @@ void Paperman::audioOut(float * output, int bufferSize, int nChannels)
     while(i < mPlanes[0].pathLines.getNumVertices()){
         float x = mPlanes[0].pathVertices[i].x;
         float y = mPlanes[0].pathVertices[i].y;
-        mWEAudioL[i] = output[i*nChannels    ] = x;
-        mWEAudioR[i] = output[i*nChannels + 1] = y;
+        mWEAudioL[i] = x;
+        mWEAudioR[i] = y;
+		output[i*nChannels    ] += x*volume;
+		output[i*nChannels + 1] += y*volume;
         i++;
     }
 }

@@ -1,7 +1,14 @@
 {
-    "boxSize": 130.0,
-    "distance": 33.0,
-    "maxHeight": 42,
-    "showDebug": true,
-    "spd": 0.00999999977648258
+    "box_size": 29.0000019073486,
+    "rect": {
+        "height": 269.0,
+        "width": 305.0,
+        "x": -152.5,
+        "y": -316.5
+    },
+    "showDebug": false,
+    "y_range": {
+        "x": 0.0,
+        "y": 80.0
+    }
 }

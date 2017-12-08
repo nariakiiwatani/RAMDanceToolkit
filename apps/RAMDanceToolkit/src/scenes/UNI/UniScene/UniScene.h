@@ -9,6 +9,7 @@
 #include "ofxBullet.h"
 #include "btPicker.h"
 #include "BaseSceneWithJsonSettings.h"
+#include "ofxJsonUtilsUtils.h"
 
 class UniScene : public BaseSceneWithJsonSettings
 {
@@ -21,16 +22,24 @@ public:
     void drawImGui();
     void drawActor(const rdtk::Actor &actor);
     
-	void onEnable();
-	void loadJson(const ofJson &json);
-	ofJson toJson() const;
+	void onEnabled();
+	JSON_FUNCS(bDrawDebug,sphere_size,gavity,wall);
 private:
     
     // Bullet example code from SoftBodyExample
     ofxBulletWorldSoft world;
-    ofxBulletBox * ground;
-    
-    ofxBulletBox wall[4];
+
+	struct Wall {
+		ofRectangle rect;
+		ofVec2f y_range;
+		bool dirty=false;
+		JSON_FUNCS(rect,y_range);
+		bool drawImGui();
+		void refresh(ofxBulletWorldSoft &world);
+		vector<shared_ptr<ofxBulletBox>> boxes;
+	};
+	Wall wall;
+	ofxBulletBox ground;
     
     vector<ofxBulletSphere*> sphere;
     ofxBulletSphere sphere_mouse[5];

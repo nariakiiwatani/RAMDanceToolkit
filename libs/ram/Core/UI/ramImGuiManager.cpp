@@ -28,6 +28,8 @@ GuiManager::GuiManager()
 
 	prefGui = ofPtr<PreferencesGui>(new PreferencesGui());
 	addScene(ofPtr<SceneGui>(prefGui));
+	
+	switchGuiType(NONE);
 }
 
 GuiManager::~GuiManager()
@@ -44,26 +46,39 @@ void GuiManager::addScene(ofPtr<SceneGui> scn)
 	sceneArr.push_back(scn);
 }
 
+void GuiManager::switchGuiType(GuiType type)
+{
+	switch(type) {
+		case IMGUI:
+			visible = true;
+			GetGUI().setVisible(false);
+			ofShowCursor();
+			break;
+		case OFXUI:
+			visible = false;
+			GetGUI().setVisible(true);
+			ofShowCursor();
+			break;
+		case NONE:
+			visible = false;
+			GetGUI().setVisible(false);
+			ofHideCursor();
+			break;
+	}
+	currentGuiType = type;
+}
+
+void GuiManager::nextGuiType()
+{
+	switchGuiType((GuiType)(((int)currentGuiType + 1) % 3));
+}
+
+
 void GuiManager::keyPressed(ofKeyEventArgs & key)
 {
 	if (key.key == '\t')
 	{
-		currentUIView = (currentUIView + 1) % 3;
-		if (currentUIView == 0)
-		{
-			visible = true;
-			GetGUI().setVisible(false);
-		}
-		if (currentUIView == 1)
-		{
-			visible = false;
-			GetGUI().setVisible(true);
-		}
-		if (currentUIView == 2)
-		{
-			visible = false;
-			GetGUI().setVisible(false);
-		}
+		nextGuiType();
 	}
 }
 

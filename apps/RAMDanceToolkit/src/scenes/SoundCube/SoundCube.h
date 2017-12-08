@@ -30,41 +30,23 @@ public:
 	public:
 		
 		ofColor color;
-		ofSoundPlayer *player;
-		bool trigger_mode;
-		bool visible;
+		shared_ptr<ofSoundPlayer> player;
+		bool trigger_mode=false;
+		bool visible=true;
 		
 		rdtk::CollisionEvent event;
-		
-		Shape() : id(-1), obj(NULL), alpha(0), player(NULL), trigger_mode(false), visible(true) {}
-		
-		~Shape()
-		{
-			if (obj)
-			{
-				delete obj;
-			}
-			
-			if (player)
-			{
-				player->stop();
-				delete player;
-			}
-		}
-		
-		void set(int id, rdtk::Primitive *obj)
+
+		void set(int id, shared_ptr<rdtk::Primitive> obj)
 		{
 			this->id = id;
 			this->obj = obj;
 			
-			event.setPrimitive(obj);
+			event.setPrimitive(obj.get());
 		}
 		
 		void loadSound(const string &path, bool trigger = false, bool loop = true)
 		{
-			if (player) delete player;
-			
-			player = new ofSoundPlayer;
+			player = make_shared<ofSoundPlayer>();
 			player->load(path);
 			player->setLoop(loop ? OF_LOOP_NORMAL : OF_LOOP_NONE);
 			trigger_mode = trigger;
@@ -119,14 +101,14 @@ public:
 			
 			ofPopStyle();
 		}
-		
+
 	private:
 		
-		int id;
-		rdtk::Primitive *obj;
+		int id=-1;
+		shared_ptr<rdtk::Primitive> obj;
 		
-		float alpha;
-		float volume, volume_t;
+		float alpha=0;
+		float volume=0, volume_t=0;
 	};
 	
 	string getName() const { return "SoundCube"; }
@@ -150,37 +132,47 @@ public:
 	{
 		ImGui::DragFloat("line width", &line_width, 0.1, 0, 10);
 		ImGui::DragFloat("fade", &fade, 0.01, 0, 1);
-		ImGui::Checkbox("show box", &show_box);
+		if(ImGui::Checkbox("show box", &show_box)) {
+			for(auto &s : shapes) {
+				if(s.shape) s.shape->visible = show_box;
+			}
+		}
+		for(auto &s : shapes) {
+			ImGui::PushID(&s);
+			if(ImGui::TreeNode("shape")) {
+				if(s.drawImGui()) {
+					s.apply();
+				}
+				ImGui::TreePop();
+			}
+			ImGui::PopID();
+		}
 	}
-	
-	JSON_FUNCS(line_width,fade,show_box);
+
+	JSON_FUNCS(line_width,fade,show_box,shapes);
 
 	void setup()
 	{
-		show_box = true;
-		ofAddListener(ofEvents().keyPressed, this, &SoundCube::onKeyPressed);
 	}
 	
 	void update()
 	{
-		for(int i=0; i<shapes.size(); i++)
-			shapes.at(i)->visible = show_box;
 	}
 	
 	void onEnabled()
 	{
-		cout << "[Unit enabled] " << getName() << endl;
-		loadXML();
+		BaseSceneWithJsonSettings::onEnabled();
+		
+		int i = 0;
+		for(auto &s : shapes) {
+			s.refresh();
+		}
 	}
 	
 	void onDisabled()
 	{
-		cout << "[Unit disabled] " << getName() << endl;
-        
-		for (int i = 0; i < shapes.size(); i++)
-		{
-			shapes[i]->player->stop();
-		}
+		BaseSceneWithJsonSettings::onDisabled();
+		clear();
 	}
 	
 	void draw()
@@ -192,144 +184,90 @@ public:
 		ofSetLineWidth(line_width);
 		
 		if (show_box) ofDrawAxis(100);
-		for (int i = 0; i < shapes.size(); i++)
-		{
-			shapes[i]->draw(fade);
+		for(auto &s : shapes) {
+			if(s.shape) s.shape->draw(fade);
 		}
-		
+
 		ofPopStyle();
 		rdtk::EndCamera();
 	}
-	
-	void loadXML()
+		
+	void clear()
 	{
-		clear();
-		
-#define _S(src) #src
-		
-		string default_xml = _S(
-<scene>
-<shape type="cube" x="-100" y="50" z="0" rx="0" ry="90" rz="0" sx="200" sy="100" sz="100" color="FFFFFF" sound="Sounds/1.aif" trigger="off" loop="on"/>
-<shape type="cube" x="200" y="50" z="0" rx="0" ry="0" rz="0" sx="100" sy="100" sz="100" color="FFFFFF" sound="Sounds/2.aif" trigger="on" loop="on"/>
-<shape type="cube" x="200" y="50" z="200" rx="0" ry="0" rz="0" sx="100" sy="100" sz="100" color="FFFFFF" sound="Sounds/3.aif" trigger="off" loop="on"/>
-<shape type="cube" x="200" y="50" z="-200" rx="0" ry="0" rz="0" sx="100" sy="100" sz="100" color="FFFFFF" sound="Sounds/4.aif" trigger="on" loop="on"/>
-</scene>
-		);
-
-#undef _S
-		
-		const string filePath = "SoundCube.xml";
-		
-		if (!ofFile::doesFileExist(filePath))
-		{
-			ofBuffer buf(default_xml);
-			ofBufferToFile(filePath, buf);
+		shapes.clear();
+	}
+	
+protected:
+	struct ShapeSettings {
+		ofVec3f pos;
+		ofVec3f rot;
+		ofVec3f size;
+		ofFloatColor color;
+		string type;
+		string sound;
+		bool trigger, loop;
+		bool need_refresh;
+		int index;
+		JSON_FUNCS(index,pos,rot,size,color,type,sound,trigger,loop);
+		shared_ptr<rdtk::Primitive> primitive;
+		shared_ptr<Shape> shape;
+		bool drawImGui() {
+			bool ret = false;
+			ret |= ImGui::DragFloat3("pos", &pos[0]);
+			ret |= ImGui::DragFloat3("rot", &rot[0]);
+			need_refresh |= ImGui::DragFloat3("size", &size[0]);
+			ret |= ImGui::ColorEdit4("color", &color[0]);
+			char buf[256]={};
+			strcpy(buf, type.c_str());
+			if(ImGui::InputText("type", buf, 256, ImGuiInputTextFlags_EnterReturnsTrue)) {
+				type = buf;
+				need_refresh = true;
+			}
+			strcpy(buf, sound.c_str());
+			if(ImGui::InputText("sound", buf, 256, ImGuiInputTextFlags_EnterReturnsTrue)) {
+				sound = buf;
+				need_refresh = true;
+			}
+			need_refresh |= ImGui::Checkbox("trigger", &trigger);
+			need_refresh |= ImGui::Checkbox("loop", &loop);
+			if(need_refresh && ImGui::Button("refresh") && refresh()) {
+				need_refresh = false;
+			}
 		}
-		
-		ofxXmlSettings xml;
-		xml.loadFile(filePath);
-		
-		xml.pushTag("scene");
-		
-		int n = xml.getNumTags("shape");
-		for (int i = 0; i < n; i++)
-		{
-			ofVec3f pos;
-			ofVec3f rot;
-			ofVec3f size;
-			
-			pos.x = xml.getAttribute("shape", "x", 0, i);
-			pos.y = xml.getAttribute("shape", "y", 0, i);
-			pos.z = xml.getAttribute("shape", "z", 0, i);
-			
-			rot.x = xml.getAttribute("shape", "rx", 0, i);
-			rot.y = xml.getAttribute("shape", "ry", 0, i);
-			rot.z = xml.getAttribute("shape", "rz", 0, i);
-			
-			size.x = xml.getAttribute("shape", "sx", 1, i);
-			size.y = xml.getAttribute("shape", "sy", 1, i);
-			size.z = xml.getAttribute("shape", "sz", 1, i);
-			
-			string hex = xml.getAttribute("shape", "color", "777777", i);
-			ofColor color = ofColor::fromHex(ofHexToInt(hex));
-			
-			string type = xml.getAttribute("shape", "type", "", i);
-			
-			if (type != "")
+		void apply() {
+			primitive->setPosition(pos);
+			primitive->setOrientation(rot);
+			primitive->updatePhysicsTransform();
+			shape->color = color;
+		}
+		bool refresh() {
+			if (type == "cube")
 			{
-				rdtk::Primitive *s;
-				
-				if (type == "cube")
-				{
-					s = new rdtk::BoxPrimitive(size);
-				}
-				else if (type == "pyramid")
-				{
-					s = new rdtk::PyramidPrimitive(size.x);
-				}
-				else if (type == "sphere")
-				{
-					s = new rdtk::SpherePrimitive(size.x);
-				}
-				else
-				{
-					ofLogError("Shape") << "invalid shape type";
-					continue;
-				}
-				
-				s->setPosition(pos);
-				s->setOrientation(rot);
-				s->updatePhysicsTransform();
-				
-				s->getRigidBody().setStatic(true);
-				
-				Shape *o = new Shape;
-				o->color = color;
-				o->set(i, s);
-				
-				string sound = xml.getAttribute("shape", "sound", "", i);
-				bool toggle_mode = xml.getAttribute("shape", "trigger", "off", i) == "on";
-				bool loop = xml.getAttribute("shape", "loop", "off", i) == "on";
-				
-				if (sound != "")
-				{
-					o->loadSound(rdtk::ToResourcePath(sound), toggle_mode, loop);
-				}
-				
-				cout << type << " loaded." << endl;
-				
-				shapes.push_back(o);
+				primitive = make_shared<rdtk::BoxPrimitive>(size);
+			}
+			else if (type == "pyramid")
+			{
+				primitive = make_shared<rdtk::PyramidPrimitive>(size.x);
+			}
+			else if (type == "sphere")
+			{
+				primitive = make_shared<rdtk::SpherePrimitive>(size.x);
 			}
 			else
 			{
 				ofLogError("Shape") << "invalid shape type";
-				continue;
+				shape.reset();
+				return false;
 			}
+			shape = make_shared<Shape>();
+			shape->set(index, primitive);
+			
+			if (sound != "") {
+				shape->loadSound(rdtk::ToResourcePath(sound), trigger, loop);
+			}
+			apply();
+			return true;
 		}
-		
-		xml.popTag();
-	}
-	
-	
-	
-	void clear()
-	{
-		for (int i = 0; i < shapes.size(); i++)
-			delete shapes[i];
-		shapes.clear();
-	}
-	
-	void onKeyPressed(ofKeyEventArgs &e)
-	{
-		if (isEnabled()) return;
-		
-		if (e.key == 'r')
-			loadXML();
-	}
-	
-	
-protected:
-	
-	vector<Shape*> shapes;
-	
+	};
+	vector<ShapeSettings> shapes;
 };

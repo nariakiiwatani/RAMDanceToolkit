@@ -27,8 +27,8 @@ namespace rdtk{
 	public:
 		bool fullscreen = false;
 		bool useShadows = false;
-		float floorSize = 600.0;
-		float floorGridSize = 50.0;
+		float floorSize = 8000.0;
+		float floorGridSize = 200.0;
 		int floorStyle = Floor::FLOOR_GRID_LINES;
 		ofFloatColor bg = ofFloatColor(0);
 		
@@ -63,7 +63,7 @@ namespace rdtk{
 			ImGui::SameLine();
 			ImGui::RadioButton("CHECKER", &pref.floorStyle, Floor::FLOOR_CHECKER_PATTERN);
 			
-			ImGui::SliderFloat("Floor size", &pref.floorSize, 100, 1000);
+			ImGui::SliderFloat("Floor size", &pref.floorSize, 100, 20000);
 			ImGui::SliderFloat("Floor grid size", &pref.floorGridSize, 20, 200);
 			
 			ImGui::ColorEdit3("background", &pref.bg[0]);
@@ -90,7 +90,7 @@ namespace rdtk{
 			vector<string> floorNames = Floor::getFloorNames();
 			floorStyleRadio = addRadio("Floor style", floorNames);
 			floorStyleRadio->getToggles()[pref.floorStyle]->setValue(true);
-			addSlider("Floor size", 100, 1000, &pref.floorSize);
+			addSlider("Floor size", 100, 20000, &pref.floorSize);
 			addSlider("Floor grid Size", 20, 200, &pref.floorGridSize);
 			addSpacer();
 			

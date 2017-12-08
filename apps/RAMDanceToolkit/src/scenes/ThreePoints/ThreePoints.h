@@ -144,7 +144,7 @@ public:
 			node.beginTransform();
 			ofSetColor(yellowPrint);
 			
-			if(showRects && mToggles[i]->getValue()) {
+			if(showRects && mNodeVisibility[i]) {
 				ofPushStyle();
 				ofFill();
 				ofSetColor(255, 128);
@@ -160,7 +160,7 @@ public:
 			{
 				rdtk::Node* parent = node.getParent();
 				
-				if(parent->hasParent() && mToggles[i]->getValue())
+				if(parent->hasParent() && mNodeVisibility[i])
 				{
 					rdtk::Node* grandparent = parent->getParent();
 					ofVec3f a = node, b = *parent, c = *grandparent;

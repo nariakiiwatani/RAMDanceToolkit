@@ -6,6 +6,44 @@
 #define round(x) (x<0?ceil((x)-0.5):floor((x)+0.5))
 #endif
 
+bool UniScene::Wall::drawImGui()
+{
+	ofVec2f center = rect.getCenter();
+	ofVec2f size = ofVec2f(rect.getWidth(), rect.getHeight());
+	dirty |= ImGui::DragFloat2("center", &center[0]);
+	dirty |= ImGui::DragFloat2("size", &size[0]);
+	dirty |= ImGui::DragFloatRange2("height", &y_range[0], &y_range[1], 1, 0, 10000);
+	if(dirty) {
+		rect.setFromCenter(center, size.x, size.y);
+	}
+	return dirty && ImGui::Button("refresh");
+}
+
+void UniScene::Wall::refresh(ofxBulletWorldSoft &world)
+{
+	for(auto &box : boxes) {
+		box->remove();
+		box.reset();
+	}
+	boxes.resize(4);
+	for(auto &box : boxes) {
+		box = make_shared<ofxBulletBox>();
+	}
+	ofVec3f center = ofVec3f(rect.getCenter().x, (y_range[0]+y_range[1])/2.f, rect.getCenter().y);
+	ofVec3f size = ofVec3f(rect.getWidth(), y_range[1]-y_range[0], rect.getHeight());
+	ofVec3f half_size = size/2.f;
+	float mass = 0;
+	float size_min = 1;
+	boxes[0]->create(world.world, ofVec3f(center.x+half_size.x, center.y, center.z), mass, size_min, size.y, size.z);
+	boxes[1]->create(world.world, ofVec3f(center.x-half_size.x, center.y, center.z), mass, size_min, size.y, size.z);
+	boxes[2]->create(world.world, ofVec3f(center.x, center.y, center.z+half_size.z), mass, size.x, size.y, size_min);
+	boxes[3]->create(world.world, ofVec3f(center.x, center.y, center.z-half_size.z), mass, size.x, size.y, size_min);
+	for(auto &box : boxes) {
+		box->add();
+	}
+	dirty = false;
+}
+
 void UniScene::setup()
 {
     //!
@@ -17,49 +55,25 @@ void UniScene::setup()
     world.setup();
     world.setGravity(ofVec3f(0., gavity, 0.));
     world.setCamera(&cam);
-    
-    //!
-    ground = new ofxBulletBox();
-    ground->create( world.world, ofVec3f(0., 0., 0.), 0., 600., 1.f, 600.f );
-    //ground->setProperties(.25, .95);
-    ground->setProperties(.01, .01);
-    ground->add();
-    
-    wall[0].create(world.world, ofVec3f(300., 300., 0.), 0., 1.f, 200.f, 600.f);
-    ground->setProperties(.01, .01);
-    wall[0].add();
-    
-    wall[1].create(world.world, ofVec3f(-300., 300., 0.), 0., 1.f, 200.f, 600.f);
-    ground->setProperties(.01, .01);
-    wall[1].add();
-    
-    
-    wall[2].create(world.world, ofVec3f(0., 300., -300.), 0., 600.f, 200.f, 1.f);
-    ground->setProperties(.01, .01);
-    wall[2].add();
-    
-    wall[2].create(world.world, ofVec3f(0., 300., 300.), 0., 600.f, 200.f, 1.f);
-    ground->setProperties(.01, .01);
-    wall[2].add();
+	
+	ground.create(world.world, ofVec3f(0,0,0), 0.f, 2000,1,2000);
+    ground.add();
+	
     //!
     colors[0] = ofColor(15,197,138);
     colors[1] = ofColor(220, 0, 220);
     colors[2] = ofColor(220, 180, 60);
     colors[3] = ofColor(255, 20, 50);
     
-    sphere.push_back( new ofxBulletSphere());
-    int n = sphere.size() - 1;
-    sphere[n]->create(world.world, ofVec3f(0,300.0,0), 0.01f, sphere_size);
-    sphere[n]->add();
+	ofVec3f center = ofVec3f(wall.rect.getCenter().x, (wall.y_range[0]+wall.y_range[1])/2.f, wall.rect.getCenter().y);
+	for (int i = 0;i<5;i++){
+		sphere_mouse[i].create(world.world, center, 1.f, 10.f);
+		sphere_mouse[i].add();
+		
+		sphere_mouse2[i].create(world.world, center, 1.f, 10.f);
+		sphere_mouse2[i].add();
+	}
 
-    for (int i = 0;i<5;i++){
-        sphere_mouse[i].create(world.world, ofVec3f(30.0,30.0,30.0), 1.f, 10.f);
-        sphere_mouse[i].add();
-        
-        sphere_mouse2[i].create(world.world, ofVec3f(30.0,30.0,30.0), 1.f, 10.f);
-        sphere_mouse2[i].add();
-    }
-    
     bDrawDebug	= true;
     bSpacebar	= false;
     bAddEllipsoid = true;
@@ -114,7 +128,7 @@ void UniScene::draw()
 //    glEnable( GL_DEPTH_TEST );
     rdtk::BeginCamera(); {
         ofSetLineWidth(1.f);
-        //    if(bDrawDebug) world.drawDebug();
+        if(bDrawDebug) world.drawDebug();
         
         //!
         ofSetColor(255, 255, 255);
@@ -217,42 +231,51 @@ void UniScene::drawActor(const rdtk::Actor &actor)
 void UniScene::drawImGui()
 {
     //const char* label, float* v, float v_speed, float v_min, float v_max, const char* display_format, float power
+	ImGui::Checkbox("draw debug", &bDrawDebug);
     ImGui::SliderFloat("Sphere size", &sphere_size, 100., 300.);
     if(ImGui::SliderFloat("gavity", &gavity, -980.0, 980.0)){
         world.setGravity(ofVec3f(0., gavity, 0.));
     }
-    if(ImGui::SmallButton("add")){
-        cout<<"add new"<<endl;
-        add();
-    }
+	if(ImGui::SmallButton("add")){
+		add();
+	}
+	ImGui::SameLine();
+	if(ImGui::SmallButton("clear")){
+		clearSpheres();
+	}
+	if(ImGui::TreeNode("wall")) {
+		if(wall.drawImGui()) {
+			wall.refresh(world);
+		}
+		ImGui::TreePop();
+	}
 }
 
-void UniScene::onEnable()
+void UniScene::onEnabled()
 {
 	clearSpheres();
 	BaseSceneWithJsonSettings::onEnabled();
 	world.setGravity(ofVec3f(0., gavity, 0.));
+	wall.refresh(world);
+
+	btVector3 center = btVector3(wall.rect.getCenter().x, (wall.y_range[0]+wall.y_range[1])/2.f, wall.rect.getCenter().y);
+	for (int i = 0;i<5;i++){
+		sphere_mouse[i].getCollisionObject()->getWorldTransform().setOrigin(center);
+		sphere_mouse2[i].getCollisionObject()->getWorldTransform().setOrigin(center);
+	}
+
 	add();
 }
-void UniScene::loadJson(const ofJson &json)
+void UniScene::add()
 {
-	ofxJsonUtils::load(json
-					   ,kv(sphere_size)
-					   ,kv(gavity));
-}
-ofJson UniScene::toJson() const
-{
-	return ofxJsonUtils::create(
-								kv(sphere_size)
-								,kv(gavity));
-}
-
-
-
-void UniScene::add() {
-    
+	ofVec3f random_pos = [this]() {
+		ofVec3f center = ofVec3f(wall.rect.getCenter().x, (wall.y_range[0]+wall.y_range[1])/2.f, wall.rect.getCenter().y);
+		ofVec3f size = ofVec3f(wall.rect.getWidth(), wall.y_range[1]-wall.y_range[0], wall.rect.getHeight());
+		ofVec3f half_size = size/2.f;
+		return center + ofVec3f(ofRandom(-half_size.x,half_size.x), half_size.y, ofRandom(-half_size.z,half_size.x));;
+	}();
     sphere.push_back( new ofxBulletSphere());
-	sphere[sphere.size()-1]->create(world.world, ofVec3f(0,600.0,0), 0.01f, sphere_size);
+	sphere[sphere.size()-1]->create(world.world, random_pos, 0.01f, sphere_size);
 	sphere[sphere.size()-1]->add();
 }
 

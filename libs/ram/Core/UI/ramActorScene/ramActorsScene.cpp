@@ -26,7 +26,7 @@ using namespace rdtk;
 ActorsScene::ActorsScene() :
 bShowAllActor(true),
 bRecAllActor(false),
-bUseShading(true),
+bUseShading(false),
 bUseSimpleActor(true),
 loadNewFile(false)
 {

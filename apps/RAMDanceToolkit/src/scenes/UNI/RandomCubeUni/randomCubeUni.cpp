@@ -116,74 +116,29 @@ const ofColor tagColor[] = {
 };
 
 
-randomCubeUni::randomCubeUni():
-trigger(false),
-initParts(false),
-resetMove(false),
-showDebugBox(false),
-maxHeight(42),
-checkTime(0),
-counter(0),
-touchId(0),
-boxSize(130),
-distance(33.0),
-spd(0.010),
-length(0.5f),
-firstActorName("")
-{
-    
-}
 
 //--------------------------------------------------------------
 void randomCubeUni::setup()
 {
     auto & cam = rdtk::CameraManager::instance().getActiveCamera(); // <-- Get ramCamera like this
-    world.setup();
-    world.setCamera(&cam);
-    world.setGravity(ofVec3f(0, 90,0));
-    
-    //!
-    ground = new ofxBulletBox();
-    ground->create( world.world, ofVec3f(0., 0., 0.), 0., 600., 1.f, 600.f );
-    ground->setProperties(.25, 10.);//10.
-    ground->add();
- 
-    uniBall = new ofxBulletSphere();
-    ((ofxBulletSphere*)uniBall)->create( world.world, ofVec3f(0, 0, 0), 4.f, 20 );
-    uniBall->add();
-    
-    joints = new ofxBulletJoint();
-    joints->create( world.world, uniBall, ofVec3f(0, 0, 0));
-    joints->add();
-    
-    currentPos = joints->getPivotAWorldPos();
-    
-    touchId = (int)ofRandom(0, 19);
-    touchIDColor = tagColor[touchId];
     infoFont.load(OF_TTF_SANS, 50);
 }
 
 //--------------------------------------------------------------
 void randomCubeUni::update()
 {
-    //!
-    if(showDebugBox && ofGetElapsedTimeMillis() - checkTime > 1000){
-        showDebugBox = false;
-    }
-    world.update();
-    //ofSetWindowTitle("randomCube"+ofToString(ofGetFrameRate(), 0));
-    
-    if(trigger){ //for uni
-        currentPos += (randomPos - currentPos) * spd;
-        //cout<<currentPos<<" with acc"<< (randomPos - currentPos) * spd <<endl;
-        //pos, length = 2
-        joints->updatePivotPos(currentPos, length);
-        if(currentPos.distance(randomPos) <= 0.5){
-            trigger = false;
-            //cout<<"fin move"<<endl;
-        }
-    }
-    
+	const auto &nas = rdtk::ActorManager::instance().getAllNodeArrays();
+	for(auto &na : nas) {
+		if(!na.isActor()) {
+			continue;
+		}
+		ofVec3f pos = na.getNode(newJointID[touchId]).getGlobalPosition();//
+		
+		float dis = pos.distance(visibleBox);
+		if(dis <= box_size/2.f){
+			next();
+		}
+	}
 }
 
 //--------------------------------------------------------------
@@ -195,141 +150,62 @@ void randomCubeUni::draw()
     ofEnableAlphaBlending();
     ofFill();
     ofSetColor(touchIDColor, 200);
-    ofDrawBox(visibleBox, distance * 2);
+    ofDrawBox(visibleBox, box_size);
     ofDisableAlphaBlending();
     ofPopStyle();
-    cam.end();
     
+	if(showDebug) {
+		ofVec3f center = ofVec3f(rect.getCenter().x, (y_range[0]+y_range[1])/2.f, rect.getCenter().y);
+		ofVec3f size = ofVec3f(rect.getWidth(), y_range[1]-y_range[0], rect.getHeight());
+		ofPushStyle();
+		ofSetColor(ofColor::green);
+		ofDrawBox(center, size.x,size.y,size.z);
+		ofPopStyle();
+	}
+	cam.end();
 }
 
-void randomCubeUni::disaffectDraw(){
-    if(bEnabled){
-        ofSetColor(255, 0 , 0);
-        infoFont.drawString(jointIDText[touchId], ofGetWidth()/2, 100);
-    }
-}
-
-//--------------------------------------------------------------
-void randomCubeUni::drawImGui(){
-    ImGui::SliderFloat("distance", &distance, 1.0, 100.0);
-    ImGui::SliderFloat("speed", &spd, 0.0001, 0.010);
-    if(ImGui::SliderFloat("box size", &boxSize, 40, 1000)){
-        showDebugBox = true;
-        checkTime = ofGetElapsedTimeMillis();
-    }
-    
-    if(ImGui::SliderInt("max height", &maxHeight, 10, 150)){
-        showDebugBox = true;
-        checkTime = ofGetElapsedTimeMillis();
-    }
-    
-    if(ImGui::SmallButton("debug")){
-        showDebug = !showDebug;
-    }    
-    //length
-}
-
-void randomCubeUni::loadJson(const ofJson &json)
-{
-	ofxJsonUtils::load(json
-					   ,kv(distance)
-					   ,kv(spd)
-					   ,kv(boxSize)
-					   ,kv(maxHeight)
-					   ,kv(showDebug)
-					   );
-}
-ofJson randomCubeUni::toJson() const
-{
-	return ofxJsonUtils::create(
-					   kv(distance)
-					   ,kv(spd)
-					   ,kv(boxSize)
-					   ,kv(maxHeight)
-					   ,kv(showDebug)
-	);
+void randomCubeUni::drawHUD(){
+	ofPushStyle();
+	ofSetColor(255, 0 , 0);
+	infoFont.drawString(jointIDText[touchId], ofGetWidth()/2, 100);
+	ofPopStyle();
 }
 
 //--------------------------------------------------------------
-void randomCubeUni::onActorSetup(const rdtk::Actor &actor)
+void randomCubeUni::drawImGui()
 {
-    
+	ImGui::Checkbox("debug", &showDebug);
+	if(ImGui::Button("next")) {
+		next();
+	}
+	ofVec2f center = rect.getCenter();
+	ofVec2f size = ofVec2f(rect.getWidth(), rect.getHeight());
+	bool dirty = false;
+	dirty |= ImGui::DragFloat2("center", &center[0]);
+	dirty |= ImGui::DragFloat2("size", &size[0]);
+	if(dirty) {
+		rect.setFromCenter(center, size.x, size.y);
+	}
+	ImGui::DragFloatRange2("height", &y_range[0], &y_range[1], 1, 0, 1000);
+	ImGui::DragFloat("box size", &box_size);
 }
 
-//--------------------------------------------------------------
-void randomCubeUni::drawActor(const rdtk::Actor &actor){
-    
-    if(!initParts){
-        cout<<actor.getName()<<endl;
-        firstActorName = "serio";//actor.getName();
-        initParts = true;
-        resetMove = true;
-        counter = 0;
-    }
-    
-    if(resetMove && firstActorName == actor.getName()){
-        float half = boxSize/2.0 - distance/2.0;
-        visibleBox = actor.getNode(JOINT_ABDOMEN).getGlobalPosition() + ofVec3f(ofRandom(-half, half), 0, ofRandom(-half, half));
-        
-        float y = ofRandom(distance, maxHeight);
-        visibleBox.set(visibleBox.x, y, visibleBox.z);
-        resetMove = false;
-    }
-    
-    if(firstActorName == actor.getName() && showDebugBox){ //for debug
-        
-        ofPushStyle();
-        ofNoFill();
-        ofSetColor(255, 71, 119);
-        ofVec3f boxPos = actor.getNode(JOINT_ABDOMEN).getGlobalPosition();
-        
-        float y = maxHeight /2.0;
-        boxPos.set(boxPos.x, y, boxPos.z);
-        float h = maxHeight;
-        ofDrawBox(boxPos, boxSize, h, boxSize);
-        ofPopStyle();
-    }
-    
-    for(int j = 0; j < 19; j++){
-        ofVec3f pos = actor.getNode(newJointID[j]).getGlobalPosition();//
-        
-        float dis = pos.distance(visibleBox);
-        if(firstActorName == actor.getName()){ //first actor need touchID
-            if(dis <= distance && touchId == j){
-                randomPos.set(visibleBox.x, 20.0, visibleBox.z);
-                //cout<<"set random pos: "<<randomPos<<endl;
-                trigger = true;
-                resetMove = true;
-                touchId = (int)ofRandom(0, 19);
-                touchIDColor = tagColor[touchId];
-            }
-        }else{ //another actor
-            if(dis <= distance){
-                randomPos.set(visibleBox.x, 20.0, visibleBox.z);
-                //cout<<"set random pos from outsider: "<<randomPos<<endl;
-                trigger = true;
-                resetMove = true;
-                touchId = (int)ofRandom(0, 19);
-                touchIDColor = tagColor[touchId];
-            }
-        }
-        
-        
-    }
-    
-    if(showDebug){
-        ofPushStyle();
-        ofSetLineWidth(1.f);
-        ofNoFill();
-        ofSetColor(255, 0, 0);
-        ofDrawSphere(currentPos, 10);
-        
-        ofSetColor(255, 255, 0);
-        ofDrawSphere(randomPos, 5);
-    }
-    
-    ofSetColor(15,197,138);
-    ofDrawSphere(uniBall->getPosition(), 20);
-    ofPopStyle();
+void randomCubeUni::onEnabled()
+{
+	BaseSceneWithJsonSettings::onEnabled();
+	next();
 }
 
+
+void randomCubeUni::next()
+{
+	visibleBox = [this]() {
+		ofVec3f center = ofVec3f(rect.getCenter().x, (y_range[0]+y_range[1])/2.f, rect.getCenter().y);
+		ofVec3f size = ofVec3f(rect.getWidth(), y_range[1]-y_range[0], rect.getHeight());
+		ofVec3f half_size = size/2.f;
+		return center + ofVec3f(ofRandom(-half_size.x,half_size.x), ofRandom(-half_size.y,half_size.y), ofRandom(-half_size.z,half_size.x));;
+	}();
+	touchId = (int)ofRandom(0, 19);
+	touchIDColor = tagColor[touchId];
+}

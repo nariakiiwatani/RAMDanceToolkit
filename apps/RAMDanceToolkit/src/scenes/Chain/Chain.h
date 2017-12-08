@@ -119,6 +119,7 @@ public:
     string getName() const { return "Chain"; }
 
 	void drawImGui();
+	void onEnabled();
 	
 	JSON_FUNCS(mGravity,mNumEdges,mAttachingEdge,mEdgeLength,mThickness);
 

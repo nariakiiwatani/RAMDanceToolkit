@@ -71,4 +71,5 @@ private:
     
     // sound
     vector<float> mWEAudioL, mWEAudioR;
+	float volume=1;
 };

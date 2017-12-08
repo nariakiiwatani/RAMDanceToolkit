@@ -26,7 +26,6 @@ namespace rdtk{
 		void removeSceneGui();
 		
 		bool visible = true;
-		int currentUIView = 0;
 		
 		void keyPressed(ofKeyEventArgs & key);
 		
@@ -39,6 +38,13 @@ namespace rdtk{
 			}
 			return *__instance;
 		}
+		
+		enum GuiType {
+			IMGUI,OFXUI,NONE
+		};
+		GuiType currentGuiType = IMGUI;
+		void switchGuiType(GuiType type);
+		void nextGuiType();
 		
 	protected:
 		vector< ofPtr<ActorGui> > actorArr;

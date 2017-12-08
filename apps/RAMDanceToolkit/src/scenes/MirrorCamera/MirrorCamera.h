@@ -15,6 +15,8 @@ public:
 	int active_camera_cache_ = 0;
 	ofxOscReceiver osc_;
 	float mirror_width_=300;
+	float mirror_pos_=0;
+	float camera_shift_;
 	struct TestNode {
 		ofVec3f pos = ofVec3f(0,160,100);
 		ofQuaternion ori;
@@ -24,6 +26,8 @@ public:
 	
 	void drawImGui()
 	{
+		ImGui::DragFloat("mirror pos", &mirror_pos_);
+		ImGui::SliderFloat("camera shift", &camera_shift_, -1,1);
 		ImGui::DragFloat("mirror width", &mirror_width_);
 		ImGui::DragFloat3("scale", &scale_[0], 0.01f);
 		if(ImGui::TreeNode("Test")) {
@@ -34,7 +38,7 @@ public:
 		}
 	}
 	
-	JSON_FUNCS(mirror_width_,scale_);
+	JSON_FUNCS(mirror_width_,mirror_pos_,scale_,camera_shift_);
 	
 	void onEnabled() {
 		auto &cm = rdtk::CameraManager::instance();
@@ -79,13 +83,13 @@ public:
 			return false;
 		}(actor_pos)) {
 			ofVec3f camera_pos = actor_pos;
-			camera_pos.z = -actor_pos.z;
+			camera_pos.z = actor_pos.z-(actor_pos.z-mirror_pos_)*2;
 			camera_->setLensOffset(ofVec2f(0,0));
 			camera_->setPosition(camera_pos);
 			camera_->lookAt(actor_pos);
 			ofVec3f origin_screen_pos = camera_->worldToScreen(ofVec3f(0,0,0));
 			float lens_offset = ofMap(origin_screen_pos.x, 0, ofGetWidth(), -1, 1);
-			camera_->setLensOffset(ofVec2f(lens_offset,0));
+			camera_->setLensOffset(ofVec2f(lens_offset,camera_shift_));
 			{
 				ofVec2f a = ofVec2f(-mirror_width_/2.f,0) - ofVec2f(camera_pos.x,camera_pos.z);
 				ofVec2f b = ofVec2f(mirror_width_/2.f,0) - ofVec2f(camera_pos.x,camera_pos.z);

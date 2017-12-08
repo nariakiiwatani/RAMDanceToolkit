@@ -16,61 +16,33 @@ randomCubeUni.h
 #include "ofxBullet.h"
 #include "BulletSoftBody/btSoftRigidDynamicsWorld.h"
 #include "BaseSceneWithJsonSettings.h"
-
-const int maxSize = 500;
+#include "ofxJsonUtilsUtils.h"
 
 class randomCubeUni : public BaseSceneWithJsonSettings
 {
 private:
-    
-    ofxBulletWorldRigid world;
-    ofxBulletBox* ground;
-    
-    ofxBulletRigidBody* uniBall;
-    ofxBulletJoint* joints;
-    
-    ofVec3f randomPos;
-    ofVec3f currentPos;
     ofVec3f visibleBox;
     
-    int maxHeight;
-    int counter;
-    int checkTime;
+	ofTrueTypeFont infoFont;
     int touchId;
-    
-    bool trigger;
-    bool showDebug;
-    bool initParts;
-    bool setPlayerPos;
-    bool resetMove;
-    bool showDebugBox;
-    
-    float distance;
-    float spd;
-    float length;
-    float boxSize;
-    
-    string firstActorName;
-    
     ofColor touchIDColor;
-    ofTrueTypeFont infoFont;
-    
-protected:
-    void onCollision(ofxBulletCollisionData& data);
-    
+	
+	bool showDebug;
+	ofRectangle rect;
+	ofVec2f y_range;
+	float box_size;
+
 public:
-    randomCubeUni();
     std::string getName() const { return "Rolling"; }
     
     void setup();
     void update();
     void draw();
+	void drawHUD();
     void drawImGui();
-    void disaffectDraw();
+    void onEnabled();
     
-    void onActorSetup(const rdtk::Actor &actor);
-    void drawActor(const rdtk::Actor &actor);
-    
-	void loadJson(const ofJson &json);
-	ofJson toJson() const;
+	JSON_FUNCS(rect,y_range,box_size,showDebug);
+	
+	void next();
 };

@@ -110,6 +110,12 @@ public:
 		lengthScale.resize(rdtk::Actor::NUM_JOINTS, 1);
 	}
 	
+	void onEnabled()
+	{
+		BaseSceneWithJsonSettings::onEnabled();
+		randomLine = true;
+	}
+	
 	bool isAncestor(int ancestor, int child) {
 		int cur = child;
 		while(treeSwap[cur] != -1)

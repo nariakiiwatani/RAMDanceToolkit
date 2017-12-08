@@ -67,6 +67,11 @@ public:
 	
 	JSON_FUNCS(use_idle_timer,mShowActor,color,line_width);
 	
+	void onEnabled()
+	{
+		BaseSceneWithJsonSettings::onEnabled();
+		mStamp.clear();
+	}
 	void setup()
 	{
 		mStamp.clear();

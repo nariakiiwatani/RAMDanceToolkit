@@ -95,13 +95,12 @@ void NodeArray::updateWithOscMessage(const ofxOscMessage &m)
 		const float vx = m.getArgAsFloat(i * 8 + 1 + 2);
 		const float vy = m.getArgAsFloat(i * 8 + 2 + 2);
 		const float vz = m.getArgAsFloat(i * 8 + 3 + 2);
-		const float angle = m.getArgAsFloat(i * 8 + 4 + 2);
-		const float ax = m.getArgAsFloat(i * 8 + 5 + 2);
-		const float ay = m.getArgAsFloat(i * 8 + 6 + 2);
-		const float az = m.getArgAsFloat(i * 8 + 7 + 2);
-		const ofVec3f axis(ax, ay, az);
+		const float qx = m.getArgAsFloat(i * 8 + 4 + 2);
+		const float qy = m.getArgAsFloat(i * 8 + 5 + 2);
+		const float qz = m.getArgAsFloat(i * 8 + 6 + 2);
+		const float qw = m.getArgAsFloat(i * 8 + 7 + 2);
 		const ofVec3f vec(vx, vy, vz);
-		const ofQuaternion quat(angle, axis);
+		const ofQuaternion quat(qx,qy,qz,qw);
 		
 		rdtk::Node &node = getNode(i);
 		node.node_id = i;

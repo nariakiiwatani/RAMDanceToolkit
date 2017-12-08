@@ -3,5 +3,6 @@
     "mIsResetPos": false,
     "mManualControlMethod": 0,
     "mPlayingMethod": 1,
-    "mTrackDistance": 256.0
+    "mTrackDistance": 256.0,
+    "volume": 1.0
 }

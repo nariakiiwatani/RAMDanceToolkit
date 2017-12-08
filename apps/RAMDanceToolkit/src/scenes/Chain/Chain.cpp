@@ -148,6 +148,38 @@ void Chain::drawImGui()
 	}
 }
 
+void Chain::onEnabled()
+{
+	BaseSceneWithJsonSettings::onEnabled();
+	for (int i = 0; i<mChains.size(); i++) {
+		delete mChains.at(i);
+		mChains.at(i) = NULL;
+	}
+	mChains.clear();
+	mChainBtDynamics.removeAllChains();
+
+	const auto &nas = rdtk::ActorManager::instance().getAllNodeArrays();
+	for(auto &na : nas) {
+		for(auto &na : nas) {
+			if(!na.isActor()) {
+				continue;
+			}
+			int nodeId = rdtk::Actor::JOINT_RIGHT_HAND;
+			AttachableChain *chain;
+			chain = new AttachableChain();
+			chain->setup(&mChainBtDynamics);
+			const ofVec3f pos = na.getNode(nodeId).getGlobalPosition();
+			/// not good
+			//chain->spawnChain(btVector3(pos.x, pos.y, pos.z), mNumEdges, mEdgeLength, mThickness);
+			/// good
+			chain->spawnChain(btVector3(0.0f, 100.0f, 0.0f), mNumEdges, mEdgeLength, mThickness);
+			chain->attach(na.getName(), nodeId, mAttachingEdge);
+			
+			mChains.push_back(chain);
+		}
+	}
+}
+
 #pragma mark -
 //--------------------------------------------------------------
 void Chain::setup()

@@ -212,6 +212,8 @@
 		8144B0601FD0E6CC0088751D /* RagdollScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8144B0451FD0E6CC0088751D /* RagdollScene.cpp */; };
 		8144B0611FD0E6CC0088751D /* RagdollShapeDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8144B0471FD0E6CC0088751D /* RagdollShapeDrawer.cpp */; };
 		8144B0621FD0E6CC0088751D /* SphereMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8144B04F1FD0E6CC0088751D /* SphereMesh.cpp */; };
+		8188A9791FD93D5300ADDFC5 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 8188A9751FD93D5300ADDFC5 /* README.md */; };
+		8188A97A1FD93D5300ADDFC5 /* ofxWatchdog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8188A9771FD93D5300ADDFC5 /* ofxWatchdog.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -842,6 +844,10 @@
 		8144B0501FD0E6CC0088751D /* SphereMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SphereMesh.h; sourceTree = "<group>"; };
 		8144B0511FD0E6CC0088751D /* ThreePoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreePoints.h; sourceTree = "<group>"; };
 		8144B0531FD0E6CC0088751D /* UpsideDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpsideDown.h; sourceTree = "<group>"; };
+		8188A9741FD93D5300ADDFC5 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8188A9751FD93D5300ADDFC5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8188A9771FD93D5300ADDFC5 /* ofxWatchdog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxWatchdog.cpp; sourceTree = "<group>"; };
+		8188A9781FD93D5300ADDFC5 /* ofxWatchdog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxWatchdog.h; sourceTree = "<group>"; };
 		818D92EB1FBC21E600464F19 /* MirrorCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MirrorCamera.h; sourceTree = "<group>"; };
 		81B784B91FCDAC1400011634 /* AutoSwitcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoSwitcher.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
@@ -996,6 +1002,7 @@
 		812CB0461FBD6C4900AB6AAF /* local_addons */ = {
 			isa = PBXGroup;
 			children = (
+				8188A9731FD93D5300ADDFC5 /* ofxWatchdog */,
 				812CB6B01FCD9F4800AB6AAF /* ofxJsonUtils */,
 				812CB6CB1FCD9F4800AB6AAF /* ofxJsonUtilsUtils */,
 				812CB6D21FCD9F4800AB6AAF /* ofxWatchFile */,
@@ -2176,6 +2183,26 @@
 			path = scenes/UpsideDown;
 			sourceTree = "<group>";
 		};
+		8188A9731FD93D5300ADDFC5 /* ofxWatchdog */ = {
+			isa = PBXGroup;
+			children = (
+				8188A9741FD93D5300ADDFC5 /* LICENSE */,
+				8188A9751FD93D5300ADDFC5 /* README.md */,
+				8188A9761FD93D5300ADDFC5 /* src */,
+			);
+			name = ofxWatchdog;
+			path = addons/ofxWatchdog;
+			sourceTree = "<group>";
+		};
+		8188A9761FD93D5300ADDFC5 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				8188A9771FD93D5300ADDFC5 /* ofxWatchdog.cpp */,
+				8188A9781FD93D5300ADDFC5 /* ofxWatchdog.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		818D92EA1FBC21E600464F19 /* MirrorCamera */ = {
 			isa = PBXGroup;
 			children = (
@@ -2434,6 +2461,7 @@
 				812CB6281FBD6C5500AB6AAF /* ofxBulletBox.cpp in Sources */,
 				812CB5B41FBD6C5500AB6AAF /* btTriangleShapeEx.cpp in Sources */,
 				8144B05C1FD0E6CC0088751D /* KeplerBtShapeDrawer.cpp in Sources */,
+				8188A9791FD93D5300ADDFC5 /* README.md in Sources */,
 				8144B05E1FD0E6CC0088751D /* Laban.cpp in Sources */,
 				812CB56A1FBD6C5500AB6AAF /* btDbvt.cpp in Sources */,
 				812CB5D21FBD6C5500AB6AAF /* btTypedConstraint.cpp in Sources */,
@@ -2528,6 +2556,7 @@
 				812CB5D71FBD6C5500AB6AAF /* Bullet-C-API.cpp in Sources */,
 				812CB59F1FBD6C5500AB6AAF /* btOptimizedBvh.cpp in Sources */,
 				812CB5991FBD6C5500AB6AAF /* btCylinderShape.cpp in Sources */,
+				8188A97A1FD93D5300ADDFC5 /* ofxWatchdog.cpp in Sources */,
 				812CB5A11FBD6C5500AB6AAF /* btScaledBvhTriangleMeshShape.cpp in Sources */,
 				812CB5CF1FBD6C5500AB6AAF /* btSequentialImpulseConstraintSolver.cpp in Sources */,
 				812CB5DD1FBD6C5500AB6AAF /* btMultiBodyJointMotor.cpp in Sources */,
