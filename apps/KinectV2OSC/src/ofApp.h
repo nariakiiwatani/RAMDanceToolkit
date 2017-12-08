@@ -36,4 +36,10 @@ class ofApp : public ofBaseApp{
 		float preview_scale_ = 100;
 		void save();
 		void load();
+
+		int max_num_player_=1;
+		ofRectangle valid_area_;
+
+		int osc_port_;
+		std::string osc_host_;
 };

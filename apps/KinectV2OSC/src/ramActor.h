@@ -78,6 +78,39 @@ public:
 		return joint < NUM_JOINTS ? joint_name[joint] : "";
 	}
 	
+	int parentJoint(int j) {
+		switch(j) {
+			case HIPS: return -1;
+			case ABDOMEN: return HIPS;
+			case CHEST: return ABDOMEN;
+			case NECK: return CHEST;
+			case HEAD: return NECK;
+
+			case L_HIP: return HIPS;
+			case L_KNEE: return L_HIP;
+			case L_ANKLE: return L_KNEE;
+			case L_TOE: return L_ANKLE;
+
+			case R_HIP: return HIPS;
+			case R_KNEE: return R_HIP;
+			case R_ANKLE: return R_KNEE;
+			case R_TOE: return R_ANKLE;
+
+			case L_COLLAR: return CHEST;
+			case L_SHOULDER: return L_COLLAR;
+			case L_ELBOW: return L_SHOULDER;
+			case L_WRIST: return L_ELBOW;
+			case L_HAND: return L_WRIST;
+
+			case R_COLLAR: return CHEST;
+			case R_SHOULDER: return R_COLLAR;
+			case R_ELBOW: return R_SHOULDER;
+			case R_WRIST: return R_ELBOW;
+			case R_HAND: return R_WRIST;
+
+		}
+		return -1;
+	}
 	void collection() {
 		auto mid = [](ofNode &a, ofNode &b) {
 			ofNode ret;
@@ -95,7 +128,14 @@ public:
 			pos.x *= -1;
 			nodes_[i].setPosition(pos);
 		}
-}
+		for(int i = 0; i < NUM_JOINTS; ++i) {
+			int p = parentJoint(i);
+			if(p >= 0) {
+				nodes_[i].lookAt(nodes_[p]);
+//				nodes_[i].rotate(180,ofVec3f(0,1,0));
+			}
+		}
+	}
 };
 
 #endif /* ramActor_h */

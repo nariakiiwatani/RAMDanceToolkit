@@ -1,5 +1,6 @@
 #include "ofApp.h"
 #include "ramActor.h"
+#include "ofxJsonUtils.h"
 
 namespace {
 	int kinectToRam(int joint_id) {
@@ -34,13 +35,29 @@ namespace {
 }
 void ofApp::save()
 {
-	ofBuffer buf(ofToString(virtual_camera_.getGlobalTransformMatrix()));
-	ofBufferToFile("settings.txt", buf);
+	ofJson json = {
+		{"matrix", ofToString(virtual_camera_.getGlobalTransformMatrix())},
+		{"num", max_num_player_},
+		{"area",ofToString(valid_area_)},
+		{"host",osc_host_},
+		{"port",osc_port_}
+	};
+	ofxJsonUtils::writeToFile("settings.json", json, 4);
 }
 void ofApp::load()
 {
-	ofBuffer buf = ofBufferFromFile("settings.txt");
-	virtual_camera_.setTransformMatrix(ofFromString<ofMatrix4x4>(buf.getText()));
+	ofJson json = ofxJsonUtils::loadFromFile("settings.json");
+	if(json.is_null()) {
+		return;
+	}
+	virtual_camera_.setTransformMatrix(ofFromString<ofMatrix4x4>(json["matrix"]));
+	max_num_player_ = json["num"];
+	valid_area_ = ofFromString<ofRectangle>(json["area"]);
+
+	osc_host_ = json["host"];
+	osc_port_ = json["port"];
+	sender_.setup(osc_host_, osc_port_);
+
 }
 
 //--------------------------------------------------------------
@@ -48,7 +65,6 @@ void ofApp::setup(){
 	if (device_.setup() && body_.setup(device_)) {
 		body_.open();
 	}
-	sender_.setup("localhost", 10000);
 	gui_.setup();
 	ofBackground(0);
 
@@ -67,7 +83,19 @@ void ofApp::update(){
 
 	device_.update();
 	auto bodies = body_.getBodies();
+	int valid_num = 0;
 	for (auto &b : bodies) {
+		ofVec2f pos_2d = [this](CameraSpacePoint pos) {
+			ofMatrix4x4 mat = virtual_camera_.getModelViewMatrix();
+			ofPoint p = mat.preMult(ofPoint(pos.X,pos.Y,pos.Z)*preview_scale_);
+			return ofVec2f(p.x,p.z);
+		}(b.getJoint(JointType_SpineBase).Position);
+		if(!valid_area_.inside(pos_2d)) {
+			continue;
+		}
+		if(++valid_num > max_num_player_) {
+			break;
+		}
 		float scale = 100;
 		ramActor actor;
 		for (int i = 0; i < JointType_Count; ++i) {
@@ -90,6 +118,7 @@ void ofApp::update(){
 			actor.nodes_[ram_joint].setOrientation(ori);
 		}
 		actor.collection();
+
 		ofxOscMessage m;
 		m.setAddress("/ram/skeleton");
 		m.addStringArg(ofToHex(b.getId()));
@@ -127,13 +156,31 @@ void ofApp::draw(){
 	ofRotateZ(90);
 	ofDrawGridPlane(50);
 	ofPopMatrix();
+	ofPushMatrix();
+	ofRotateX(90);
+	ofPushStyle();
+	ofSetColor(ofColor::yellow, 128);
+	ofDrawRectangle(valid_area_);
+	ofPopStyle();
+	ofPopMatrix();
 	ofDrawAxis(100);
 	virtual_camera_.restoreTransformGL();
 
 	ofPushStyle();
-	ofSetColor(ofColor::yellow);
 	auto bodies = body_.getBodies();
+	int valid_num = 0;
 	for (auto &b : bodies) {
+		ofVec2f pos_2d = [this](CameraSpacePoint pos) {
+			ofMatrix4x4 mat = virtual_camera_.getModelViewMatrix();
+			ofPoint p = mat.preMult(ofPoint(pos.X,pos.Y,pos.Z)*preview_scale_);
+			return ofVec2f(p.x,p.z);
+		}(b.getJoint(JointType_SpineBase).Position);
+		if(valid_area_.inside(pos_2d) && ++valid_num <= max_num_player_) {
+			ofSetColor(ofColor::green);
+		}
+		else {
+			ofSetColor(ofColor::red, 64);
+		}
 		for(int i = 0, num = b.getNumJoints(); i < num; ++i) {
 			ofPoint p = ofPoint(b.getJoint(i).Position.X, b.getJoint(i).Position.Y, b.getJoint(i).Position.Z)*preview_scale_;
 			ofDrawBox(p,5);
@@ -153,24 +200,47 @@ void ofApp::draw(){
 		if (ImGui::Button("Save")) {
 			save();
 		}
+		ImGui::SameLine();
 		if (ImGui::Button("Load")) {
 			load();
 		}
-		ofVec3f move(0,0,0);
-		if (ImGui::DragFloat3("Move", &move[0], 0.01f)) {
-			virtual_camera_.move(move);
+		if(ImGui::TreeNode("camera")) {
+			ofVec3f move(0,0,0);
+			if (ImGui::DragFloat3("Move", &move[0], 0.01f)) {
+				virtual_camera_.move(move);
+			}
+			float roll(0);
+			if (ImGui::DragFloat("Roll", &roll, 0.01f)) {
+				virtual_camera_.roll(roll);
+			}
+			float pitch(0);
+			if (ImGui::DragFloat("Pitch", &pitch, 0.01f)) {
+				virtual_camera_.tilt(pitch);
+			}
+			float yaw(0);
+			if (ImGui::DragFloat("Yaw", &yaw, 0.01f)) {
+				virtual_camera_.pan(yaw);
+			}
+			ImGui::TreePop();
 		}
-		float roll(0);
-		if (ImGui::DragFloat("Roll", &roll, 0.01f)) {
-			virtual_camera_.roll(roll);
+		if(ImGui::TreeNode("clipping")) {
+			ImGui::SliderInt("player", &max_num_player_, 0, 6);
+			ofVec2f center = valid_area_.getCenter();
+			ofVec2f size = ofVec2f(valid_area_.getWidth(),valid_area_.getHeight());
+			if(ImGui::DragFloat2("center", &center[0]) || ImGui::DragFloat2("size", &size[0])) {
+				valid_area_.setFromCenter(center, size.x, size.y);
+			}
+			ImGui::TreePop();
 		}
-		float pitch(0);
-		if (ImGui::DragFloat("Pitch", &pitch, 0.01f)) {
-			virtual_camera_.tilt(pitch);
-		}
-		float yaw(0);
-		if (ImGui::DragFloat("Yaw", &yaw, 0.01f)) {
-			virtual_camera_.pan(yaw);
+		if(ImGui::TreeNode("osc")) {
+			char buf[256]={};
+			strcpy(buf,osc_host_.c_str());
+			if(ImGui::InputText("host", buf, 256, ImGuiInputTextFlags_EnterReturnsTrue)
+			|| ImGui::InputInt("port", &osc_port_, 1, 100, ImGuiInputTextFlags_EnterReturnsTrue)) {
+				osc_host_ = buf;
+				sender_.setup(osc_host_, osc_port_);
+			}
+			ImGui::TreePop();
 		}
 	}
 	ImGui::End();
